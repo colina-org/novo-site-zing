@@ -1,0 +1,179 @@
+@font-face {
+  font-family: "Sundry";
+  src:
+    url("../fonts/Sundry-Medium.woff2") format("woff2"),
+    url("../fonts/Sundry-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SundryNarrow";
+  src:
+    url("../fonts/SundryNarrow-Bold.woff2") format("woff2"),
+    url("../fonts/SundryNarrow-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SundryNarrow";
+  src:
+    url("../fonts/SundryNarrow-HeavyItalic.woff2") format("woff2"),
+    url("../fonts/SundryNarrow-HeavyItalic.woff") format("woff");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SundryNarrow";
+  src:
+    url("../fonts/SundryNarrow-Heavy.woff2") format("woff2"),
+    url("../fonts/SundryNarrow-Heavy.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SundryNarrow";
+  src:
+    url("../fonts/SundryNarrow-Italic.woff2") format("woff2"),
+    url("../fonts/SundryNarrow-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sundry";
+  src:
+    url("../fonts/Sundry-MediumItalic.woff2") format("woff2"),
+    url("../fonts/Sundry-MediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SundryNarrow";
+  src:
+    url("../fonts/SundryNarrow-LightItalic.woff2") format("woff2"),
+    url("../fonts/SundryNarrow-LightItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SundryNarrow";
+  src:
+    url("../fonts/SundryNarrow-ThinItalic.woff2") format("woff2"),
+    url("../fonts/SundryNarrow-ThinItalic.woff") format("woff");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sundry";
+  src:
+    url("../fonts/Sundry-Thin.woff2") format("woff2"),
+    url("../fonts/Sundry-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SundryNarrow";
+  src:
+    url("../fonts/SundryNarrow-MediumItalic.woff2") format("woff2"),
+    url("../fonts/SundryNarrow-MediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SundryNarrow";
+  src:
+    url("../fonts/SundryNarrow-Medium.woff2") format("woff2"),
+    url("../fonts/SundryNarrow-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sundry";
+  src:
+    url("../fonts/Sundry-ThinItalic.woff2") format("woff2"),
+    url("../fonts/Sundry-ThinItalic.woff") format("woff");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sundry-Super";
+  src:
+    url("../fonts/Sundry-Super.woff2") format("woff2"),
+    url("../fonts/Sundry-Super.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SundryNarrow";
+  src:
+    url("../fonts/SundryNarrow-Thin.woff2") format("woff2"),
+    url("../fonts/SundryNarrow-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sundry-SuperItalic";
+  src:
+    url("../fonts/Sundry-SuperItalic.woff2") format("woff2"),
+    url("../fonts/Sundry-SuperItalic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sundry";
+  src:
+    url("../fonts/Sundry-Regular.woff2") format("woff2"),
+    url("../fonts/Sundry-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SundryNarrow";
+  src:
+    url("../fonts/SundryNarrow-Regular.woff2") format("woff2"),
+    url("../fonts/SundryNarrow-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SundryNarrow";
+  src:
+    url("../fonts/SundryNarrow-Light.woff2") format("woff2"),
+    url("../fonts/SundryNarrow-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
