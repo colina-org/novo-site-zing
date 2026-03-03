@@ -14,19 +14,30 @@ const serviceItems = [
   },
 ];
 
+const sectorItems = [
+  { label: "Setor público", href: "#" },
+  { label: "Setor Privado", href: "#" },
+];
+
 const navItems = [
-  { label: "Pra quem oferecemos", href: "#" },
   { label: "Programas", href: "/programas" },
   { label: "Eventos", href: "#" },
   { label: "Conteúdo", href: "#" },
 ];
 
-function ChevronDown() {
+function ChevronDown({ className }: { className?: string }) {
   return (
-    <svg width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true">
+    <svg
+      width="8"
+      height="5"
+      viewBox="0 0 8 5"
+      fill="none"
+      aria-hidden="true"
+      className={className}
+    >
       <path
         d="M1 1L4 4L7 1"
-        stroke="#464646"
+        stroke="currentColor"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -104,8 +115,11 @@ function HamburgerIcon({ open }: { open: boolean }) {
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [sectorOpen, setSectorOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileSectorOpen, setMobileSectorOpen] = useState(false);
   const servicesRef = useRef<HTMLDivElement>(null);
+  const sectorRef = useRef<HTMLDivElement>(null);
 
   // Close desktop dropdown when clicking outside
   useEffect(() => {
@@ -119,6 +133,16 @@ export default function Header() {
     }
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [servicesRef]);
+
+  useEffect(() => {
+    function menuSectorSecvices(e: MouseEvent) {
+      if (sectorRef.current && !sectorRef.current.contains(e.target as Node)) {
+        setSectorOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", menuSectorSecvices);
+    return () => document.removeEventListener("mousedown", menuSectorSecvices);
   }, []);
 
   return (
@@ -140,7 +164,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-2 lg:flex">
+        <nav className="hidden items-center gap-2 nav:flex">
           {/* Serviços dropdown */}
           <div
             ref={servicesRef}
@@ -149,15 +173,27 @@ export default function Header() {
             onMouseLeave={() => setServicesOpen(false)}
           >
             <button
-              className="flex items-center gap-1 rounded-full px-3 py-2 text-base font-normal text-black transition-colors hover:bg-gray-100"
+              className={`group flex items-center gap-1 px-3 py-2 text-base font-normal transition-all duration-200 hover:rounded hover:bg-[#f9f2ff] ${
+                servicesOpen ? "rounded bg-[#f9f2ff]" : ""
+              }`}
               onClick={() => setServicesOpen((prev) => !prev)}
             >
-              Serviços
-              <ChevronDown />
+              <span
+                className={`bg-linear-to-tr from-[#9500FF] to-[#35005B] bg-clip-text transition-colors duration-200 group-hover:text-transparent ${
+                  servicesOpen ? "text-transparent" : "text-greyPrimary"
+                }`}
+              >
+                Serviços
+              </span>
+              <ChevronDown
+                className={`transition-colors duration-200 group-hover:text-[#9500FF] ${
+                  servicesOpen ? "text-[#9500FF]" : "text-greyPrimary"
+                }`}
+              />
             </button>
 
             <div
-              className={`absolute left-0 top-full min-w-64 rounded-lg border border-gray-100 bg-white py-2 shadow-lg transition-all duration-200 ${
+              className={`absolute left-0 top-full flex min-w-80 flex-col gap-2 rounded border border-gray-100 bg-white p-2 shadow-lg transition-all duration-200 ${
                 servicesOpen
                   ? "visible translate-y-0 opacity-100"
                   : "invisible -translate-y-1 opacity-0"
@@ -167,10 +203,60 @@ export default function Header() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="block px-4 py-2.5 text-base text-black transition-colors hover:bg-gray-50"
+                  className="rounded bg-[#f9f2ff] px-3 py-2 text-base transition-colors hover:bg-[#eddcff]"
                   onClick={() => setServicesOpen(false)}
                 >
-                  {item.label}
+                  <span className="bg-linear-to-tr from-[#9500FF] to-[#35005B] bg-clip-text text-transparent">
+                    {item.label}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div
+            ref={sectorRef}
+            className="relative"
+            onMouseEnter={() => setSectorOpen(true)}
+            onMouseLeave={() => setSectorOpen(false)}
+          >
+            <button
+              className={`group flex items-center gap-1 px-3 py-2 text-base font-normal transition-all duration-200 hover:rounded hover:bg-[#f9f2ff] ${
+                sectorOpen ? "rounded bg-[#f9f2ff]" : ""
+              }`}
+              onClick={() => setSectorOpen((prev) => !prev)}
+            >
+              <span
+                className={`bg-linear-to-tr from-[#9500FF] to-[#35005B] bg-clip-text transition-colors duration-200 group-hover:text-transparent ${
+                  sectorOpen ? "text-transparent" : "text-greyPrimary"
+                }`}
+              >
+                Pra quem oferecemos
+              </span>
+              <ChevronDown
+                className={`transition-colors duration-200 group-hover:text-[#9500FF] ${
+                  sectorOpen ? "text-[#9500FF]" : "text-greyPrimary"
+                }`}
+              />
+            </button>
+
+            <div
+              className={`absolute left-0 top-full flex min-w-44 flex-col gap-2 rounded border border-gray-100 bg-white p-2 shadow-lg transition-all duration-200 ${
+                sectorOpen
+                  ? "visible translate-y-0 opacity-100"
+                  : "invisible -translate-y-1 opacity-0"
+              }`}
+            >
+              {sectorItems.map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="rounded bg-[#f9f2ff] px-3 py-2 text-base transition-colors hover:bg-[#eddcff]"
+                  onClick={() => setSectorOpen(false)}
+                >
+                  <span className="bg-linear-to-tr from-[#9500FF] to-[#35005B] bg-clip-text text-transparent">
+                    {item.label}
+                  </span>
                 </Link>
               ))}
             </div>
@@ -180,16 +266,18 @@ export default function Header() {
             <Link
               key={item.label}
               href={item.href}
-              className="flex items-center gap-1 rounded-full px-3 py-2 text-base font-normal text-black transition-colors hover:bg-gray-100"
+              className="group flex items-center gap-1 px-3 py-2 text-base font-normal transition-all duration-200 hover:rounded hover:bg-[#f9f2ff]"
             >
-              {item.label}
-              <ChevronDown />
+              <span className="bg-linear-to-tr from-[#9500FF] to-[#35005B] bg-clip-text text-greyPrimary transition-colors duration-200 group-hover:text-transparent">
+                {item.label}
+              </span>
+              <ChevronDown className="text-greyPrimary transition-colors duration-200 group-hover:text-[#9500FF]" />
             </Link>
           ))}
         </nav>
 
         {/* Desktop Actions */}
-        <div className="hidden items-center gap-4 lg:flex">
+        <div className="hidden items-center gap-4 nav:flex">
           <Link
             href="#"
             className="flex items-center justify-center whitespace-nowrap rounded border border-black px-4 py-2 text-base font-bold text-black transition-colors hover:bg-gray-50"
@@ -207,7 +295,7 @@ export default function Header() {
 
         {/* Mobile Hamburger */}
         <button
-          className="flex items-center justify-center lg:hidden"
+          className="flex items-center justify-center nav:hidden"
           onClick={() => setMenuOpen((prev) => !prev)}
           aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
           aria-expanded={menuOpen}
@@ -218,7 +306,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       <div
-        className={`overflow-hidden bg-white transition-all duration-300 ease-in-out lg:hidden ${
+        className={`overflow-hidden bg-white transition-all duration-300 ease-in-out nav:hidden ${
           menuOpen
             ? "max-h-screen border-t border-gray-100 opacity-100"
             : "max-h-0 opacity-0"
@@ -253,6 +341,42 @@ export default function Header() {
                   onClick={() => {
                     setMenuOpen(false);
                     setMobileServicesOpen(false);
+                  }}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Pra quem oferecemos accordion */}
+          <div>
+            <button
+              className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-base font-normal text-black transition-colors hover:bg-gray-50"
+              onClick={() => setMobileSectorOpen((prev) => !prev)}
+            >
+              Pra quem oferecemos
+              <span
+                className={`transition-transform duration-200 ${mobileSectorOpen ? "rotate-180" : ""}`}
+              >
+                <ChevronDown />
+              </span>
+            </button>
+            <div
+              className={`overflow-hidden transition-all duration-200 ${
+                mobileSectorOpen
+                  ? "max-h-40 opacity-100"
+                  : "max-h-0 opacity-0"
+              }`}
+            >
+              {sectorItems.map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="block rounded-lg px-6 py-2.5 text-base text-black transition-colors hover:bg-gray-50"
+                  onClick={() => {
+                    setMenuOpen(false);
+                    setMobileSectorOpen(false);
                   }}
                 >
                   {item.label}

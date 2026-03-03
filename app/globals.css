@@ -16,6 +16,7 @@
   --color-greyPrimary: #464646;
   --color-purpleSecondary: #9500ff;
   --animate-fade-in-up: fadeInUp 0.6s ease-out both;
+  --breakpoint-nav: 1137px;
 }
 
 @media (prefers-color-scheme: dark) {

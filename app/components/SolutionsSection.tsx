@@ -1,14 +1,21 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 const solutions = [
   {
     label: "Setor público",
+    description:
+      "Lance chamadas de CPSI e desafios de inovação para resolver problemas reais da gestão pública, testando e validando soluções com startups de forma segura, transparente e orientada a resultados.",
     image: "/solutions/img-card-solution.png",
     href: "#",
   },
   {
     label: "Setor privado",
+    description:
+      "A Zing apoia empresas do setor privado na criação e execução de programas de inovação aberta, conectando startups a desafios reais do negócio por meio de processos estruturados de captação, seleção e avaliação. Também desenvolvemos desafios de intraempreendedorismo para engajar colaboradores na criação de soluções inovadoras e orientadas a resultados.",
     image: "/solutions/img-card-solution.png",
     href: "#",
   },
@@ -22,6 +29,7 @@ function ArrowIcon() {
       viewBox="0 0 16 10"
       fill="none"
       aria-hidden="true"
+      className="shrink-0"
     >
       <path
         d="M1 5H15M15 5L10.5 1M15 5L10.5 9"
@@ -48,6 +56,8 @@ function ArrowIcon() {
 }
 
 export default function SolutionsSection() {
+  const [active, setActive] = useState<number | null>(null);
+
   return (
     <section className="overflow-hidden bg-white max-lg:py-14">
       <div className="relative flex min-h-125 flex-col lg:min-h-150">
@@ -84,37 +94,95 @@ export default function SolutionsSection() {
           </div>
 
           {/* Right: image cards */}
-          <div className="flex w-full max-w-3xl flex-col gap-3 items-center  sm:flex-row sm:gap-4">
-            {solutions.map((s, i) => (
-              <Link
-                key={i}
-                href={s.href}
-                className={`group w-full relative h-100 max-sm:h-64 overflow-hidden rounded-xl sm:min-h-0 ${
-                  i === 0 ? "sm:flex-4" : "sm:flex-3"
-                }`}
-              >
-                <Image
-                  src={s.image}
-                  alt={s.label}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 640px) 100vw, 35vw"
-                />
+          <div
+            className="flex w-full max-w-3xl flex-col gap-3 items-center sm:flex-row sm:gap-4"
+            onMouseLeave={() => setActive(null)}
+          >
+            {solutions.map((s, i) => {
+              const isActive = active === i;
+              return (
+                <Link
+                  key={i}
+                  href={s.href}
+                  onMouseEnter={() => setActive(i)}
+                  className={`relative flex flex-col overflow-hidden rounded-xl h-100 max-sm:h-90 transition-all duration-500 ease-in-out w-full ${
+                    active === null
+                      ? "sm:flex-1"
+                      : isActive
+                        ? "sm:flex-4"
+                        : "sm:flex-3"
+                  }`}
+                >
+                  {/* Image — absolute background */}
+                  <Image
+                    src={s.image}
+                    alt={s.label}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, 40vw"
+                  />
 
-                {/* Bottom gradient for text readability */}
-                <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/30 to-transparent" />
+                  {/* Gradient overlay — absolute, deepens on hover */}
+                  <div
+                    className={`pointer-events-none absolute inset-0 transition-all duration-500 ${
+                      isActive
+                        ? "bg-linear-to-t from-black/75 via-black/30 to-transparent"
+                        : "bg-linear-to-t from-black/50 to-transparent"
+                    }`}
+                  />
 
-                {/* Label + arrow */}
-                <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between p-5">
-                  <span className="text-2xl font-bold text-white">
-                    {s.label}
-                  </span>
-                  <div className="flex size-8 shrink-0 items-center justify-center rounded bg-white shadow-sm">
-                    <ArrowIcon />
+                  {/* Content — full height flex, top vs bottom on hover */}
+                  <div className="absolute inset-0 z-10 flex flex-col p-5">
+                    {/* Top: title + description (hover only) */}
+                    <div
+                      className={`overflow-hidden transition-all duration-500 ${
+                        isActive ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
+                      }`}
+                    >
+                      <span className="text-2xl font-bold text-white">
+                        {s.label}
+                      </span>
+                      <p className="mt-3 text-base font-normal text-white/90">
+                        {s.description}
+                      </p>
+                    </div>
+
+                    {/* Spacer */}
+                    <div className="flex-1" />
+
+                    {/* Bottom: title + arrow (default only) */}
+                    <div
+                      className={`overflow-hidden transition-all duration-500 ${
+                        isActive ? "max-h-0 opacity-0" : "max-h-20 opacity-100"
+                      }`}
+                    >
+                      <div className="flex items-center justify-between">
+                        <span className="text-2xl font-bold text-white">
+                          {s.label}
+                        </span>
+                        <div className="flex size-8 shrink-0 items-center justify-center rounded bg-white shadow-sm">
+                          <ArrowIcon />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Bottom: button (hover only) */}
+                    <div
+                      className={`overflow-hidden transition-all duration-500 ${
+                        isActive ? "max-h-14 opacity-100" : "max-h-0 opacity-0"
+                      }`}
+                    >
+                      <div className="flex w-full items-center justify-between rounded bg-white px-4 py-2">
+                        <span className="text-base font-bold bg-linear-to-r from-[#9500FF] to-[#35005A] bg-clip-text text-transparent">
+                          Conheça mais
+                        </span>
+                        <ArrowIcon />
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 
 const services = [
@@ -54,14 +54,37 @@ function ArrowRightIcon() {
 export default function ServicesSection() {
   const [active, setActive] = useState(0);
   const [imgVisible, setImgVisible] = useState(true);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const activeRef = useRef(0);
 
-  const handleTabClick = (index: number) => {
-    if (index === active) return;
+  const switchTo = useCallback((index: number) => {
     setImgVisible(false);
     setTimeout(() => {
       setActive(index);
+      activeRef.current = index;
       setImgVisible(true);
     }, 250);
+  }, []);
+
+  const startInterval = useCallback(() => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(() => {
+      const next = (activeRef.current + 1) % services.length;
+      switchTo(next);
+    }, 10000);
+  }, [switchTo]);
+
+  useEffect(() => {
+    startInterval();
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [startInterval]);
+
+  const handleTabClick = (index: number) => {
+    if (index === active) return;
+    switchTo(index);
+    startInterval();
   };
 
   return (
