@@ -12,8 +12,8 @@ export default function PageCPSI() {
   return (
     <main>
       <Hero />
-      <About />
       <Clients />
+      <About />
       <Calls />
       <WhyUse />
       <Cases />

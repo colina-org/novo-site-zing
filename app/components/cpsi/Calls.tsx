@@ -14,8 +14,11 @@ const steps = [
 
 function StepCard({ label }: { label: string }) {
   return (
-    <div className="flex justify-center text-center items-center h-43 w-full max-w-50 flex-col rounded bg-linear-to-br from-[#9500FF] to-[#35005A] p-5">
-      <p className="text-lg max-sm:text-base font-bold text-white">{label}</p>
+    <div className="flex flex-col items-center gap-14 max-sm:gap-10">
+      <div className="h-43 w-full max-w-50 rounded bg-linear-to-br from-[#9500FF] to-[#35005A]" />
+      <p className="text-lg max-w-50 max-sm:text-base font-bold text-black text-center">
+        {label}
+      </p>
     </div>
   );
 }

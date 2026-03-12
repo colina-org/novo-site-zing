@@ -13,9 +13,13 @@ export default function About() {
             </h2>
             <p className="text-lg font-normal leading-relaxed text-black">
               O CPSI (Contrato Público para Solução Inovadora) é um instrumento
-              jurídico que permite ao setor público contratar, testar e validar
-              soluções inovadoras para desafios reais da gestão, com segurança
-              jurídica, transparência e foco em resultados.
+              jurídico que permite ao setor público{" "}
+              <span className="font-medium">contratar, testar e validar </span>
+              soluções inovadoras para desafios reais da gestão, com{" "}
+              <span className="font-medium">
+                segurança jurídica, transparência e foco em resultados
+              </span>
+              .
             </p>
           </div>
 

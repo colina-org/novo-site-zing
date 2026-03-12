@@ -3,21 +3,25 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="bg-white py-20 max-sm:py-10 lg:flex lg:items-center">
+    <section className="bg-white pt-20 pb-6 max-sm:py-10 lg:flex lg:items-center">
       <div className="container">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
           {/* Text content */}
-          <div className="flex max-w-2xl flex-col gap-13.5">
+          <div className="flex max-w-4xl flex-col gap-13.5">
             <div className="flex flex-col gap-6">
               <h1 className="text-[clamp(32px,4vw,48px)] font-normal leading-tight text-black">
                 Plataforma líder na{" "}
-                <span className="font-medium">gestão de editais de CPSI</span>{" "}
+                <span className="font-medium">
+                  gestão de <br />
+                  editais de CPSI
+                </span>{" "}
                 no Brasil
               </h1>
               <p className="text-lg font-normal leading-relaxed text-black">
-                A Zing é a plataforma líder na gestão de editais de CPSI no
-                Brasil. Segurança, escala e confiança para quem conduz inovação
-                no setor público.
+                A Zing é a plataforma dos maiores editais de{" "}
+                <strong>Contrato Público para Solução Inovadora (CPSI) </strong>
+                do Brasil. Grandes intuições como CAIXA, CEMIG, Porto Suape e
+                Prefeitura de Belo Horizonte confiam na ZING.
               </p>
             </div>
 
@@ -31,42 +35,12 @@ export default function Hero() {
 
           {/* Cubes decoration */}
           <div className="relative hidden h-82.5 w-82.5 shrink-0 lg:block">
-            <div className="absolute top-0 left-0 animate-fade-in-up [animation-delay:0s]">
-              <Image
-                src="/cube-icon.svg"
-                alt=""
-                width={131}
-                height={131}
-                aria-hidden="true"
-              />
-            </div>
-            <div className="absolute top-0 left-50 animate-fade-in-up [animation-delay:0.15s]">
-              <Image
-                src="/cube-icon.svg"
-                alt=""
-                width={131}
-                height={131}
-                aria-hidden="true"
-              />
-            </div>
-            <div className="absolute top-24.75 left-25 animate-fade-in-up [animation-delay:0.3s]">
-              <Image
-                src="/cube-icon.svg"
-                alt=""
-                width={131}
-                height={131}
-                aria-hidden="true"
-              />
-            </div>
-            <div className="absolute top-49.5 left-50 animate-fade-in-up [animation-delay:0.45s]">
-              <Image
-                src="/cube-icon.svg"
-                alt=""
-                width={131}
-                height={131}
-                aria-hidden="true"
-              />
-            </div>
+            <Image
+              src={"/all-cubes-hero-cpsi.svg"}
+              alt=""
+              width={331}
+              height={329}
+            />
           </div>
         </div>
       </div>
