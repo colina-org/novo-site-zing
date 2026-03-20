@@ -55,10 +55,10 @@ const testimonials: Testimonial[] = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="bg-[#f9f2ff] py-20 max-md:py-10">
+    <section className="bg-[#F2F8FD] py-20 max-md:py-10">
       <div className="container max-w-full!">
         {/* Header */}
-        <h2 className="mb-15 max-sm:mb-10 text-center text-[clamp(28px,3vw,40px)] font-normal text-black">
+        <h2 className="mb-15 max-sm:mb-10 text-center text-[clamp(28px,3vw,40px)] font-normal text-greyPrimary">
           O que nossos <span className="font-medium">clientes</span> dizem
         </h2>
 
@@ -75,7 +75,7 @@ export default function TestimonialsSection() {
         >
           {testimonials.map((t, i) => (
             <SwiperSlide key={i}>
-              <div className="rounded bg-linear-to-br from-[#9500FF] to-[#35005A] p-6">
+              <div className="rounded bg-[#0071E3] p-6">
                 <div className="flex w-full items-end gap-4 max-md:flex-col max-md:items-center">
                   {/* Profile photo */}
                   <div className="relative h-55.75 max-sm:h-40 w-full max-w-45 shrink-0 overflow-hidden rounded">

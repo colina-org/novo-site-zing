@@ -74,7 +74,11 @@ function SocialButton({
       aria-label={label}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex size-8.5 shrink-0 items-center justify-center rounded bg-linear-to-br from-[#9500FF] to-[#35005A] transition-opacity hover:opacity-80"
+      className="flex size-8.5 shrink-0 items-center justify-center rounded transition-opacity hover:opacity-80"
+      style={{
+        backgroundImage:
+          "linear-gradient(78deg, #6453D1 8%, #0071E3 58%, #1ACBDC 91%)",
+      }}
     >
       {children}
     </Link>
@@ -83,7 +87,7 @@ function SocialButton({
 
 export default function Footer() {
   return (
-    <footer className="bg-[#f9f2ff]">
+    <footer className="bg-[#F2F8FD]">
       <div className="container mx-auto px-6 py-10">
         <div className="flex flex-col gap-10">
           {/* Footer Links Row */}
@@ -94,7 +98,7 @@ export default function Footer() {
               <div className="flex items-center gap-4">
                 <Link href="/" aria-label="Zing - Página inicial">
                   <Image
-                    src="/zing-logo.png"
+                    src="/logo-header.svg"
                     alt="Zing"
                     width={112}
                     height={50}
@@ -128,10 +132,10 @@ export default function Footer() {
 
             {/* Right: Address */}
             <div className="w-full max-w-60">
-              <p className="text-base font-medium text-black">
+              <p className="text-base font-medium text-greyPrimary">
                 IEBT Innovation
               </p>
-              <p className="text-sm font-normal text-black">
+              <p className="text-sm font-normal text-greyPrimary">
                 R. Professor José Vieira de Mendonça, 770 Belo Horizonte - MG
               </p>
             </div>
@@ -141,7 +145,7 @@ export default function Footer() {
           <div className="h-px bg-[rgba(196,197,198,0.4)]" />
 
           {/* Copyright */}
-          <p className="text-sm font-normal text-black/80">
+          <p className="text-sm font-normal text-greyPrimary">
             © 2025 ZING. Todos os direitos reservados.
           </p>
         </div>

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 
 type Step = {
@@ -13,6 +12,7 @@ type Step = {
 
 type ContactData = {
   nome: string;
+  instituicao: string;
   email: string;
   telefone: string;
   newsletter: boolean;
@@ -22,68 +22,11 @@ const steps: Step[] = [
   {
     question:
       'Você já ouviu falar em "Contrato Público para Solução Inovadora (CPSI)"?',
-    helper:
-      "Os principais estudos sobre compras públicas para inovação indicam a necessidade de se dedicar tempo e atenção para descrever o desafio a ser enfrentado pela Administração Pública.",
-    options: [
-      "O desafio foi definido com clareza pela Administração Pública?",
-      "O desafio foi definido com clareza pela Administração Pública?",
-      "O desafio foi definido com clareza pela Administração Pública?",
-    ],
-  },
-  {
-    question:
-      'Você já ouviu falar em "Contrato Público para Solução Inovadora (CPSI)"?',
     options: [
       "Nunca ouvi falar",
       "Já ouvi falar, mas não conheço em detalhes",
       "Tenho conhecimento básico sobre o tema",
       "Já participei ou conduzi algum processo CPSI",
-    ],
-  },
-  {
-    question:
-      "O seu órgão público já realizou ou planeja realizar contratações voltadas à inovação?",
-    options: [
-      "Ainda não realizou",
-      "Está em fase de estudo",
-      "Já tem experiências pontuais",
-      "Possui iniciativas estruturadas de fomento ou contratação de inovação",
-    ],
-  },
-  {
-    question:
-      "Existe algum comitê, núcleo ou laboratório de inovação ativo no seu órgão?",
-    options: [
-      "Não existe",
-      "Existe informalmente (sem ato normativo)",
-      "Existe e possui ato formal de instituição",
-      "Existe, atua ativamente e possui política/normativa própria",
-    ],
-  },
-  {
-    question:
-      "O quanto você considera que sua equipe domina as normas aplicáveis ao Marco Legal de CT&I e ao Marco Legal das Startups?",
-    options: [
-      "Não dominamos",
-      "Conhecemos superficialmente",
-      "Temos algum domínio, mas ainda com dúvidas",
-      "Dominamos bem e aplicamos na prática",
-    ],
-  },
-  {
-    question:
-      "Quais são os principais desafios para estruturar CPSI no seu órgão? (pode marcar mais de uma).",
-    multiSelect: true,
-    options: [
-      "Falta de conhecimento técnico",
-      "Insegurança jurídica",
-      "Ausência de estrutura interna (comitê, política, etc.)",
-      "Falta de modelos prontos (minutas/templates)",
-      "Dificuldade de escolher a modalidade de inovação adequada",
-      "Dificuldade de identificar soluções inovadoras",
-      "Limitações orçamentárias",
-      "Falta de modelos prontos (minutas/templates)",
-      "Outros",
     ],
   },
   {
@@ -110,6 +53,7 @@ export default function Steps() {
   const [transitioning, setTransitioning] = useState(false);
   const [contactData, setContactData] = useState<ContactData>({
     nome: "",
+    instituicao: "",
     email: "",
     telefone: "",
     newsletter: false,
@@ -149,48 +93,28 @@ export default function Steps() {
 
   const isContactValid =
     contactData.nome.trim() !== "" &&
+    contactData.instituicao.trim() !== "" &&
     contactData.email.trim() !== "" &&
     contactData.telefone.trim() !== "";
 
   return (
-    <section className="relative overflow-hidden bg-[#f1e8fb] py-10">
-      <Image
-        src="/frame-steps-left.svg"
-        height={333}
-        width={331}
-        alt={""}
-        className="absolute bottom-0 left-0 max-lg:hidden"
-      />
-
-      <Image
-        src="/frame-top-right-steps.svg"
-        height={260}
-        width={200}
-        alt={""}
-        className="absolute top-0 right-0 max-lg:hidden"
-      />
-
-      {/* Content */}
-      <div className="container mx-auto px-6">
+    <section className="steps-section relative overflow-hidden bg-gradientbg max-lg:bg-bluePrimary py-16 max-lg:py-10">
+      <div className="container">
         <div className="flex flex-col gap-10 lg:flex-row lg:gap-20">
           {/* Left — text */}
-          <div className="flex flex-col gap-6 lg:max-w-130">
-            <h2 className="text-[clamp(28px,3.5vw,40px)] font-medium text-black">
-              CPSI é para mim?
+          <div className="relative z-10 flex flex-col justify-center gap-6 lg:max-w-130">
+            <h2 className="text-[clamp(28px,3.5vw,40px)] text-greyPrimary max-lg:text-white">
+              <span className="font-medium">CPSI</span> é para mim?
             </h2>
-            <p className="text-lg leading-relaxed text-black">
+            <p className="text-base leading-relaxed text-greyPrimary max-lg:text-white">
               Responda as perguntas para receber apoio na decisão sobre a
               modalidade ou instrumento mais adequado para contratação.
-              <br />
-              <br />
-              Respondendo a apenas seis perguntas, conseguimos sugerir as
-              melhores opções de compra pública.
             </p>
           </div>
 
           {/* Right — Quiz card */}
           <div
-            className={`flex-1 rounded bg-[#5F2AB2] p-4 transition-all duration-300 ease-in-out lg:max-w-150 ${
+            className={`relative z-10 flex-1 rounded p-4 transition-all duration-300 ease-in-out lg:max-w-150 ${
               transitioning
                 ? "translate-y-2 opacity-0"
                 : "translate-y-0 opacity-100"
@@ -210,12 +134,10 @@ export default function Steps() {
               /* Contact form */
               <div className="mb-4 flex flex-col gap-4">
                 {/* Nome */}
-                <div className="flex flex-col gap-1.5">
-                  <label className="flex items-center gap-1 text-base font-medium text-white">
-                    Nome{" "}
-                    <span className="text-sm text-[#DD1D1D]" aria-hidden="true">
-                      *
-                    </span>
+                <div className="flex flex-col gap-2">
+                  <label className="flex items-center text-base font-medium text-white">
+                    Nome
+                    <span className="text-sm text-[#DD1D1D]">*</span>
                   </label>
                   <input
                     type="text"
@@ -226,18 +148,36 @@ export default function Steps() {
                         nome: e.target.value,
                       }))
                     }
-                    placeholder="Insira seu nome"
-                    className="h-9.5 cursor-pointer rounded border border-[#828282] bg-white px-2 text-base outline-none placeholder:text-[#828282] focus:border-[#9500FF]"
+                    placeholder="Insira o nome da startup/projeto"
+                    className="h-9.5 border-b border-[#838383] bg-white px-2 text-base text-greyPrimary outline-none placeholder:text-[#838383] focus:border-[#0071E3]"
+                  />
+                </div>
+
+                {/* Instituição */}
+                <div className="flex flex-col gap-2">
+                  <label className="flex items-center text-base font-medium text-white">
+                    Instituição
+                    <span className="text-sm text-[#DD1D1D]">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    value={contactData.instituicao}
+                    onChange={(e) =>
+                      setContactData((prev) => ({
+                        ...prev,
+                        instituicao: e.target.value,
+                      }))
+                    }
+                    placeholder="Insira o nome da startup/projeto"
+                    className="h-9.5 border-b border-[#838383] bg-white px-2 text-base text-greyPrimary outline-none placeholder:text-[#838383] focus:border-[#0071E3]"
                   />
                 </div>
 
                 {/* E-mail */}
-                <div className="flex flex-col gap-1.5">
-                  <label className="flex items-center gap-1 text-base font-medium text-white">
-                    E-mail{" "}
-                    <span className="text-sm text-[#DD1D1D]" aria-hidden="true">
-                      *
-                    </span>
+                <div className="flex flex-col gap-2">
+                  <label className="flex items-center text-base font-medium text-white">
+                    E-mail
+                    <span className="text-sm text-[#DD1D1D]">*</span>
                   </label>
                   <input
                     type="email"
@@ -248,18 +188,16 @@ export default function Steps() {
                         email: e.target.value,
                       }))
                     }
-                    placeholder="Insira seu e-mail"
-                    className="h-9.5 cursor-pointer rounded border border-[#828282] bg-white px-2 text-base outline-none placeholder:text-[#828282] focus:border-[#9500FF]"
+                    placeholder="Insira o nome da startup/projeto"
+                    className="h-9.5 border-b border-[#838383] bg-white px-2 text-base text-greyPrimary outline-none placeholder:text-[#838383] focus:border-[#0071E3]"
                   />
                 </div>
 
                 {/* Telefone */}
-                <div className="flex flex-col gap-1.5">
-                  <label className="flex items-center gap-1 text-base font-medium text-white">
-                    Telefone de contato{" "}
-                    <span className="text-sm text-[#DD1D1D]" aria-hidden="true">
-                      *
-                    </span>
+                <div className="flex flex-col gap-2">
+                  <label className="flex items-center text-base font-medium text-white">
+                    Telefone de contato
+                    <span className="text-sm text-[#DD1D1D]">*</span>
                   </label>
                   <input
                     type="tel"
@@ -270,8 +208,8 @@ export default function Steps() {
                         telefone: e.target.value,
                       }))
                     }
-                    placeholder="Insira seu telefone"
-                    className="h-9.5 cursor-pointer rounded border border-[#828282] bg-white px-2 text-base outline-none placeholder:text-[#828282] focus:border-[#9500FF]"
+                    placeholder="Insira o nome da startup/projeto"
+                    className="h-9.5 border-b border-[#838383] bg-white px-2 text-base text-greyPrimary outline-none placeholder:text-[#838383] focus:border-[#0071E3]"
                   />
                 </div>
 
@@ -283,15 +221,17 @@ export default function Steps() {
                       newsletter: !prev.newsletter,
                     }))
                   }
-                  className={`flex w-full cursor-pointer items-start gap-4 rounded border border-white bg-white p-4 text-left transition-opacity ${
+                  className={`flex w-full cursor-pointer items-start gap-4 rounded border border-white bg-white/50 p-4 text-left transition-opacity ${
                     contactData.newsletter
                       ? "ring-2 ring-white/60"
                       : "opacity-90 hover:opacity-100"
                   }`}
                 >
                   <span
-                    className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-sm border-2 border-[#9500FF] transition-colors ${
-                      contactData.newsletter ? "bg-[#9500FF]" : "bg-white"
+                    className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-sm border-2 border-greyPrimary transition-colors ${
+                      contactData.newsletter
+                        ? "bg-[#0071E3] border-[#0071E3]"
+                        : "bg-white"
                     }`}
                   >
                     {contactData.newsletter && (
@@ -311,9 +251,8 @@ export default function Steps() {
                       </svg>
                     )}
                   </span>
-                  <span className="text-lg text-black">
-                    Quero receber materiais e oportunidades de capacitação sobre
-                    CPSI
+                  <span className="text-base text-greyPrimary">
+                    Quero receber materiais sobre CPSI
                   </span>
                 </button>
               </div>
@@ -326,7 +265,7 @@ export default function Steps() {
                     <button
                       key={i}
                       onClick={() => handleSelect(i)}
-                      className={`flex w-full cursor-pointer items-start gap-4 rounded border border-white bg-white p-4 text-left transition-opacity ${
+                      className={`flex w-full cursor-pointer items-start gap-4 rounded border border-white bg-white/50 p-4 text-left transition-opacity ${
                         isSelected
                           ? "ring-2 ring-white/60"
                           : "opacity-90 hover:opacity-100"
@@ -335,8 +274,8 @@ export default function Steps() {
                       {step.multiSelect ? (
                         /* Checkbox indicator */
                         <span
-                          className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-sm border-2 border-[#9500FF] transition-colors ${
-                            isSelected ? "bg-[#9500FF]" : "bg-white"
+                          className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-sm border-2 border-[#0071E3] transition-colors ${
+                            isSelected ? "bg-[#0071E3]" : "bg-white"
                           }`}
                         >
                           {isSelected && (
@@ -359,8 +298,8 @@ export default function Steps() {
                       ) : (
                         /* Radio indicator */
                         <span
-                          className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2 border-[#9500FF] transition-colors ${
-                            isSelected ? "bg-[#9500FF]" : "bg-white"
+                          className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2 border-[#0071E3] transition-colors ${
+                            isSelected ? "bg-[#0071E3]" : "bg-white"
                           }`}
                         >
                           {isSelected && (
@@ -368,7 +307,7 @@ export default function Steps() {
                           )}
                         </span>
                       )}
-                      <span className="text-lg text-black">{opt}</span>
+                      <span className="text-lg text-greyPrimary">{opt}</span>
                     </button>
                   );
                 })}
@@ -380,21 +319,17 @@ export default function Steps() {
               <button
                 onClick={handleSubmit}
                 disabled={!isContactValid}
-                className="w-full cursor-pointer rounded border border-black bg-white py-2 text-center disabled:cursor-not-allowed disabled:opacity-50"
+                className="w-full cursor-pointer rounded bg-white py-2 text-center text-lg font-bold text-[#0071E3] backdrop-blur-sm disabled:cursor-not-allowed disabled:opacity-50"
               >
-                <span className="bg-linear-to-tr from-[#9500FF] to-[#35005A] bg-clip-text text-lg font-bold text-transparent">
-                  Enviar
-                </span>
+                Enviar
               </button>
             ) : (
               <button
                 onClick={handleAdvance}
                 disabled={selections.length === 0}
-                className="w-full cursor-pointer rounded border border-black bg-white py-2 text-center disabled:cursor-not-allowed disabled:opacity-50"
+                className="w-full cursor-pointer rounded border border-white py-2 text-center text-lg font-bold text-white backdrop-blur-sm disabled:cursor-not-allowed disabled:opacity-50"
               >
-                <span className="bg-linear-to-tr from-[#9500FF] to-[#35005A] bg-clip-text text-lg font-bold text-transparent">
-                  Avançar
-                </span>
+                Avançar
               </button>
             )}
           </div>

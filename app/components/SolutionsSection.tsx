@@ -9,14 +9,14 @@ const solutions = [
     label: "Setor público",
     description:
       "Lance chamadas de CPSI e desafios de inovação para resolver problemas reais da gestão pública, testando e validando soluções com startups de forma segura, transparente e orientada a resultados.",
-    image: "/solutions/img-card-solution.png",
+    image: "/img-card-setor-publico.png",
     href: "#",
   },
   {
     label: "Setor privado",
     description:
       "A Zing apoia empresas do setor privado na criação e execução de programas de inovação aberta, conectando startups a desafios reais do negócio por meio de processos estruturados de captação, seleção e avaliação. Também desenvolvemos desafios de intraempreendedorismo para engajar colaboradores na criação de soluções inovadoras e orientadas a resultados.",
-    image: "/solutions/img-card-solution.png",
+    image: "/img-card-setor-privado.png",
     href: "#",
   },
 ];
@@ -47,8 +47,9 @@ function ArrowIcon() {
           y2="5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#9500FF" />
-          <stop offset="1" stopColor="#35005A" />
+          <stop stopColor="#6453D1" />
+          <stop offset="0.6" stopColor="#0071E3" />
+          <stop offset="1" stopColor="#1ACBDC" />
         </linearGradient>
       </defs>
     </svg>
@@ -62,33 +63,29 @@ export default function SolutionsSection() {
     <section className="overflow-hidden bg-white max-lg:py-14">
       <div className="relative flex min-h-125 flex-col lg:min-h-150">
         {/* Full-bleed purple bg for the left half — desktop only */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-full max-w-[58%] bg-purpleSecondary/5 lg:block" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-full max-w-[58%] bg-[#0071E30D] lg:block" />
 
         {/* Container aligns content with the rest of the page */}
         <div className="container mx-auto flex flex-1 flex-col px-6 lg:flex-row">
           {/* Left: text content */}
-          <div className="flex items-center bg-purpleSecondary/5 py-14 max-sm:py-0 max-md:mb-10 w-full max-w-[50%] max-lg:max-w-full max-lg:bg-white lg:bg-transparent lg:py-0 lg:pr-16">
+          <div className="flex items-center bg-[#0071E30D] py-14 max-sm:py-0 max-md:mb-10 w-full max-w-[50%] max-lg:max-w-full max-lg:bg-white lg:bg-transparent lg:py-0 lg:pr-16">
             <div className="w-full">
               {/* Badge */}
               <div className="mb-8 flex items-center gap-2">
-                <Image
-                  src="/cube-icon.svg"
-                  alt=""
-                  width={16}
-                  height={16}
+                <div
                   aria-hidden="true"
+                  className="size-4 shrink-0"
+                  style={{ backgroundImage: "linear-gradient(125deg, #6453D1 0%, #0071E3 60%, #1ACBDC 100%)" }}
                 />
-                <span className="text-xs font-bold uppercase tracking-widest text-black">
+                <span className="text-xs font-bold uppercase tracking-widest text-greyPrimary">
                   Para quem oferecemos
                 </span>
               </div>
 
               {/* Title */}
-              <h2 className="text-5xl max-sm:text-4xl text-black">
+              <h2 className="text-5xl max-sm:text-4xl text-greyPrimary">
                 Conheça nossas <br className="max-md:hidden" />
-                <span className="font-medium bg-linear-to-r from-[#9500FF] to-[#35005A] bg-clip-text text-transparent">
-                  soluções
-                </span>
+                <span className="font-bold">soluções</span>
               </h2>
             </div>
           </div>
@@ -105,30 +102,27 @@ export default function SolutionsSection() {
                   key={i}
                   href={s.href}
                   onMouseEnter={() => setActive(i)}
-                  className={`relative flex flex-col overflow-hidden rounded-xl h-100 max-sm:h-90 transition-all duration-500 ease-in-out w-full ${
+                  className={`relative flex flex-col overflow-hidden rounded-xl h-100 max-sm:h-90 transition-all duration-500 ease-in-out ${
                     active === null
-                      ? "sm:flex-1"
+                      ? i === 0 ? "sm:w-100" : "sm:w-75"
                       : isActive
-                        ? "sm:flex-4"
-                        : "sm:flex-3"
+                        ? "sm:w-100"
+                        : "sm:w-75"
                   }`}
                 >
-                  {/* Image — absolute background */}
+                  {/* Image — visible by default, hidden on hover */}
                   <Image
                     src={s.image}
                     alt={s.label}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    className={`object-cover transition-opacity duration-500 ${isActive ? "opacity-0" : "opacity-100"}`}
                     sizes="(max-width: 640px) 100vw, 40vw"
                   />
 
-                  {/* Gradient overlay — absolute, deepens on hover */}
+                  {/* Gradient — hidden by default, visible on hover */}
                   <div
-                    className={`pointer-events-none absolute inset-0 transition-all duration-500 ${
-                      isActive
-                        ? "bg-linear-to-t from-black/75 via-black/30 to-transparent"
-                        : "bg-linear-to-t from-black/50 to-transparent"
-                    }`}
+                    className={`absolute inset-0 transition-opacity duration-500 ${isActive ? "opacity-100" : "opacity-0"}`}
+                    style={{ backgroundImage: "linear-gradient(125deg, #6453D1 0%, #0071E3 60%, #1ACBDC 100%)" }}
                   />
 
                   {/* Content — full height flex, top vs bottom on hover */}
@@ -173,7 +167,7 @@ export default function SolutionsSection() {
                       }`}
                     >
                       <div className="flex w-full items-center justify-between rounded bg-white px-4 py-2">
-                        <span className="text-base font-bold bg-linear-to-r from-[#9500FF] to-[#35005A] bg-clip-text text-transparent">
+                        <span className="text-base font-bold bg-linear-to-r from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text text-transparent">
                           Conheça mais
                         </span>
                         <ArrowIcon />

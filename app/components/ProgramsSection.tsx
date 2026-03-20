@@ -11,7 +11,7 @@ import { programs } from "./programas/ProgramCards";
 export default function ProgramsSection() {
   return (
     <section className="bg-white relative py-16">
-      <div className="bg-linear-to-br from-[#9500FF] to-[#35005A] absolute top-0 left-0 w-full h-96.25 max-sm:h-full"></div>
+      <div className="gradient-blue-primary-zing absolute top-0 left-0 w-full h-96.25 max-sm:h-full"></div>
       <div className="container">
         {/* Header */}
         <div className="mb-10 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
@@ -23,7 +23,7 @@ export default function ProgramsSection() {
             href="/programas"
             className="inline-flex w-full max-w-50 shrink-0 items-center justify-center rounded bg-white px-4 py-2 text-base font-bold hover:scale-105 duration-300 ease-linear max-md:hidden"
           >
-            <span className="bg-linear-to-r from-[#9500FF] to-[#35005A] bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text text-transparent">
               Ver todos
             </span>
           </Link>
@@ -63,22 +63,22 @@ export default function ProgramsSection() {
 
                   {/* Content */}
                   <div className="flex flex-col gap-4">
-                    <p className="text-sm font-normal text-black">
+                    <p className="text-sm font-normal text-greyPrimary">
                       {program.category}
                     </p>
 
                     {/* Title */}
-                    <h3 className="text-lg font-bold leading-snug text-black">
+                    <h3 className="text-lg font-bold leading-snug text-greyPrimary">
                       {program.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-base font-normal leading-relaxed text-black">
+                    <p className="text-base font-normal leading-relaxed text-greyPrimary">
                       {program.description}
                     </p>
 
                     {/* Date badge */}
-                    <span className="text-sm font-medium text-black">
+                    <span className="text-sm font-medium text-greyPrimary">
                       {program.badge}
                     </span>
                   </div>
@@ -87,9 +87,9 @@ export default function ProgramsSection() {
                 {/* CTA */}
                 <Link
                   href={program.href}
-                  className="w-full flex text-center justify-center px-4 py-2 text-base font-bold border border-purpleSecondary group-hover:scale-105 duration-300 ease-linear"
+                  className="w-full flex text-center justify-center px-4 py-2 text-base font-bold border border-[#6453D1] group-hover:scale-105 duration-300 ease-linear"
                 >
-                  <span className="bg-linear-to-r from-[#9500FF] to-[#35005A] bg-clip-text text-transparent">
+                  <span className="bg-linear-to-r from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text text-transparent">
                     Conheça mais
                   </span>
                 </Link>
@@ -102,7 +102,7 @@ export default function ProgramsSection() {
           href="/programas"
           className="max-md:table mx-auto mt-10 w-full max-w-50 shrink-0 text-center rounded bg-white px-4 py-2 text-base font-bold hover:scale-105 duration-300 ease-linear hidden"
         >
-          <span className="bg-linear-to-r from-[#9500FF] to-[#35005A] bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text text-transparent">
             Ver todos
           </span>
         </Link>

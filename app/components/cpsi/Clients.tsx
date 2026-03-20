@@ -29,7 +29,7 @@ export default function Clients() {
           <p className="shrink-0 text-xl text-black lg:max-w-49 max-lg:text-center">
             Clientes que fazem
             <br />
-            <span className="font-bold text-purplePrimary">CPSI na ZING</span>
+            <span className="font-bold text-bluePrimary">CPSI na ZING</span>
           </p>
 
           {/* Logos carousel */}

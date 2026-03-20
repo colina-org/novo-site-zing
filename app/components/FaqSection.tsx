@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 
 type FaqItem = {
@@ -49,7 +48,7 @@ function PlusIcon({ open }: { open: boolean }) {
     >
       <path
         d="M10 4V16M4 10H16"
-        stroke="#9500FF"
+        stroke="#0071E3"
         strokeWidth="1.5"
         strokeLinecap="round"
       />
@@ -66,15 +65,8 @@ export default function FaqSection() {
     <section className="bg-white py-16 max-md:py-10">
       <div className="container mx-auto ">
         {/* Header */}
-        <div className="mb-10 flex items-center gap-4">
-          <Image
-            src="/cube-icon.svg"
-            alt=""
-            width={24}
-            height={24}
-            aria-hidden="true"
-          />
-          <h2 className="text-[clamp(32px,3.5vw,48px)] font-normal text-black">
+        <div className="mb-10">
+          <h2 className="text-[clamp(32px,3.5vw,48px)] font-normal text-greyPrimary">
             Tire suas <span className="font-medium">dúvidas</span>
           </h2>
         </div>
@@ -89,10 +81,10 @@ export default function FaqSection() {
                 aria-expanded={openIndex === i}
                 className="flex w-full items-center justify-between gap-4 py-6 text-left cursor-pointer"
               >
-                <span className="text-lg font-medium text-black">
+                <span className="text-lg font-medium text-greyPrimary">
                   {faq.question}
                 </span>
-                <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-white shadow-sm ring-1 ring-[#9500FF]/20">
+                <div className="flex shrink-0 items-center justify-center">
                   <PlusIcon open={openIndex === i} />
                 </div>
               </button>

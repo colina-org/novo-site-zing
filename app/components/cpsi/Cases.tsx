@@ -27,20 +27,20 @@ export default function Cases() {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="bg-[#f1e8fb] py-10 lg:py-16">
+    <section className="bg-white py-10 lg:py-16">
       <div className="container mx-auto px-6">
         <div className="flex flex-col gap-10 lg:flex-row lg:gap-6">
           {/* Left — text */}
           <div className="flex flex-col gap-6 lg:w-90 lg:shrink-0 max-sm:text-center">
-            <h2 className="text-[40px] font-normal leading-[120%] text-black max-sm:text-3xl">
+            <h2 className="text-[40px] font-normal leading-[120%] text-greyPrimary max-sm:text-3xl">
               Cases <span className="font-medium">de sucesso</span>
             </h2>
-            <p className="text-lg text-black">
+            <p className="text-lg text-greyPrimary">
               Onde a inovação pública já aconteceu, com segurança e impacto.
             </p>
             <Link
               href={"#"}
-              className="w-fit max-sm:hidden rounded border border-black px-4 py-2 text-lg font-bold text-black backdrop-blur-sm hover:bg-black hover:text-white duration-300 ease-linear"
+              className="w-fit max-sm:hidden rounded border border-black px-4 py-2 text-lg font-bold text-greyPrimary backdrop-blur-sm hover:bg-black hover:text-white duration-300 ease-linear"
             >
               Conheça mais
             </Link>
@@ -84,7 +84,7 @@ export default function Cases() {
                       isActive ? "opacity-100" : "opacity-0"
                     }`}
                   >
-                    <span className="inline-block w-fit rounded bg-linear-to-br from-[#9500FF] to-[#35005A] px-4 py-2 text-2xl font-medium text-white">
+                    <span className="inline-block w-fit rounded bg-[#0071E3] px-4 py-2 text-2xl font-medium text-white">
                       {card.badge}
                     </span>
                     <p className="text-2xl font-medium leading-tight text-white drop-shadow-md">
@@ -98,7 +98,7 @@ export default function Cases() {
 
           <Link
             href={"#"}
-            className="w-fit hidden max-sm:table mx-auto rounded border border-black px-4 py-2 text-lg font-bold text-black backdrop-blur-sm hover:bg-black hover:text-white duration-300 ease-linear"
+            className="w-fit hidden max-sm:table mx-auto rounded border border-black px-4 py-2 text-lg font-bold text-greyPrimary backdrop-blur-sm hover:bg-black hover:text-white duration-300 ease-linear"
           >
             Conheça mais
           </Link>

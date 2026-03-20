@@ -44,8 +44,8 @@ function WhyCard({
 
       {/* Text */}
       <div className="flex flex-col gap-2 p-2">
-        <p className="text-lg font-bold text-black">{title}</p>
-        <p className="text-base text-black">{description}</p>
+        <p className="text-lg font-bold text-greyPrimary">{title}</p>
+        <p className="text-base text-greyPrimary">{description}</p>
       </div>
     </div>
   );
@@ -53,8 +53,8 @@ function WhyCard({
 
 export default function WhyUse() {
   return (
-    <section className="whyuse py-16 relative max-sm:py-10 bg-[#f1e8fb]">
-      <div className="bg-linear-to-br from-[#9500FF] to-[#35005A] absolute top-0 left-0 h-96.25 w-full"></div>
+    <section className="whyuse py-16 relative max-sm:py-10 bg-gradientbg">
+      <div className="gradient-blue-primary-zing absolute top-0 left-0 h-96.25 w-full"></div>
       <div className="container mx-auto px-6">
         {/* Title */}
         <h2 className="mb-10 text-[clamp(28px,4vw,48px)] font-normal text-white">

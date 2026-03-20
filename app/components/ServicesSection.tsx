@@ -92,21 +92,19 @@ export default function ServicesSection() {
       <div className="container">
         {/* Badge */}
         <div className="mb-8 flex items-center gap-2">
-          <Image
-            src="/cube-icon.svg"
-            alt=""
-            width={16}
-            height={16}
+          <div
             aria-hidden="true"
+            className="size-4 shrink-0"
+            style={{ backgroundImage: "linear-gradient(125deg, #6453D1 0%, #0071E3 60%, #1ACBDC 100%)" }}
           />
-          <span className="text-xs font-bold uppercase tracking-widest text-black">
+          <span className="text-xs font-bold uppercase tracking-widest text-greyPrimary">
             Serviços
           </span>
         </div>
 
         {/* Header row: Title + Description */}
         <div className="mb-10 flex flex-col gap-6 lg:flex-row lg:items-start lg:gap-16">
-          <h2 className="text-[40px] max-sm:text-3xl leading-tight font-bold  text-black lg:w-1/2">
+          <h2 className="text-[40px] max-sm:text-3xl leading-tight font-bold text-greyPrimary lg:w-1/2">
             Transforme{" "}
             <span className="font-normal">
               ideias <br />
@@ -114,7 +112,7 @@ export default function ServicesSection() {
             </span>{" "}
             soluções concretas.
           </h2>
-          <p className="text-lg font-normal leading-relaxed text-black lg:w-1/2 lg:pt-3">
+          <p className="text-lg font-normal leading-relaxed text-greyPrimary lg:w-1/2 lg:pt-3">
             Conectamos setores, estimulamos a colaboração e promovemos
             capacitação para criar um ecossistema público-privado mais
             eficiente, inovador e impactante.
@@ -133,23 +131,20 @@ export default function ServicesSection() {
                   onClick={() => handleTabClick(i)}
                   className={`cursor-pointer w-full rounded-lg px-6 py-4 text-left transition-all duration-300 ${
                     isActive
-                      ? "bg-linear-to-br from-[#9500FF] to-[#35005A]"
-                      : "bg-purpleSecondary/5 hover:bg-purpleSecondary/10"
+                      ? "gradient-blue-primary-zing"
+                      : "bg-[#0071E30D] hover:bg-[#0071E31A]"
                   }`}
                 >
                   <div className="flex items-center justify-between gap-4">
                     <div className="flex items-center gap-3">
-                      <Image
-                        src="/cube-icon.svg"
-                        alt=""
-                        width={16}
-                        height={16}
+                      <div
                         aria-hidden="true"
-                        className={isActive ? "brightness-0 invert" : ""}
+                        className={`size-4 shrink-0 ${isActive ? "bg-white" : ""}`}
+                        style={!isActive ? { backgroundImage: "linear-gradient(125deg, #6453D1 0%, #0071E3 60%, #1ACBDC 100%)" } : undefined}
                       />
                       <span
                         className={`text-lg font-bold leading-tight ${
-                          isActive ? "text-white" : "text-black"
+                          isActive ? "text-white" : "text-greyPrimary"
                         }`}
                       >
                         {service.title}

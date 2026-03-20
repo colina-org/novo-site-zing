@@ -16,8 +16,8 @@ export default function PageCPSI() {
       <About />
       <Calls />
       <WhyUse />
-      <Cases />
       <Steps />
+      <Cases />
       <FaqSection />
       <CommunitySection />
     </main>

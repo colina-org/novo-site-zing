@@ -12,11 +12,27 @@ const steps = [
   "Acompanhamento dos projetos",
 ];
 
+function BookmarkIcon() {
+  return (
+    <svg width="47" height="60" viewBox="0 0 47 60" fill="none" aria-hidden="true">
+      <path
+        d="M40 0H6.667C3 0 .033 3 .033 6.667L0 60l23.333-10L46.667 60V6.667C46.667 3 43.667 0 40 0ZM40 50l-16.667-7.267L6.667 50V6.667H40V50Z"
+        fill="white"
+      />
+    </svg>
+  );
+}
+
 function StepCard({ label }: { label: string }) {
   return (
     <div className="flex flex-col items-center gap-14 max-sm:gap-10">
-      <div className="h-43 w-full max-w-50 rounded bg-linear-to-br from-[#9500FF] to-[#35005A]" />
-      <p className="text-lg max-w-50 max-sm:text-base font-bold text-black text-center">
+      <div
+        className="flex h-43 w-full max-w-50 items-center justify-center rounded"
+        style={{ backgroundImage: "linear-gradient(76deg, #6453D1 8%, #0071E3 58%, #1ACBDC 91%)" }}
+      >
+        <BookmarkIcon />
+      </div>
+      <p className="text-lg max-w-50 max-sm:text-base font-bold text-greyPrimary text-center">
         {label}
       </p>
     </div>
@@ -29,10 +45,10 @@ export default function Calls() {
       <div className="container">
         {/* Header */}
         <div className="mb-25.5 max-sm:mb-10 flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-10">
-          <h2 className="w-full max-w-99 text-[clamp(28px,3.5vw,40px)] font-normal leading-[120%] text-black">
+          <h2 className="w-full max-w-99 text-[clamp(28px,3.5vw,40px)] font-normal leading-[120%] text-greyPrimary">
             Como é feito na <span className="font-bold">ZING</span>
           </h2>
-          <p className="max-w-3xl text-lg text-black">
+          <p className="max-w-3xl text-lg text-greyPrimary">
             Preparamos a instituição para executar o CPSI desde a primeira vez e
             impulsionamos instituições que já fazem o CPSI.
           </p>

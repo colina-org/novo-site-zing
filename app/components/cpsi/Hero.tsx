@@ -9,7 +9,7 @@ export default function Hero() {
           {/* Text content */}
           <div className="flex max-w-4xl flex-col gap-13.5">
             <div className="flex flex-col gap-6">
-              <h1 className="text-[clamp(32px,4vw,48px)] font-normal leading-tight text-black">
+              <h1 className="text-[clamp(32px,4vw,48px)] font-normal leading-tight text-greyPrimary">
                 Plataforma líder na{" "}
                 <span className="font-medium">
                   gestão de <br />
@@ -17,7 +17,7 @@ export default function Hero() {
                 </span>{" "}
                 no Brasil
               </h1>
-              <p className="text-lg font-normal leading-relaxed text-black">
+              <p className="text-lg font-normal leading-relaxed text-greyPrimary">
                 A Zing é a plataforma dos maiores editais de{" "}
                 <strong>Contrato Público para Solução Inovadora (CPSI) </strong>
                 do Brasil. Grandes intuições como CAIXA, CEMIG, Porto Suape e
@@ -27,19 +27,20 @@ export default function Hero() {
 
             <Link
               href="#"
-              className="w-fit rounded bg-linear-to-tr from-[#9500FF] to-[#35005A] px-4 py-2 text-lg font-bold text-white transition-opacity hover:opacity-90"
+              className="gradient-blue-primary-zing w-fit rounded px-4 py-2 text-lg font-bold text-white transition-opacity hover:opacity-90"
             >
               Quero fazer CPSI
             </Link>
           </div>
 
           {/* Cubes decoration */}
-          <div className="relative hidden h-82.5 w-82.5 shrink-0 lg:block">
+          <div className="relative hidden w-82.5 shrink-0 lg:block">
             <Image
-              src={"/all-cubes-hero-cpsi.svg"}
+              src="/frame-right-cubes-cpsi-hero.png"
               alt=""
-              width={331}
-              height={329}
+              width={327}
+              height={354}
+              className="ml-auto"
             />
           </div>
         </div>

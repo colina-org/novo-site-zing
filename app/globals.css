@@ -15,6 +15,8 @@
   --color-purplePrimary: #5f2ab2;
   --color-greyPrimary: #464646;
   --color-purpleSecondary: #9500ff;
+  --color-bluePrimary: #0071e3;
+  --color-gradientbg: #f2f8fd;
   --animate-fade-in-up: fadeInUp 0.6s ease-out both;
   --breakpoint-nav: 1137px;
 }
@@ -34,6 +36,15 @@ body {
 
 .container {
   @apply w-full max-w-7xl px-4 mx-auto relative z-3;
+}
+
+.gradient-blue-primary-zing {
+  background-image: linear-gradient(
+    35deg,
+    #6453d1 8%,
+    #0071e3 58%,
+    #1acbdc 91%
+  );
 }
 
 @keyframes fadeInUp {
@@ -102,7 +113,7 @@ body {
   }
 
   .swiper-pagination-bullet-active {
-    background: #9500ff;
+    background: #0071e3;
   }
 }
 
@@ -112,7 +123,7 @@ body {
       @apply w-3! h-3!;
     }
     .swiper-pagination-bullet-active {
-      background: #9500ff;
+      background: #0071e3;
     }
   }
 }
@@ -122,7 +133,29 @@ body {
       @apply w-3! h-3!;
     }
     .swiper-pagination-bullet-active {
-      background: #9500ff;
+      background: #0071e3;
     }
+  }
+}
+
+.steps-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 55%;
+  height: 100%;
+  background-image: linear-gradient(
+    74deg,
+    #6453d1 8%,
+    #0071e3 58%,
+    #1acbdc 91%
+  );
+  z-index: 0;
+}
+
+@media (max-width: 1023px) {
+  .steps-section::after {
+    display: none;
   }
 }

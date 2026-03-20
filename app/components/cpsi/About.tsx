@@ -2,16 +2,15 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section className="bg-[#f9f2ff] py-16 max-sm:py-10">
+    <section className="bg-gradientbg! py-16 max-sm:py-10">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center gap-10 lg:flex-row lg:gap-20">
           {/* Text */}
           <div className="flex flex-col gap-4 lg:max-w-125">
-            <h2 className="text-[clamp(32px,4vw,48px)] font-normal leading-tight text-black">
-              O que é <span className="font-bold text-purplePrimary">CPSI</span>
-              ?
+            <h2 className="text-[clamp(32px,4vw,48px)] font-normal leading-tight text-greyPrimary">
+              O que é <span className="font-bold text-bluePrimary">CPSI</span>?
             </h2>
-            <p className="text-lg font-normal leading-relaxed text-black">
+            <p className="text-lg font-normal leading-relaxed text-greyPrimary">
               O CPSI (Contrato Público para Solução Inovadora) é um instrumento
               jurídico que permite ao setor público{" "}
               <span className="font-medium">contratar, testar e validar </span>

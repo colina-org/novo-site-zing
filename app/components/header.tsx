@@ -20,9 +20,9 @@ const sectorItems = [
 ];
 
 const navItems = [
-  { label: "Programas", href: "/programas" },
-  { label: "Eventos", href: "#" },
-  { label: "Conteúdo", href: "#" },
+  { label: "Programas", href: "/programas", hasDropdown: false },
+  { label: "Eventos", href: "#", hasDropdown: false },
+  { label: "Conteúdo", href: "#", hasDropdown: true },
 ];
 
 function ChevronDown({ className }: { className?: string }) {
@@ -155,7 +155,7 @@ export default function Header() {
           onClick={() => setMenuOpen(false)}
         >
           <Image
-            src="/zing-logo.png"
+            src="/logo-header.svg"
             alt="Zing"
             width={112}
             height={50}
@@ -173,21 +173,21 @@ export default function Header() {
             onMouseLeave={() => setServicesOpen(false)}
           >
             <button
-              className={`group flex items-center gap-1 px-3 py-2 text-base font-normal transition-all duration-200 hover:rounded hover:bg-[#f9f2ff] ${
-                servicesOpen ? "rounded bg-[#f9f2ff]" : ""
+              className={`group flex items-center gap-1 px-3 py-2 text-base font-normal transition-all duration-200 hover:rounded hover:bg-[#0071E30D] ${
+                servicesOpen ? "rounded bg-[#0071E30D]" : ""
               }`}
               onClick={() => setServicesOpen((prev) => !prev)}
             >
               <span
-                className={`bg-linear-to-tr from-[#9500FF] to-[#35005B] bg-clip-text transition-colors duration-200 group-hover:text-transparent ${
+                className={`bg-linear-to-tr from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text transition-colors duration-200 group-hover:text-transparent ${
                   servicesOpen ? "text-transparent" : "text-greyPrimary"
                 }`}
               >
                 Serviços
               </span>
               <ChevronDown
-                className={`transition-colors duration-200 group-hover:text-[#9500FF] ${
-                  servicesOpen ? "text-[#9500FF]" : "text-greyPrimary"
+                className={`transition-colors duration-200 group-hover:text-[#0071E3] ${
+                  servicesOpen ? "text-[#0071E3]" : "text-greyPrimary"
                 }`}
               />
             </button>
@@ -203,10 +203,10 @@ export default function Header() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="rounded bg-[#f9f2ff] px-3 py-2 text-base transition-colors hover:bg-[#eddcff]"
+                  className="rounded bg-[#0071E30D] px-3 py-2 text-base"
                   onClick={() => setServicesOpen(false)}
                 >
-                  <span className="bg-linear-to-tr from-[#9500FF] to-[#35005B] bg-clip-text text-transparent">
+                  <span className="bg-linear-to-tr from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text text-transparent">
                     {item.label}
                   </span>
                 </Link>
@@ -221,21 +221,21 @@ export default function Header() {
             onMouseLeave={() => setSectorOpen(false)}
           >
             <button
-              className={`group flex items-center gap-1 px-3 py-2 text-base font-normal transition-all duration-200 hover:rounded hover:bg-[#f9f2ff] ${
-                sectorOpen ? "rounded bg-[#f9f2ff]" : ""
+              className={`group flex items-center gap-1 px-3 py-2 text-base font-normal transition-all duration-200 hover:rounded hover:bg-[#0071E30D] ${
+                sectorOpen ? "rounded bg-[#0071E30D]" : ""
               }`}
               onClick={() => setSectorOpen((prev) => !prev)}
             >
               <span
-                className={`bg-linear-to-tr from-[#9500FF] to-[#35005B] bg-clip-text transition-colors duration-200 group-hover:text-transparent ${
+                className={`bg-linear-to-tr from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text transition-colors duration-200 group-hover:text-transparent ${
                   sectorOpen ? "text-transparent" : "text-greyPrimary"
                 }`}
               >
                 Pra quem oferecemos
               </span>
               <ChevronDown
-                className={`transition-colors duration-200 group-hover:text-[#9500FF] ${
-                  sectorOpen ? "text-[#9500FF]" : "text-greyPrimary"
+                className={`transition-colors duration-200 group-hover:text-[#0071E3] ${
+                  sectorOpen ? "text-[#0071E3]" : "text-greyPrimary"
                 }`}
               />
             </button>
@@ -251,10 +251,10 @@ export default function Header() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="rounded bg-[#f9f2ff] px-3 py-2 text-base transition-colors hover:bg-[#eddcff]"
+                  className="rounded bg-[#0071E30D] px-3 py-2 text-base"
                   onClick={() => setSectorOpen(false)}
                 >
-                  <span className="bg-linear-to-tr from-[#9500FF] to-[#35005B] bg-clip-text text-transparent">
+                  <span className="bg-linear-to-tr from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text text-transparent">
                     {item.label}
                   </span>
                 </Link>
@@ -266,12 +266,14 @@ export default function Header() {
             <Link
               key={item.label}
               href={item.href}
-              className="group flex items-center gap-1 px-3 py-2 text-base font-normal transition-all duration-200 hover:rounded hover:bg-[#f9f2ff]"
+              className="group flex items-center gap-1 px-3 py-2 text-base font-normal transition-all duration-200 hover:rounded hover:bg-[#0071E30D]"
             >
-              <span className="bg-linear-to-tr from-[#9500FF] to-[#35005B] bg-clip-text text-greyPrimary transition-colors duration-200 group-hover:text-transparent">
+              <span className="bg-linear-to-tr from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text text-greyPrimary transition-colors duration-200 group-hover:text-transparent">
                 {item.label}
               </span>
-              <ChevronDown className="text-greyPrimary transition-colors duration-200 group-hover:text-[#9500FF]" />
+              {item.hasDropdown && (
+                <ChevronDown className="text-greyPrimary transition-colors duration-200 group-hover:text-[#0071E3]" />
+              )}
             </Link>
           ))}
         </nav>
@@ -287,7 +289,7 @@ export default function Header() {
 
           <Link
             href="/contato"
-            className="flex items-center justify-center whitespace-nowrap rounded bg-linear-to-tr from-[#9500FF] to-[#35005B] px-4 py-2 text-base font-bold text-white transition-opacity hover:opacity-90"
+            className="gradient-blue-primary-zing flex items-center justify-center whitespace-nowrap rounded px-4 py-2 text-base font-bold text-white transition-opacity hover:opacity-90"
           >
             Solicite uma demonstração
           </Link>
@@ -364,9 +366,7 @@ export default function Header() {
             </button>
             <div
               className={`overflow-hidden transition-all duration-200 ${
-                mobileSectorOpen
-                  ? "max-h-40 opacity-100"
-                  : "max-h-0 opacity-0"
+                mobileSectorOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
               }`}
             >
               {sectorItems.map((item) => (
@@ -409,7 +409,7 @@ export default function Header() {
 
           <Link
             href="/contato"
-            className="mt-2 flex items-center justify-center rounded bg-linear-to-tr from-[#9500FF] to-[#35005B] py-3 text-base font-bold text-white transition-opacity hover:opacity-90"
+            className="gradient-blue-primary-zing mt-2 flex items-center justify-center rounded py-3 text-base font-bold text-white transition-opacity hover:opacity-90"
             onClick={() => setMenuOpen(false)}
           >
             Solicite uma demonstração

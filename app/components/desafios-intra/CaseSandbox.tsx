@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function CaseSandbox() {
   return (
-    <section className="bg-linear-to-br from-[#9500FF] to-[#35005A] py-16 max-sm:py-10">
+    <section className="bg-gradientbg py-16 max-sm:py-10">
       <div className="container">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-10">
           {/* Image */}
@@ -19,22 +19,21 @@ export default function CaseSandbox() {
 
           {/* Content */}
           <div className="flex flex-col gap-10">
-            <h2 className="text-[clamp(28px,3.5vw,48px)] leading-[120%] text-white">
+            <h2 className="text-[clamp(28px,3.5vw,48px)] leading-[120%] text-greyPrimary">
               Case de sucesso —{" "}
-              <span className="font-bold">Sandbox CAIXA</span>
+              <span className="font-bold">Espaço TEIA CAIXA</span>
             </h2>
-            <p className="text-lg leading-[140%] text-white">
-              A ZING foi utilizada no Sandbox CAIXA, um edital interno que
-              mobilizou mais de 80 mil colaboradores da Caixa Econômica Federal
-              para propor ideias voltadas à solução de desafios reais da
-              organização, consolidando o intraempreendedorismo como motor de
-              inovação em larga escala.
+            <p className="text-base leading-[140%] text-greyPrimary">
+              A Zing é responsável pela gestão completa do Espaço TEIA, o Hub de
+              inovação da CAIXA. Integrando operação física e digital, conecta
+              serviços, programas, eventos, ecossistema e dados em uma
+              experiência única.
             </p>
             <Link
               href="#"
-              className="group flex w-fit items-center gap-2.5 rounded bg-white px-4 py-1 text-base font-bold transition-opacity duration-300 hover:opacity-80"
+              className="group flex w-fit items-center gap-2.5 rounded border border-white bg-[#0071E30D] px-4 py-1 text-base font-bold transition-opacity duration-300 hover:opacity-80"
             >
-              <span className="bg-linear-to-br from-[#9500FF] to-[#35005A] bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text text-transparent">
                 Leia case completo
               </span>
               <svg
@@ -60,8 +59,9 @@ export default function CaseSandbox() {
                     y2="5.5"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop stopColor="#9500FF" />
-                    <stop offset="1" stopColor="#35005A" />
+                    <stop stopColor="#6453D1" />
+                    <stop offset="0.6" stopColor="#0071E3" />
+                    <stop offset="1" stopColor="#1ACBDC" />
                   </linearGradient>
                 </defs>
               </svg>
