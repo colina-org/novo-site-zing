@@ -66,6 +66,7 @@ function SocialButton({
 }: {
   href: string;
   label: string;
+  target?: string;
   children: React.ReactNode;
 }) {
   return (
@@ -118,13 +119,25 @@ export default function Footer() {
 
               {/* Social Icons */}
               <div className="flex items-center gap-3">
-                <SocialButton href="#" label="Facebook">
+                <SocialButton
+                  href="https://www.facebook.com/iebtgestaoeinovacao/"
+                  target="_blank"
+                  label="Facebook"
+                >
                   <FacebookIcon />
                 </SocialButton>
-                <SocialButton href="#" label="LinkedIn">
+                <SocialButton
+                  href="https://www.linkedin.com/company/iebt/"
+                  target="_blank"
+                  label="LinkedIn"
+                >
                   <LinkedInIcon />
                 </SocialButton>
-                <SocialButton href="#" label="Instagram">
+                <SocialButton
+                  href="https://www.instagram.com/iebtinnovation/"
+                  target="_blank"
+                  label="Instagram"
+                >
                   <InstagramIcon />
                 </SocialButton>
               </div>

@@ -1,10 +1,13 @@
 import Link from "next/link";
 
+import Image from "next/image";
+import HubsBar from "./HubsBar";
+
 export default function HeroGestao() {
   return (
     <section className="bg-white py-20 max-sm:py-10">
-      <div className="container">
-        <div className="flex max-w-4xl flex-col gap-13.5">
+      <div className="container flex items-start justify-between gap-4">
+        <div className="flex max-w-2xl flex-col gap-13.5">
           <div className="flex flex-col gap-6">
             <h1 className="text-5xl max-sm:text-3xl font-normal leading-tight text-greyPrimary">
               Gestão completa de <br className="max-sm:hidden" />
@@ -23,6 +26,18 @@ export default function HeroGestao() {
           >
             Fale com especialista
           </Link>
+
+          <HubsBar />
+        </div>
+
+        <div className="w-full max-w-fit">
+          <Image
+            src="/cubes-hero-hubs.png"
+            alt=""
+            width={465}
+            height={568}
+            className=""
+          />
         </div>
       </div>
     </section>
