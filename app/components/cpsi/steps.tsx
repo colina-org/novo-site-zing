@@ -102,7 +102,7 @@ export default function Steps() {
       <div className="container">
         <div className="flex flex-col gap-10 lg:flex-row lg:gap-20">
           {/* Left — text */}
-          <div className="relative z-10 flex flex-col justify-center gap-6 lg:max-w-130">
+          <div data-aos="fade-right" className="relative z-10 flex flex-col justify-center gap-6 lg:max-w-130">
             <h2 className="text-[clamp(28px,3.5vw,40px)] text-greyPrimary max-lg:text-white">
               <span className="font-medium">CPSI</span> é para mim?
             </h2>
@@ -114,6 +114,7 @@ export default function Steps() {
 
           {/* Right — Quiz card */}
           <div
+            data-aos="fade-left"
             className={`relative z-10 flex-1 rounded p-4 transition-all duration-300 ease-in-out lg:max-w-150 ${
               transitioning
                 ? "translate-y-2 opacity-0"

@@ -1,48 +1,38 @@
 import Image from "next/image";
 
-export default function AboutProgram() {
+export default function AboutGestao() {
   return (
-    <section className="bg-[#f9f2ff] py-16 max-sm:py-10">
+    <section className="bg-gradientbg py-16 max-sm:py-10">
       <div className="container">
-        <div className="flex flex-col items-center gap-10 lg:flex-row lg:gap-20">
+        <div className="flex flex-col items-center max-md:gap-10 lg:flex-row gap-4  justify-between">
           {/* Text */}
-          <div className="w-full max-w-125 max-lg:max-w-full">
-            <h2 className="text-[40px] mb-4 max-sm:text-[28px] font-normal leading-tight text-black">
-              O que é um <br />
-              <span className="font-bold text-purplePrimary">
+          <div data-aos="fade-right" className="w-full max-w-140 max-lg:max-w-full">
+            <h2 className="text-[40px] mb-4 max-sm:text-[28px] font-normal leading-tight text-greyPrimary">
+              O que é um
+              <br />
+              <span className="font-bold text-bluePrimary">
                 Programa de inovação
               </span>
               ?
             </h2>
-            <p className="text-lg max-sm:text-base font-normal leading-relaxed text-black">
+            <p className="text-lg max-sm:text-base font-normal leading-relaxed text-greyPrimary">
               Programas de inovação aberta{" "}
               <strong>
                 conectam organizações a startups, pesquisadores e outros agentes
                 do ecossistema
               </strong>{" "}
               para resolver desafios reais de negócio.
-              <br />
-              <br />
-              De forma estruturada e orientada a resultados, a empresa{" "}
-              <strong>
-                define seus desafios, avalia propostas e desenvolve soluções
-              </strong>{" "}
-              por meio de provas de conceito ou projetos piloto,{" "}
-              <strong>
-                acelerando a inovação, reduzindo riscos e transformando ideias
-              </strong>{" "}
-              em valor concreto.
             </p>
           </div>
 
           {/* Image */}
-          <div className="w-full overflow-hidden rounded-[10px] lg:max-w-155">
+          <div data-aos="fade-left" className="w-full overflow-hidden rounded-[10px] lg:max-w-155">
             <Image
               src="/cpsi/about.png"
               alt="Sobre o CPSI"
               width={620}
-              height={300}
-              className="h-auto w-full object-cover"
+              height={199}
+              className="h-full max-h-49.75 w-full object-cover"
             />
           </div>
         </div>

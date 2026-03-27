@@ -3,7 +3,7 @@
 import { useState } from "react";
 import ProgramasHero from "../components/programas/Hero";
 import ProgramCards from "../components/programas/ProgramCards";
-import Cases from "../components/cpsi/Cases";
+import Cases from "../components/programas/Cases";
 import FaqSection from "../components/FaqSection";
 import CommunitySection from "../components/CommunitySection";
 

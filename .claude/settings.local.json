@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:api.figma.com)",
+      "Bash(curl:*)",
+      "Bash(python3:*)",
+      "Bash(npm install:*)",
+      "Bash(echo $FIGMA_TOKEN)",
+      "Bash(echo $FIGMA_ACCESS_TOKEN)",
+      "Bash(echo $FIGMA_API_KEY)",
+      "Bash(npx vercel --prod)",
+      "mcp__claude_ai_Figma__get_design_context",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ]
+  }
+}

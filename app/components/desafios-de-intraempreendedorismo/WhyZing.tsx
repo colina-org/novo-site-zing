@@ -8,17 +8,19 @@ import "swiper/css/pagination";
 
 const cards = [
   {
-    title: "Rastreabilidade",
+    title: "Cadastro dos colaboradores",
     description:
-      "Histórico completo, organizado e auditável de todo o processo.",
+      "Centralize o registro de todos os colaboradores em um só lugar.",
   },
   {
-    title: "Transparência",
-    description: "Visibilidade e clareza em todas as etapas da contratação.",
+    title: "Submissão estruturada de ideias",
+    description:
+      "Organize o envio de ideias com clareza, padrão e praticidade.",
   },
   {
-    title: "Isonomia",
-    description: "Tratamento equânime e competição justa entre os proponentes.",
+    title: "Avaliações por banca",
+    description:
+      "Conduza avaliações com critérios definidos e decisões mais consistentes.",
   },
 ];
 
@@ -53,13 +55,22 @@ function WhyCard({
 
 export default function WhyUse() {
   return (
-    <section className="whyuse py-16 relative max-sm:py-10 bg-gradientbg">
+    <section className="whyuse py-16 relative max-sm:py-10 bg-white">
       <div className="gradient-blue-primary-zing absolute top-0 left-0 h-96.25 w-full"></div>
       <div className="container mx-auto px-6">
         {/* Title */}
-        <h2 data-aos="fade-up" className="mb-10 text-[clamp(28px,4vw,48px)] font-normal text-white">
-          Por que usar a <span className="font-bold">ZING</span>?
-        </h2>
+        <div data-aos="fade-up" className="flex items-center justify-between gap-4 mb-10">
+          <h2 className="text-[40px] max-sm:text-[28px] leading-[120%] font-normal text-white w-full max-w-80">
+            Por que fazer com a <span className="font-bold">ZING</span>?
+          </h2>
+
+          <p className="text-lg w-full max-w-171.25">
+            A Zing oferece uma experiência completa para programas de
+            intraempreendedorismo com o acompanhamento de todas as etapas em um
+            único ambiente, garantindo organização, transparência e gestão
+            eficiente.
+          </p>
+        </div>
 
         {/* Cards Swiper */}
         <div data-aos="fade-up" data-aos-delay="100">

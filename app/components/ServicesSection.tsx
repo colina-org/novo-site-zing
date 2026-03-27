@@ -91,7 +91,7 @@ export default function ServicesSection() {
     <section className="bg-white py-16 max-lg:py-10">
       <div className="container">
         {/* Badge */}
-        <div className="mb-8 flex items-center gap-2">
+        <div data-aos="fade-up" className="mb-8 flex items-center gap-2">
           <div
             aria-hidden="true"
             className="size-4 shrink-0"
@@ -104,7 +104,7 @@ export default function ServicesSection() {
 
         {/* Header row: Title + Description */}
         <div className="mb-10 flex flex-col gap-6 lg:flex-row lg:items-start lg:gap-16">
-          <h2 className="text-[40px] max-sm:text-3xl leading-tight font-bold text-greyPrimary lg:w-1/2">
+          <h2 data-aos="fade-right" className="text-[40px] max-sm:text-3xl leading-tight font-bold text-greyPrimary lg:w-1/2">
             Transforme{" "}
             <span className="font-normal">
               ideias <br />
@@ -112,7 +112,7 @@ export default function ServicesSection() {
             </span>{" "}
             soluções concretas.
           </h2>
-          <p className="text-lg font-normal leading-relaxed text-greyPrimary lg:w-1/2 lg:pt-3">
+          <p data-aos="fade-left" className="text-lg font-normal leading-relaxed text-greyPrimary lg:w-1/2 lg:pt-3">
             Conectamos setores, estimulamos a colaboração e promovemos
             capacitação para criar um ecossistema público-privado mais
             eficiente, inovador e impactante.
@@ -122,7 +122,7 @@ export default function ServicesSection() {
         {/* Content: Tabs + Image */}
         <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-10">
           {/* Tab list */}
-          <div className="flex flex-col gap-3 lg:w-1/2">
+          <div data-aos="fade-up" className="flex flex-col gap-3 lg:w-1/2">
             {services.map((service, i) => {
               const isActive = active === i;
               return (
@@ -171,7 +171,7 @@ export default function ServicesSection() {
           </div>
 
           {/* Image */}
-          <div className="lg:w-1/2">
+          <div data-aos="fade-left" className="lg:w-1/2">
             <div
               className={`relative h-72 w-full overflow-hidden rounded-xl lg:h-87.5 transition-opacity duration-250 ${
                 imgVisible ? "opacity-100" : "opacity-0"

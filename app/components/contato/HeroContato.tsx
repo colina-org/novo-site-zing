@@ -22,10 +22,10 @@ export default function HeroContato() {
   }
 
   return (
-    <section className="relative overflow-hidden bg-[#f9f2ff] pt-32 pb-16 max-sm:py-10">
+    <section className="relative overflow-hidden bg-linear-to-r from-[#6453D1] via-[#0071E3] to-[#1ACBDC] pt-32 pb-16 max-sm:py-10">
       {/* Decorative cubes */}
       <Image
-        src="/herocubescontact.svg"
+        src="/cube-hero-left-contact.png"
         alt=""
         width={329}
         height={331}
@@ -33,21 +33,21 @@ export default function HeroContato() {
         aria-hidden="true"
       />
       <Image
-        src="/topcubescontact.svg"
+        src="/cube-hero-right-contant.png"
         alt=""
         width={333}
         height={331}
-        className="pointer-events-none absolute top-0 -right-28 hidden lg:block w-full max-w-83.25 h-82.75 object-contain"
+        className="pointer-events-none absolute top-0 -right-10 hidden lg:block w-full max-w-83.25 h-82.75 object-contain"
         aria-hidden="true"
       />
 
       <div className="container relative z-10 flex items-start justify-between gap-4 max-lg:gap-10 max-lg:flex-col">
         <div className="w-full max-w-143 max-lg:max-w-full">
-          <h1 className="text-[clamp(28px,3.5vw,40px)] leading-[120%] text-black mb-6">
+          <h1 className="text-[clamp(28px,3.5vw,40px)] leading-[120%] text-white mb-6">
             Dê o próximo passo na sua{" "}
             <span className="font-medium">jornada de inovação</span>
           </h1>
-          <p className="text-lg leading-[140%] text-black">
+          <p className="text-lg leading-[140%] text-white">
             Nossa equipe entrará em contato para entender seus desafios e
             mostrar, na prática, como transformar ideias em impacto.
           </p>
@@ -155,7 +155,7 @@ export default function HeroContato() {
           {/* Submit */}
           <button
             type="submit"
-            className="mt-2 cursor-pointer rounded border border-white bg-linear-to-br from-[#9500FF] to-[#35005A] px-4 py-2 text-lg font-bold text-white transition-opacity duration-300 hover:opacity-80"
+            className="mt-2 cursor-pointer w-full max-w-fit self-end rounded bg-linear-to-r from-[#6453D1] via-[#0071E3] to-[#1ACBDC] px-4 py-2 text-lg font-bold text-white transition-opacity duration-300 hover:opacity-80"
           >
             Enviar
           </button>

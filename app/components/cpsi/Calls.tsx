@@ -44,7 +44,7 @@ export default function Calls() {
     <section className="bg-white max-sm:py-10 py-20 calls">
       <div className="container">
         {/* Header */}
-        <div className="mb-25.5 max-sm:mb-10 flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-10">
+        <div data-aos="fade-up" className="mb-25.5 max-sm:mb-10 flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-10">
           <h2 className="w-full max-w-99 text-[clamp(28px,3.5vw,40px)] font-normal leading-[120%] text-greyPrimary">
             Como é feito na <span className="font-bold">ZING</span>
           </h2>
@@ -55,7 +55,7 @@ export default function Calls() {
         </div>
 
         {/* Steps Swiper */}
-        <div className="relative lg:pt-8 lg:pb-9">
+        <div data-aos="fade-up" data-aos-delay="100" className="relative lg:pt-8 lg:pb-9">
           {/* Decorative outlined rects (desktop only, behind cards) */}
           <div className="pointer-events-none absolute inset-0 z-0 hidden lg:block">
             <div className="absolute top-0.5 left-[12%] h-40.75 w-[25.5%] rounded-[30px] border-3 border-black" />

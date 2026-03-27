@@ -27,11 +27,11 @@ export default function Cases() {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="bg-white py-10 lg:py-16">
+    <section className="bg-gradientbg py-10 lg:py-16">
       <div className="container mx-auto px-6">
         <div className="flex flex-col gap-10 lg:flex-row lg:gap-6">
           {/* Left — text */}
-          <div data-aos="fade-right" className="flex flex-col gap-6 lg:w-90 lg:shrink-0 max-sm:text-center">
+          <div className="flex flex-col gap-6 lg:w-90 lg:shrink-0 max-sm:text-center">
             <h2 className="text-[40px] font-normal leading-[120%] text-greyPrimary max-sm:text-3xl">
               Cases <span className="font-medium">de sucesso</span>
             </h2>
@@ -48,7 +48,6 @@ export default function Cases() {
 
           {/* Right — cards */}
           <div
-            data-aos="fade-left"
             className="flex flex-1 gap-4 overflow-x-auto lg:overflow-x-visible"
             onMouseLeave={() => setActive(0)}
           >

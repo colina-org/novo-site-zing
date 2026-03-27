@@ -159,3 +159,16 @@ body {
     display: none;
   }
 }
+
+.s-hero-blog {
+  form {
+    button[type="submit"] {
+      background: linear-gradient(
+        78deg,
+        #6453d1 7.96%,
+        #0071e3 57.82%,
+        #1acbdc 91.06%
+      );
+    }
+  }
+}

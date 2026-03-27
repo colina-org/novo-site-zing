@@ -1,3 +1,4 @@
+import Image from "next/image";
 type HeroProps = {
   keyword: string;
   onKeywordChange: (value: string) => void;
@@ -10,13 +11,34 @@ export default function Hero({
   onSearch,
 }: HeroProps) {
   return (
-    <section className="bg-[#f9f2ff] py-10 lg:py-32">
+    <section className="s-hero-blog bg-gradientbg relative overflow-hidden py-10 lg:py-32">
+      <Image
+        src={"/cube-left-hero-blog.png"}
+        width={327}
+        height={325}
+        alt=""
+        className="absolute -bottom-10 -left-10 opacity-40 max-lg:hidden pointer-events-none"
+      />
+      <Image
+        src={"/hero-cube-blog-top-right.png"}
+        width={376}
+        height={368}
+        alt=""
+        className="absolute w-full max-w-94 h-92 -top-30 -right-30  max-lg:hidden pointer-events-none"
+      />
+      <Image
+        src={"/hero-cube-blog-bottom-right.png"}
+        width={376}
+        height={368}
+        alt=""
+        className="absolute w-full max-w-86.25 h-81 -bottom-10 -right-10  max-lg:hidden pointer-events-none"
+      />
       <div className="container">
         <div className="flex flex-col items-center gap-10 lg:gap-14">
           {/* Heading */}
-          <h1 className="text-center text-[clamp(32px,4vw,48px)] max-sm:text-[28px] leading-tight text-black">
+          <h1 className="text-center text-[clamp(32px,4vw,48px)] max-sm:text-[28px] leading-tight text-greyPrimary">
             Suporte completo para resolver <br className="hidden sm:block" />
-            <strong className="font-bold">desafios públicos</strong> com
+            <strong className="font-medium">desafios públicos</strong> com
             inovação.
           </h1>
 
@@ -42,7 +64,7 @@ export default function Hero({
 
             <button
               type="submit"
-              className="flex h-12 w-12 shrink-0 items-center justify-center max-sm:self-start self-end rounded border border-purpleSecondary bg-linear-to-tr from-[#9500FF] to-[#35005B] transition-opacity hover:opacity-90 sm:self-auto"
+              className="flex h-12 w-12 shrink-0 items-center justify-center max-sm:self-start self-end rounded cursor-pointer transition-opacity hover:opacity-90 sm:self-auto"
               aria-label="Buscar"
             >
               <svg

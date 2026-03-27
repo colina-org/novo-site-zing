@@ -1,36 +1,99 @@
-export default function WhyZing() {
+"use client";
+
+import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+
+const cards = [
+  {
+    title: "Criação de programas",
+    description:
+      "A organização configura o programa de inovação na plataforma, definindo a iniciativa, desafios, documentos e formulário de inscrição.",
+  },
+  {
+    title: "Submissão de soluções",
+    description:
+      "Os solucionadores se inscrevem diretamente na ZING, enquanto a organização estabelece critérios, pesos e a banca avaliadora.",
+  },
+  {
+    title: "Avaliações",
+    description:
+      "A plataforma centraliza a avaliação, consolida notas e classifica as propostas para a tomada de decisão.",
+  },
+];
+
+function WhyCard({
+  title,
+  description,
+}: {
+  title: string;
+  description: string;
+}) {
   return (
-    <section className="overflow-hidden bg-white py-20 max-md:py-10">
+    <div className="flex h-full flex-col rounded bg-white p-2">
+      {/* Image */}
+      <div className="relative mb-2 h-87 max-sm:h-60 overflow-hidden rounded">
+        <Image
+          src="/cpsi/why-card.png"
+          alt={title}
+          fill
+          className="object-cover"
+          sizes="(max-width: 640px) 80vw, (max-width: 1024px) 50vw, 33vw"
+        />
+      </div>
+
+      {/* Text */}
+      <div className="flex flex-col gap-2 p-2">
+        <p className="text-lg font-bold text-greyPrimary">{title}</p>
+        <p className="text-base text-greyPrimary">{description}</p>
+      </div>
+    </div>
+  );
+}
+
+export default function WhyUse() {
+  return (
+    <section className="whyuse py-16 relative max-sm:py-10 bg-gradientbg">
+      <div className="gradient-blue-primary-zing absolute top-0 left-0 h-96.25 w-full"></div>
       <div className="container mx-auto px-6">
-        {/* Text row */}
-        <div className="mb-10 max-md:mb-0 flex flex-col gap-10 lg:flex-row">
-          <h2 className="text-[clamp(28px,3vw,40px)] font-normal leading-[120%] text-black w-full max-w-xl max-lg:max-w-full">
-            Por que fazer
-            <br className="max-lg:hidden" />
-            com a <span className="font-bold">ZING</span>?
+        {/* Title */}
+        <div data-aos="fade-up" className="flex items-center justify-between gap-4 mb-10">
+          <h2 className="text-[40px] max-sm:text-[28px] leading-[120%] font-normal text-white w-full max-w-80">
+            Por que fazer com a <span className="font-bold">ZING</span>?
           </h2>
-          <div className="flex flex-col gap-4 text-lg leading-[25.2px] text-black">
-            <p>
-              Conduzir um programa de inovação aberta exige{" "}
-              <strong>método, governança e escala.</strong> A Zing foi criada
-              para atender exatamente a esses desafios.
-              <br />
-              <br />
-              Em um <strong>único ambiente</strong>, a plataforma centraliza
-              inscrições, propostas e avaliações, garantindo critérios claros,
-              <strong>rastreabilidade</strong> das decisões e{" "}
-              <strong>processos mais ágeis e confiáveis</strong>.
-              <br />
-              <br />
-              Já utilizada em programas reais de grandes organizações, a ZING
-              opera com fluxos validados para{" "}
-              <strong>
-                contextos de alta complexidade, volume e responsabilidade
-              </strong>
-              .
-            </p>
-          </div>
+
+          <p className="text-lg w-full max-w-171.25">
+            Em um <strong>único ambiente</strong>, a plataforma centraliza
+            inscrições, propostas e avaliações, garantindo critérios claros,{" "}
+            <strong>rastreabilidade</strong> das decisões e{" "}
+            <strong>processos mais ágeis e confiáveis</strong>.
+          </p>
         </div>
+
+        {/* Cards Swiper */}
+        <div data-aos="fade-up" data-aos-delay="100">
+        <Swiper
+          modules={[Pagination]}
+          slidesPerView={1}
+          spaceBetween={16}
+          pagination={{ clickable: true, el: ".why-pagination" }}
+          breakpoints={{
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+        >
+          {cards.map((card, i) => (
+            <SwiperSlide key={i} className="h-auto!">
+              <WhyCard {...card} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        </div>
+
+        {/* Pagination dots — hidden on desktop (all 3 cards visible) */}
+        <div className="why-pagination mt-8 flex justify-center gap-2 lg:hidden" />
       </div>
     </section>
   );

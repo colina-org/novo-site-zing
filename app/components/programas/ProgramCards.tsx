@@ -124,9 +124,9 @@ function ProgramCard({ program }: { program: Program }) {
 
         <Link
           href={program.href}
-          className="rounded border border-purpleSecondary px-4 py-2 text-center text-base font-bold transition-transform duration-300 ease-linear group-hover:scale-[1.02]"
+          className=" px-4 py-2 text-center text-base font-bold transition-transform duration-300 ease-linear group-hover:scale-[1.02]"
         >
-          <span className="bg-linear-to-r from-[#9500FF] to-[#35005A] bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text text-transparent">
             Conheça mais
           </span>
         </Link>
@@ -156,7 +156,7 @@ export default function ProgramCards({ keyword }: ProgramCardsProps) {
     : programs;
 
   return (
-    <section className="bg-[#f9f2ff] pb-16 lg:pb-20">
+    <section className="bg-white py-16 lg:pb-20">
       <div className="container">
         {filtered.length > 0 ? (
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

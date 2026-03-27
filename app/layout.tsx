@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "./components/header";
 import Footer from "./components/footer";
+import AosInit from "./components/AosInit";
 
 export const metadata: Metadata = {
   title: "Zing Innovation by IEBT",
@@ -16,6 +17,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className="antialiased">
+        <AosInit />
         <Header />
         {children}
         <Footer />

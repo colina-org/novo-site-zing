@@ -14,7 +14,7 @@ export default function ProgramsSection() {
       <div className="gradient-blue-primary-zing absolute top-0 left-0 w-full h-96.25 max-sm:h-full"></div>
       <div className="container">
         {/* Header */}
-        <div className="mb-10 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+        <div data-aos="fade-up" className="mb-10 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <h2 className="text-[40px] max-md:text-3xl max-md:text-center text-white">
             Fique por dentro dos nossos <br className="max-md:hidden" />
             <span className="font-bold">programas e chamadas</span>
@@ -30,6 +30,7 @@ export default function ProgramsSection() {
         </div>
 
         {/* Cards Swiper */}
+        <div data-aos="fade-up" data-aos-delay="100">
         <Swiper
           modules={[Pagination]}
           slidesPerView={1}
@@ -97,6 +98,7 @@ export default function ProgramsSection() {
             </SwiperSlide>
           ))}
         </Swiper>
+        </div>
 
         <Link
           href="/programas"

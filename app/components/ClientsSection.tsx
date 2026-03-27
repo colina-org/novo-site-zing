@@ -32,7 +32,7 @@ export default function ClientsSection() {
     <section className="bg-white py-14 max-lg:py-8 clients">
       {/* Title */}
       <div className="container mx-auto px-6">
-        <p className="mb-10 text-center text-xl font-normal text-greyPrimary">
+        <p data-aos="fade-up" className="mb-10 text-center text-xl font-normal text-greyPrimary">
           Escolhido por instituições públicas e empresas que{" "}
           <span className="font-bold text-bluePrimary!">
             valorizam a inovação

@@ -6,7 +6,7 @@ export default function About() {
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center gap-10 lg:flex-row lg:gap-20">
           {/* Text */}
-          <div className="flex flex-col gap-4 lg:max-w-125">
+          <div data-aos="fade-right" className="flex flex-col gap-4 lg:max-w-125">
             <h2 className="text-[clamp(32px,4vw,48px)] font-normal leading-tight text-greyPrimary">
               O que é <span className="font-bold text-bluePrimary">CPSI</span>?
             </h2>
@@ -23,7 +23,7 @@ export default function About() {
           </div>
 
           {/* Image */}
-          <div className="w-full overflow-hidden rounded-[10px] lg:max-w-155">
+          <div data-aos="fade-left" className="w-full overflow-hidden rounded-[10px] lg:max-w-155">
             <Image
               src="/cpsi/about.png"
               alt="Sobre o CPSI"

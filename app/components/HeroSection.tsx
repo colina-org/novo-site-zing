@@ -28,7 +28,7 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="container relative z-10">
-        <h1 className="text-center lg:text-[58px] leading-[120%] text-3xl font-normal text-black mb-14 max-sm:mb-8">
+        <h1 data-aos="fade-up" className="text-center lg:text-[58px] leading-[120%] text-3xl font-normal text-black mb-14 max-sm:mb-8">
           Plataforma de inovação completa <br className="max-sm:hidden" />
           para o{" "}
           <span
@@ -43,7 +43,7 @@ export default function HeroSection() {
         </h1>
 
         {/* Description */}
-        <p className="max-w-3xl mx-auto mb-14 max-sm:mb-8 text-[clamp(16px,1.5vw,18px)] font-normal leading-relaxed text-greyPrimary text-center">
+        <p data-aos="fade-up" data-aos-delay="100" className="max-w-3xl mx-auto mb-14 max-sm:mb-8 text-[clamp(16px,1.5vw,18px)] font-normal leading-relaxed text-greyPrimary text-center">
           Conectamos os atores do ecossistema de inovação para que startups
           desenvolvam soluções sob medida para os desafios reais do setor
           público e privado.
@@ -51,6 +51,8 @@ export default function HeroSection() {
 
         {/* CTA Button */}
         <Link
+          data-aos="fade-up"
+          data-aos-delay="200"
           href="/contato"
           className="gradient-blue-primary-zing table mx-auto whitespace-nowrap rounded px-4 py-2 text-base font-bold text-white transition-opacity hover:opacity-90"
         >

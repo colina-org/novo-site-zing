@@ -59,7 +59,7 @@ export default function WhyUse() {
       <div className="gradient-blue-primary-zing absolute top-0 left-0 h-96.25 w-full"></div>
       <div className="container mx-auto px-6">
         {/* Title */}
-        <div className="flex items-center justify-between gap-4 mb-10">
+        <div data-aos="fade-up" className="flex items-center justify-between gap-4 mb-10">
           <h2 className="text-[40px] max-sm:text-[28px] leading-[120%] font-normal text-white w-full max-w-80">
             Por que fazer com a <span className="font-bold">ZING</span>?
           </h2>
@@ -78,6 +78,7 @@ export default function WhyUse() {
         </div>
 
         {/* Cards Swiper */}
+        <div data-aos="fade-up" data-aos-delay="100">
         <Swiper
           modules={[Pagination]}
           slidesPerView={1}
@@ -94,6 +95,7 @@ export default function WhyUse() {
             </SwiperSlide>
           ))}
         </Swiper>
+        </div>
 
         {/* Pagination dots — hidden on desktop (all 3 cards visible) */}
         <div className="why-pagination mt-8 flex justify-center gap-2 lg:hidden" />

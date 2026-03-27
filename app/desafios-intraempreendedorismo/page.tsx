@@ -1,16 +1,16 @@
-import AboutDesafiosIntra from "../components/desafios-intra/About";
-import HeroDesafiosIntra from "../components/desafios-intra/Hero";
-import WhyZingDesafios from "../components/desafios-intra/WhyZing";
-import CaseSandbox from "../components/desafios-intra/CaseSandbox";
+import AboutDesafiosIntra from "../components/desafios-de-intraempreendedorismo/About";
+import HeroDesafiosIntra from "../components/desafios-de-intraempreendedorismo/Hero";
+import CaseSandbox from "../components/desafios-de-intraempreendedorismo/CaseSandbox";
 import FaqSection from "../components/FaqSection";
 import CommunitySection from "../components/CommunitySection";
+import WhyUse from "../components/desafios-de-intraempreendedorismo/WhyZing";
 
 export default function DesafiosIntraempreendedorismo() {
   return (
     <main>
       <HeroDesafiosIntra />
       <AboutDesafiosIntra />
-      <WhyZingDesafios />
+      <WhyUse />
       <CaseSandbox />
       <FaqSection />
       <CommunitySection />

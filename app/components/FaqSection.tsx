@@ -65,14 +65,14 @@ export default function FaqSection() {
     <section className="bg-white py-16 max-md:py-10">
       <div className="container mx-auto ">
         {/* Header */}
-        <div className="mb-10">
+        <div data-aos="fade-up" className="mb-10">
           <h2 className="text-[clamp(32px,3.5vw,48px)] font-normal text-greyPrimary">
             Tire suas <span className="font-medium">dúvidas</span>
           </h2>
         </div>
 
         {/* FAQ list */}
-        <div>
+        <div data-aos="fade-up" data-aos-delay="100">
           {faqs.map((faq, i) => (
             <div key={i}>
               <hr className="border-[#E5E7EB]" />

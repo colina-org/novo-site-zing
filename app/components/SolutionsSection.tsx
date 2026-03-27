@@ -71,7 +71,7 @@ export default function SolutionsSection() {
           <div className="flex items-center bg-[#0071E30D] py-14 max-sm:py-0 max-md:mb-10 w-full max-w-[50%] max-lg:max-w-full max-lg:bg-white lg:bg-transparent lg:py-0 lg:pr-16">
             <div className="w-full">
               {/* Badge */}
-              <div className="mb-8 flex items-center gap-2">
+              <div data-aos="fade-up" className="mb-8 flex items-center gap-2">
                 <div
                   aria-hidden="true"
                   className="size-4 shrink-0"
@@ -83,7 +83,7 @@ export default function SolutionsSection() {
               </div>
 
               {/* Title */}
-              <h2 className="text-5xl max-sm:text-4xl text-greyPrimary">
+              <h2 data-aos="fade-up" data-aos-delay="100" className="text-5xl max-sm:text-4xl text-greyPrimary">
                 Conheça nossas <br className="max-md:hidden" />
                 <span className="font-bold">soluções</span>
               </h2>
@@ -92,6 +92,7 @@ export default function SolutionsSection() {
 
           {/* Right: image cards */}
           <div
+            data-aos="fade-left"
             className="flex w-full max-w-3xl flex-col gap-3 items-center sm:flex-row sm:gap-4"
             onMouseLeave={() => setActive(null)}
           >

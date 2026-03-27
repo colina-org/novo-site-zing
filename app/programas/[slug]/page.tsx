@@ -39,12 +39,14 @@ export default async function ProgramPage({ params }: Props) {
         <div className="flex flex-col gap-10 lg:flex-row lg:gap-16">
           {/* Left — main content */}
           <div className="flex-1">
-            <h1 className="text-[clamp(28px,3.5vw,40px)] font-medium leading-[120%] text-black">
+            <h1 className="text-[clamp(28px,3.5vw,40px)] font-medium leading-[120%] text-greyPrimary">
               {program.title}
             </h1>
 
             {/* Descrição */}
-            <h2 className="mt-6 text-lg font-medium text-black">Descrição</h2>
+            <h2 className="mt-6 text-lg font-medium text-greyPrimary">
+              Descrição
+            </h2>
             <p className="mt-6 text-lg leading-[140%] text-greyPrimary">
               Show Único de Mike Love em Belo Horizonte no Dístrital.
               {"\n\n"}
@@ -67,11 +69,11 @@ export default async function ProgramPage({ params }: Props) {
             <hr className="my-6 border-[#C4C5C6]" />
 
             {/* Vídeos */}
-            <h2 className="text-lg font-medium text-black">Vídeos</h2>
+            <h2 className="text-lg font-medium text-greyPrimary">Vídeos</h2>
             <div className="mt-6 flex flex-col gap-2.5">
               <Link
                 href="#"
-                className="text-lg text-black underline-offset-2 hover:underline max-sm:text-sm wrap-break-word"
+                className="text-lg text-greyPrimary underline-offset-2 hover:underline max-sm:text-sm wrap-break-word"
               >
                 Live - Tira-dúvidas | 2º Desafio de Inovação Aberta InovaSerra
               </Link>
@@ -81,29 +83,29 @@ export default async function ProgramPage({ params }: Props) {
             <hr className="my-6 border-[#C4C5C6]" />
 
             {/* Anexos */}
-            <h2 className="text-lg font-medium text-black">Anexos</h2>
+            <h2 className="text-lg font-medium text-greyPrimary">Anexos</h2>
             <div className="mt-6 flex flex-col gap-2.5">
               <Link
                 href="#"
-                className="text-lg text-black underline-offset-2 hover:underline max-sm:text-sm wrap-break-word"
+                className="text-lg text-greyPrimary underline-offset-2 hover:underline max-sm:text-sm wrap-break-word"
               >
                 Anexo_I_-_Declaração_de_Aceite_Integral.docx
               </Link>
               <Link
                 href="#"
-                className="text-lg text-black underline-offset-2 hover:underline max-sm:text-sm wrap-break-word"
+                className="text-lg text-greyPrimary underline-offset-2 hover:underline max-sm:text-sm wrap-break-word"
               >
                 EDITAL_DE_SELEÇÃO_-_2º_Desafio_de_Inovação_Aberta_InovaSerra_Assinado.pdf
               </Link>
               <Link
                 href="#"
-                className="text-lg text-black underline-offset-2 hover:underline max-sm:text-sm wrap-break-word"
+                className="text-lg text-greyPrimary underline-offset-2 hover:underline max-sm:text-sm wrap-break-word"
               >
                 ALTERAÇÃO_1_-_EDITAL_DE_SELEÇÃO_-2º_Desafio_de_Inovação_Aberta_InovaSerra_Assinado.pdf
               </Link>
               <Link
                 href="#"
-                className="text-lg text-black underline-offset-2 hover:underline max-sm:text-sm wrap-break-word"
+                className="text-lg text-greyPrimary underline-offset-2 hover:underline max-sm:text-sm wrap-break-word"
               >
                 Anexo_II_-_Detalhamento_das_Empresas_e_Desafios.pdf
               </Link>
@@ -116,7 +118,7 @@ export default async function ProgramPage({ params }: Props) {
               {/* CTA */}
               <Link
                 href="#"
-                className="flex items-center justify-center rounded bg-linear-to-br from-[#9500FF] to-[#35005A] px-4 py-2 text-lg font-bold text-white transition-opacity duration-300 hover:opacity-80"
+                className="flex items-center justify-center rounded bg-linear-to-r from-[#6453D1] via-[#0071E3] to-[#1ACBDC] px-4 py-2 text-lg font-bold text-white transition-opacity duration-300 hover:opacity-80"
               >
                 Inscreva-se
               </Link>
@@ -140,10 +142,10 @@ export default async function ProgramPage({ params }: Props) {
                   />
                 </svg>
                 <div className="flex flex-col gap-2.5">
-                  <p className="text-base text-black">
+                  <p className="text-base text-greyPrimary">
                     <span className="font-medium">Inscrições:</span>
                   </p>
-                  <p className="text-base text-black">
+                  <p className="text-base text-greyPrimary">
                     17 nov 2025 à 17 dez 2025
                   </p>
                 </div>
@@ -168,8 +170,10 @@ export default async function ProgramPage({ params }: Props) {
                   />
                 </svg>
                 <div className="flex flex-col gap-2.5">
-                  <p className="text-base font-medium text-black">Avaliações</p>
-                  <div className="flex flex-col gap-4 text-base text-black">
+                  <p className="text-base font-medium text-greyPrimary">
+                    Avaliações
+                  </p>
+                  <div className="flex flex-col gap-4 text-base text-greyPrimary">
                     <p>
                       Etapa inicial:
                       <br />

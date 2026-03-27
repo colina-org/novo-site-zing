@@ -5,16 +5,18 @@ import Image from "next/image";
 export default function HeroGestao() {
   return (
     <section className="bg-white pt-20 max-sm:py-10">
-      <div className="container flex items-start justify-between gap-4 max-lg:flex-col max-lg:gap-10">
-        <div className="flex max-w-2xl flex-col gap-13.5">
+      <div className="container  flex items-start justify-between gap-4 max-lg:flex-col max-lg:gap-10">
+        <div className="flex max-w-4xl flex-col gap-13.5">
           <div className="flex flex-col gap-6">
-            <h1 data-aos="fade-up" className="text-5xl max-sm:text-3xl font-normal leading-tight text-greyPrimary max-lg:text-center">
-              Programas estruturados de <br className="max-sm:hidden" />
-              <span className="font-medium">inovação aberta</span>
+            <h1 data-aos="fade-up" className="text-[42px] max-sm:text-3xl font-medium leading-[120%] text-greyPrimary max-lg:text-center">
+              Desafios de intraempreendedorismo:{" "}
+              <br className="max-sm:hidden" />
+              <span className="font-normal">inovação que nasce de dentro</span>
             </h1>
             <p data-aos="fade-up" data-aos-delay="100" className="text-base font-normal leading-relaxed text-greyPrimary max-lg:text-center">
-              A Zing seleciona e avalia as startups mais aderentes para
-              responder à dor da instituição.
+              Crie desafios que fomentam a inovação em empresas públicas e
+              privadas <br className="max-sm:hidden" />e transformam a
+              experiência dos colaboradores em ideias estruturadas.
             </p>
           </div>
 

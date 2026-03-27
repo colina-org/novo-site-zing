@@ -1,5 +1,5 @@
 import CommunitySection from "../components/CommunitySection";
-import CaseSandbox from "../components/desafios-intra/CaseSandbox";
+import CaseSandbox from "../components/desafios-de-intraempreendedorismo/CaseSandbox";
 import FaqSection from "../components/FaqSection";
 import AboutGestao from "../components/gestao-hubs/About";
 import HeroGestao from "../components/gestao-hubs/Hero";
