@@ -46,7 +46,7 @@ function WhyCard({
 
       {/* Text */}
       <div className="flex flex-col gap-2 p-2">
-        <p className="text-lg font-bold text-greyPrimary">{title}</p>
+        <p className="text-lg font-bold text-greyPrimary">{title} </p>
         <p className="text-base text-greyPrimary">{description}</p>
       </div>
     </div>
