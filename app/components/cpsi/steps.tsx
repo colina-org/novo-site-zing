@@ -98,11 +98,17 @@ export default function Steps() {
     contactData.telefone.trim() !== "";
 
   return (
-    <section className="steps-section relative overflow-hidden bg-gradientbg max-lg:bg-bluePrimary py-16 max-lg:py-10">
+    <section
+      className="steps-section relative overflow-hidden bg-gradientbg max-lg:bg-bluePrimary py-16 max-lg:py-10"
+      id="cpsi-steps"
+    >
       <div className="container">
         <div className="flex flex-col gap-10 lg:flex-row lg:gap-20">
           {/* Left — text */}
-          <div data-aos="fade-right" className="relative z-10 flex flex-col justify-center gap-6 lg:max-w-130">
+          <div
+            data-aos="fade-right"
+            className="relative z-10 flex flex-col justify-center gap-6 lg:max-w-130"
+          >
             <h2 className="text-[clamp(28px,3.5vw,40px)] text-greyPrimary max-lg:text-white">
               <span className="font-medium">CPSI</span> é para mim?
             </h2>

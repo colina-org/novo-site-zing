@@ -7,10 +7,13 @@ export default function CaseSandbox() {
       <div className="container">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-10">
           {/* Image */}
-          <div data-aos="fade-right" className="relative aspect-580/353 w-full overflow-hidden rounded-[10px] lg:w-1/2 lg:shrink-0">
+          <div
+            data-aos="fade-right"
+            className="relative aspect-580/353 w-full overflow-hidden rounded-[10px] lg:w-1/2 lg:shrink-0"
+          >
             <Image
               src="/cpsi/case-sandbox.png"
-              alt="Case Sandbox CAIXA"
+              alt="Espaço TEIA CAIXA"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -23,10 +26,9 @@ export default function CaseSandbox() {
               Case de sucesso — <span className="font-bold">Sandbox CAIXA</span>
             </h2>
             <p className="text-base leading-[140%] text-greyPrimary">
-              A Zing é responsável pela gestão completa do Espaço TEIA, o Hub de
-              inovação da CAIXA. Integrando operação física e digital, conecta
-              serviços, programas, eventos, ecossistema e dados em uma
-              experiência única.
+              No Sandbox CAIXA, colaboradores transformaram desafios do
+              cotidiano em oportunidades de inovação, propondo soluções que
+              contribuem para a evolução da instituição.
             </p>
             <Link
               href="#"

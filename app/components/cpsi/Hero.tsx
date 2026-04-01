@@ -9,7 +9,10 @@ export default function Hero() {
           {/* Text content */}
           <div className="flex max-w-4xl flex-col gap-13.5 max-lg:text-center">
             <div className="flex flex-col gap-6">
-              <h1 data-aos="fade-up" className="text-[clamp(32px,4vw,48px)] font-normal leading-tight text-greyPrimary">
+              <h1
+                data-aos="fade-up"
+                className="text-[clamp(32px,4vw,48px)] font-normal leading-tight text-greyPrimary"
+              >
                 Plataforma líder na{" "}
                 <span className="font-medium">
                   gestão de <br className="max-sm:hidden" />
@@ -17,7 +20,11 @@ export default function Hero() {
                 </span>{" "}
                 no Brasil
               </h1>
-              <p data-aos="fade-up" data-aos-delay="100" className="text-lg font-normal leading-relaxed text-greyPrimary">
+              <p
+                data-aos="fade-up"
+                data-aos-delay="100"
+                className="text-lg font-normal leading-relaxed text-greyPrimary"
+              >
                 A Zing é a plataforma dos maiores editais de{" "}
                 <strong>Contrato Público para Solução Inovadora (CPSI) </strong>
                 do Brasil. Grandes intuições como CAIXA, CEMIG, Porto Suape e
@@ -28,7 +35,7 @@ export default function Hero() {
             <Link
               data-aos="fade-up"
               data-aos-delay="200"
-              href="#"
+              href="#cpsi-steps"
               className="gradient-blue-primary-zing w-fit max-lg:table max-lg:mx-auto rounded px-4 py-2 text-lg font-bold text-white transition-opacity hover:opacity-90"
             >
               Quero fazer CPSI
@@ -36,7 +43,10 @@ export default function Hero() {
           </div>
 
           {/* Cubes decoration */}
-          <div data-aos="fade-left" className="relative hidden w-82.5 shrink-0 lg:block">
+          <div
+            data-aos="fade-left"
+            className="relative hidden w-82.5 shrink-0 lg:block"
+          >
             <Image
               src="/frame-right-cubes-cpsi-hero.png"
               alt=""

@@ -95,7 +95,10 @@ export default function ServicesSection() {
           <div
             aria-hidden="true"
             className="size-4 shrink-0"
-            style={{ backgroundImage: "linear-gradient(125deg, #6453D1 0%, #0071E3 60%, #1ACBDC 100%)" }}
+            style={{
+              backgroundImage:
+                "linear-gradient(125deg, #6453D1 0%, #0071E3 60%, #1ACBDC 100%)",
+            }}
           />
           <span className="text-xs font-bold uppercase tracking-widest text-greyPrimary">
             Serviços
@@ -104,7 +107,10 @@ export default function ServicesSection() {
 
         {/* Header row: Title + Description */}
         <div className="mb-10 flex flex-col gap-6 lg:flex-row lg:items-start lg:gap-16">
-          <h2 data-aos="fade-right" className="text-[40px] max-sm:text-3xl leading-tight font-bold text-greyPrimary lg:w-1/2">
+          <h2
+            data-aos="fade-right"
+            className="text-[40px] max-sm:text-3xl leading-tight font-bold text-greyPrimary lg:w-1/2"
+          >
             Transforme{" "}
             <span className="font-normal">
               ideias <br />
@@ -112,10 +118,13 @@ export default function ServicesSection() {
             </span>{" "}
             soluções concretas.
           </h2>
-          <p data-aos="fade-left" className="text-lg font-normal leading-relaxed text-greyPrimary lg:w-1/2 lg:pt-3">
-            Conectamos setores, estimulamos a colaboração e promovemos
-            capacitação para criar um ecossistema público-privado mais
-            eficiente, inovador e impactante.
+          <p
+            data-aos="fade-left"
+            className="text-lg font-normal leading-relaxed text-greyPrimary lg:w-1/2 lg:pt-3"
+          >
+            Conectamos setores, estimulamos a colaboração e promovemos desafios
+            para criar um ecossistema público-privado mais eficiente, inovador e
+            impactante.
           </p>
         </div>
 
@@ -140,7 +149,14 @@ export default function ServicesSection() {
                       <div
                         aria-hidden="true"
                         className={`size-4 shrink-0 ${isActive ? "bg-white" : ""}`}
-                        style={!isActive ? { backgroundImage: "linear-gradient(125deg, #6453D1 0%, #0071E3 60%, #1ACBDC 100%)" } : undefined}
+                        style={
+                          !isActive
+                            ? {
+                                backgroundImage:
+                                  "linear-gradient(125deg, #6453D1 0%, #0071E3 60%, #1ACBDC 100%)",
+                              }
+                            : undefined
+                        }
                       />
                       <span
                         className={`text-lg font-bold leading-tight ${

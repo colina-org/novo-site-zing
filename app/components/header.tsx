@@ -5,9 +5,9 @@ import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 
 const serviceItems = [
+  { label: "CPSI", href: "/cpsi" },
   { label: "Gestão de Hubs", href: "/gestao-de-hubs" },
   { label: "Programa de inovação aberta", href: "/programa-inovacao-aberta" },
-  { label: "CPSI", href: "/cpsi" },
   {
     label: "Desafios do Intraempreendedorismo",
     href: "/desafios-intraempreendedorismo",
@@ -231,7 +231,7 @@ export default function Header() {
                   sectorOpen ? "text-transparent" : "text-greyPrimary"
                 }`}
               >
-                Pra quem oferecemos
+                Para quem oferecemos
               </span>
               <ChevronDown
                 className={`transition-colors duration-200 group-hover:text-[#0071E3] ${
@@ -357,7 +357,7 @@ export default function Header() {
               className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-base font-normal text-black transition-colors hover:bg-gray-50"
               onClick={() => setMobileSectorOpen((prev) => !prev)}
             >
-              Pra quem oferecemos
+              Para quem oferecemos
               <span
                 className={`transition-transform duration-200 ${mobileSectorOpen ? "rotate-180" : ""}`}
               >

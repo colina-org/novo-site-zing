@@ -59,12 +59,15 @@ export default function WhyUse() {
       <div className="gradient-blue-primary-zing absolute top-0 left-0 h-96.25 w-full"></div>
       <div className="container mx-auto px-6">
         {/* Title */}
-        <div data-aos="fade-up" className="flex items-center justify-between gap-4 mb-10">
+        <div
+          data-aos="fade-up"
+          className="flex items-center justify-between gap-4 mb-10"
+        >
           <h2 className="text-[40px] max-sm:text-[28px] leading-[120%] font-normal text-white w-full max-w-80">
             Por que fazer com a <span className="font-bold">ZING</span>?
           </h2>
 
-          <p className="text-lg w-full max-w-171.25">
+          <p className="text-lg w-full max-w-171.25 text-white">
             A Zing oferece uma{" "}
             <strong>
               gestão completa, estruturada e orientada a resultados para hubs de
@@ -79,22 +82,22 @@ export default function WhyUse() {
 
         {/* Cards Swiper */}
         <div data-aos="fade-up" data-aos-delay="100">
-        <Swiper
-          modules={[Pagination]}
-          slidesPerView={1}
-          spaceBetween={16}
-          pagination={{ clickable: true, el: ".why-pagination" }}
-          breakpoints={{
-            640: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-        >
-          {cards.map((card, i) => (
-            <SwiperSlide key={i} className="h-auto!">
-              <WhyCard {...card} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+          <Swiper
+            modules={[Pagination]}
+            slidesPerView={1}
+            spaceBetween={16}
+            pagination={{ clickable: true, el: ".why-pagination" }}
+            breakpoints={{
+              640: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+          >
+            {cards.map((card, i) => (
+              <SwiperSlide key={i} className="h-auto!">
+                <WhyCard {...card} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
 
         {/* Pagination dots — hidden on desktop (all 3 cards visible) */}

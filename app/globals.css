@@ -33,7 +33,10 @@ body {
   color: var(--foreground);
   font-family: "Sundry", sans-serif;
 }
-
+html,
+body {
+  @apply scroll-smooth;
+}
 .container {
   @apply w-full max-w-7xl px-4 mx-auto relative z-3;
 }

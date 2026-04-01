@@ -15,7 +15,7 @@ const solutions = [
   {
     label: "Setor privado",
     description:
-      "A Zing apoia empresas do setor privado na criação e execução de programas de inovação aberta, conectando startups a desafios reais do negócio por meio de processos estruturados de captação, seleção e avaliação. Também desenvolvemos desafios de intraempreendedorismo para engajar colaboradores na criação de soluções inovadoras e orientadas a resultados.",
+      "A Zing apoia empresas na criação e execução de programas de inovação aberta, conectando startups a desafios reais do negócio. Também desenvolve desafios de intraempreendedorismo para engajar colaboradores na criação de soluções inovadoras.",
     image: "/img-card-setor-privado.png",
     href: "#",
   },
@@ -75,7 +75,10 @@ export default function SolutionsSection() {
                 <div
                   aria-hidden="true"
                   className="size-4 shrink-0"
-                  style={{ backgroundImage: "linear-gradient(125deg, #6453D1 0%, #0071E3 60%, #1ACBDC 100%)" }}
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(125deg, #6453D1 0%, #0071E3 60%, #1ACBDC 100%)",
+                  }}
                 />
                 <span className="text-xs font-bold uppercase tracking-widest text-greyPrimary">
                   Para quem oferecemos
@@ -83,7 +86,11 @@ export default function SolutionsSection() {
               </div>
 
               {/* Title */}
-              <h2 data-aos="fade-up" data-aos-delay="100" className="text-5xl max-sm:text-4xl text-greyPrimary">
+              <h2
+                data-aos="fade-up"
+                data-aos-delay="100"
+                className="text-5xl max-sm:text-4xl text-greyPrimary"
+              >
                 Conheça nossas <br className="max-md:hidden" />
                 <span className="font-bold">soluções</span>
               </h2>
@@ -105,7 +112,9 @@ export default function SolutionsSection() {
                   onMouseEnter={() => setActive(i)}
                   className={`relative flex flex-col overflow-hidden rounded-xl h-100 max-sm:h-90 transition-all duration-500 ease-in-out ${
                     active === null
-                      ? i === 0 ? "sm:w-100" : "sm:w-75"
+                      ? i === 0
+                        ? "sm:w-100"
+                        : "sm:w-75"
                       : isActive
                         ? "sm:w-100"
                         : "sm:w-75"
@@ -123,7 +132,10 @@ export default function SolutionsSection() {
                   {/* Gradient — hidden by default, visible on hover */}
                   <div
                     className={`absolute inset-0 transition-opacity duration-500 ${isActive ? "opacity-100" : "opacity-0"}`}
-                    style={{ backgroundImage: "linear-gradient(125deg, #6453D1 0%, #0071E3 60%, #1ACBDC 100%)" }}
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(125deg, #6453D1 0%, #0071E3 60%, #1ACBDC 100%)",
+                    }}
                   />
 
                   {/* Content — full height flex, top vs bottom on hover */}

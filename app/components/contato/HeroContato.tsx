@@ -97,6 +97,7 @@ export default function HeroContato() {
                 <option value="intraempreendedorismo">
                   Intraempreendedorismo
                 </option>
+                <option value="hubs-de-inovacao">Hubs de Inovação</option>
                 <option value="outro">Outro</option>
               </select>
               <svg
