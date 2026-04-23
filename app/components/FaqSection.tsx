@@ -9,30 +9,35 @@ type FaqItem = {
 
 const faqs: FaqItem[] = [
   {
-    question: "A ZING ajuda minha equipe a colaborar melhor?",
+    question: "Para quem é a Zing?",
     answer:
-      "Sim! A ZING oferece ferramentas e metodologias que facilitam a colaboração entre times, conectando diferentes atores do ecossistema de inovação para alcançar melhores resultados.",
+      "A Zing é voltada para empresas, governos e instituições que desejam estruturar e executar iniciativas de inovação com mais organização, eficiência e resultados.",
   },
   {
-    question:
-      "A ZING é uma plataforma que pode agregar valor aos meus projetos?",
+    question: "A Zing substitui planilhas e processos manuais?",
     answer:
-      "Com certeza. A ZING conecta sua organização a startups, especialistas e programas de inovação, trazendo valor tangível aos seus projetos através de soluções inovadoras e parcerias estratégicas.",
+      "Sim. A Zing digitaliza e estrutura todas as etapas da gestão da inovação, reduzindo retrabalho e aumentando o controle sobre os processos.",
   },
   {
-    question: "A ZING me ajuda a lançar novos produtos?",
+    question: "Quais tipos de iniciativas posso gerenciar na Zing?",
     answer:
-      "Sim. Através dos nossos programas de inovação aberta e chamadas de CPSI, a ZING facilita o desenvolvimento e o lançamento de novos produtos, conectando demandas reais a soluções criativas.",
+      "Você pode gerenciar programas de inovação aberta, CPSI, hubs de inovação, desafios internos, eventos e outras iniciativas em um único ambiente.",
   },
   {
-    question: "A ZING me ajuda a tirar ideias do papel?",
+    question: "A plataforma é segura e confiável?",
     answer:
-      "Absolutamente. Nossa plataforma e metodologia são desenhadas para transformar ideias em projetos concretos, com suporte em todas as etapas: da concepção à execução.",
+      "Sim. A Zing foi desenvolvida para garantir organização, controle de acesso e rastreabilidade das informações ao longo de todo o processo.",
   },
   {
-    question: "A ZING ajuda a encontrar investidores?",
+    question: "Preciso de conhecimento técnico para usar a plataforma?",
     answer:
-      "A ZING conecta startups e projetos inovadores a um amplo ecossistema de parceiros, que inclui investidores, setor público e grandes empresas interessados em apoiar soluções com impacto.",
+      "Não. A Zing possui uma interface intuitiva e é acompanhada por suporte especializado para apoiar sua implementação e uso.",
+  },
+
+  {
+    question: "Quais tipos de iniciativas posso gerenciar na Zing?",
+    answer:
+      "Você pode gerenciar programas de inovação aberta, CPSI, hubs de inovação, desafios internos, eventos e outras iniciativas em um único ambiente.",
   },
 ];
 

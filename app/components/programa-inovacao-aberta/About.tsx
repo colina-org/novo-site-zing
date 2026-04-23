@@ -2,39 +2,32 @@ import Image from "next/image";
 
 export default function AboutGestao() {
   return (
-    <section className="bg-gradientbg py-16 max-sm:py-10">
-      <div className="container">
-        <div className="flex flex-col items-center max-md:gap-10 lg:flex-row gap-4  justify-between">
-          {/* Text */}
-          <div data-aos="fade-right" className="w-full max-w-140 max-lg:max-w-full">
-            <h2 className="text-[40px] mb-4 max-sm:text-[28px] font-normal leading-tight text-greyPrimary">
-              O que é um
-              <br />
-              <span className="font-bold text-bluePrimary">
-                Programa de inovação
-              </span>
-              ?
-            </h2>
-            <p className="text-lg max-sm:text-base font-normal leading-relaxed text-greyPrimary">
-              Programas de inovação aberta{" "}
-              <strong>
-                conectam organizações a startups, pesquisadores e outros agentes
-                do ecossistema
-              </strong>{" "}
-              para resolver desafios reais de negócio.
-            </p>
-          </div>
+    <section className="relative overflow-hidden py-28 max-sm:py-10 bg-gradientbg">
+      <Image
+        src="/inovacao-aberta/oque-e-programa-inovacao-nova.png"
+        alt=""
+        height={368}
+        width={880}
+        className="object-cover object-top w-full max-w-220 absolute right-0 top-0 max-sm:hidden"
+      />
 
-          {/* Image */}
-          <div data-aos="fade-left" className="w-full overflow-hidden rounded-[10px] lg:max-w-155">
-            <Image
-              src="/cpsi/about.png"
-              alt="Sobre o CPSI"
-              width={620}
-              height={199}
-              className="h-full max-h-49.75 w-full object-cover"
-            />
-          </div>
+      <div className="container relative z-10">
+        <div data-aos="fade-right" className="flex max-w-xl flex-col gap-4">
+          <h2 className="text-[clamp(32px,4vw,40px)] font-normal leading-[1.2] text-greyPrimary">
+            O que é um <br className="max-sm:hidden" />
+            <span className="font-bold text-bluePrimary">
+              Programa de inovação
+            </span>
+            ?
+          </h2>
+          <p className="text-lg font-normal leading-relaxed text-greyPrimary">
+            Programas de inovação aberta{" "}
+            <strong>
+              conectam organizações a startups, pesquisadores e outros agentes
+              do ecossistema{" "}
+            </strong>
+            para resolver desafios reais de negócio.
+          </p>
         </div>
       </div>
     </section>

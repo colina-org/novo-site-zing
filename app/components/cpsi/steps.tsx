@@ -1,6 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useTransition } from "react";
+import Image from "next/image";
+import { enviarCpsi, type CpsiFormState } from "../../actions/cpsi";
 
 type Step = {
   kind?: "quiz" | "contact";
@@ -50,6 +52,7 @@ const steps: Step[] = [
 export default function Steps() {
   const [currentStep, setCurrentStep] = useState(0);
   const [selections, setSelections] = useState<number[]>([]);
+  const [answers, setAnswers] = useState<Record<number, number[]>>({});
   const [transitioning, setTransitioning] = useState(false);
   const [contactData, setContactData] = useState<ContactData>({
     nome: "",
@@ -58,6 +61,11 @@ export default function Steps() {
     telefone: "",
     newsletter: false,
   });
+  const [feedback, setFeedback] = useState<CpsiFormState>({
+    status: "idle",
+    message: "",
+  });
+  const [isPending, startTransition] = useTransition();
 
   const step = steps[currentStep];
   const isContact = step.kind === "contact";
@@ -72,23 +80,70 @@ export default function Steps() {
     }
   }
 
+  function handleBack() {
+    if (currentStep === 0) return;
+    setTransitioning(true);
+    setTimeout(() => {
+      const prevStep = currentStep - 1;
+      setCurrentStep(prevStep);
+      setSelections(answers[prevStep] ?? []);
+      setTransitioning(false);
+    }, 250);
+  }
+
   function handleAdvance() {
     if (selections.length === 0) return;
     if (currentStep < steps.length - 1) {
+      const savedSelections = selections;
+      const savedStep = currentStep;
       setTransitioning(true);
       setTimeout(() => {
-        setCurrentStep(currentStep + 1);
-        setSelections([]);
+        setAnswers((prev) => ({ ...prev, [savedStep]: savedSelections }));
+        const nextStep = savedStep + 1;
+        setCurrentStep(nextStep);
+        setSelections(answers[nextStep] ?? []);
         setTransitioning(false);
       }, 250);
     }
   }
 
   function handleSubmit() {
-    const { nome, email, telefone } = contactData;
-    if (!nome.trim() || !email.trim() || !telefone.trim()) return;
-    // TODO: send data to API
-    console.log("Form submitted:", contactData);
+    if (!isContactValid) return;
+
+    const quiz = steps
+      .map((s, idx) => {
+        if (s.kind === "contact" || !s.options) return null;
+        const selected = answers[idx] ?? [];
+        const answer = selected
+          .map((i) => s.options?.[i])
+          .filter(Boolean)
+          .join("; ");
+        return { question: s.question, answer: answer || "(sem resposta)" };
+      })
+      .filter((q): q is { question: string; answer: string } => q !== null);
+
+    startTransition(async () => {
+      const result = await enviarCpsi({
+        nome: contactData.nome,
+        instituicao: contactData.instituicao,
+        email: contactData.email,
+        telefone: contactData.telefone,
+        newsletter: contactData.newsletter,
+        quiz,
+      });
+      setFeedback(result);
+
+      if (result.status === "success") {
+        setContactData({
+          nome: "",
+          instituicao: "",
+          email: "",
+          telefone: "",
+          newsletter: false,
+        });
+        setAnswers({});
+      }
+    });
   }
 
   const isContactValid =
@@ -99,16 +154,22 @@ export default function Steps() {
 
   return (
     <section
-      className="steps-section relative overflow-hidden bg-gradientbg max-lg:bg-bluePrimary py-16 max-lg:py-10"
+      className="steps-section relative overflow-hidden bg-gradientbg max-lg:bg-bluePrimary py-16 max-sm:py-10"
       id="cpsi-steps"
     >
+      <div className="absolute top-0 right-0 h-full w-[55%] max-lg:hidden">
+        <Image
+          src="/cpsi/steps-bg.png"
+          alt=""
+          fill
+          className="object-cover object-center"
+          sizes="55vw"
+        />
+      </div>
       <div className="container">
         <div className="flex flex-col gap-10 lg:flex-row lg:gap-20">
           {/* Left — text */}
-          <div
-            data-aos="fade-right"
-            className="relative z-10 flex flex-col justify-center gap-6 lg:max-w-130"
-          >
+          <div className="relative z-10 flex flex-col justify-center gap-6 lg:max-w-130">
             <h2 className="text-[clamp(28px,3.5vw,40px)] text-greyPrimary max-lg:text-white">
               <span className="font-medium">CPSI</span> é para mim?
             </h2>
@@ -120,8 +181,7 @@ export default function Steps() {
 
           {/* Right — Quiz card */}
           <div
-            data-aos="fade-left"
-            className={`relative z-10 flex-1 rounded p-4 transition-all duration-300 ease-in-out lg:max-w-150 ${
+            className={`relative z-10 flex-1 p-4 transition-all duration-300 ease-in-out lg:max-w-150 ${
               transitioning
                 ? "translate-y-2 opacity-0"
                 : "translate-y-0 opacity-100"
@@ -139,7 +199,7 @@ export default function Steps() {
 
             {isContact ? (
               /* Contact form */
-              <div className="mb-4 flex flex-col gap-4">
+              <div className="relative z-10 mb-4 flex flex-col gap-4">
                 {/* Nome */}
                 <div className="flex flex-col gap-2">
                   <label className="flex items-center text-base font-medium text-white">
@@ -155,7 +215,7 @@ export default function Steps() {
                         nome: e.target.value,
                       }))
                     }
-                    placeholder="Insira o nome da startup/projeto"
+                    placeholder="Insira o seu nome completo"
                     className="h-9.5 border-b border-[#838383] bg-white px-2 text-base text-greyPrimary outline-none placeholder:text-[#838383] focus:border-[#0071E3]"
                   />
                 </div>
@@ -175,7 +235,7 @@ export default function Steps() {
                         instituicao: e.target.value,
                       }))
                     }
-                    placeholder="Insira o nome da startup/projeto"
+                    placeholder="Insira o nome da sua instituição"
                     className="h-9.5 border-b border-[#838383] bg-white px-2 text-base text-greyPrimary outline-none placeholder:text-[#838383] focus:border-[#0071E3]"
                   />
                 </div>
@@ -195,7 +255,7 @@ export default function Steps() {
                         email: e.target.value,
                       }))
                     }
-                    placeholder="Insira o nome da startup/projeto"
+                    placeholder="Insira seu e-mail"
                     className="h-9.5 border-b border-[#838383] bg-white px-2 text-base text-greyPrimary outline-none placeholder:text-[#838383] focus:border-[#0071E3]"
                   />
                 </div>
@@ -215,7 +275,7 @@ export default function Steps() {
                         telefone: e.target.value,
                       }))
                     }
-                    placeholder="Insira o nome da startup/projeto"
+                    placeholder="Insira seu telefone de contato"
                     className="h-9.5 border-b border-[#838383] bg-white px-2 text-base text-greyPrimary outline-none placeholder:text-[#838383] focus:border-[#0071E3]"
                   />
                 </div>
@@ -265,14 +325,14 @@ export default function Steps() {
               </div>
             ) : (
               /* Quiz options */
-              <div className="mb-4 flex flex-col gap-4">
+              <div className="relative z-10 mb-4 flex flex-col gap-4">
                 {step.options?.map((opt, i) => {
                   const isSelected = selections.includes(i);
                   return (
                     <button
                       key={i}
                       onClick={() => handleSelect(i)}
-                      className={`flex w-full cursor-pointer items-start gap-4 rounded border border-white bg-white/50 p-4 text-left transition-opacity ${
+                      className={`flex w-full cursor-pointer items-start gap-4 rounded-[10px] border border-white bg-white/50 p-4 text-left transition-opacity ${
                         isSelected
                           ? "ring-2 ring-white/60"
                           : "opacity-90 hover:opacity-100"
@@ -314,30 +374,58 @@ export default function Steps() {
                           )}
                         </span>
                       )}
-                      <span className="text-lg text-greyPrimary">{opt}</span>
+                      <span className="text-base text-greyPrimary">{opt}</span>
                     </button>
                   );
                 })}
               </div>
             )}
 
+            {/* Feedback message (contact step) */}
+            {isContact && feedback.status !== "idle" && (
+              <p
+                role="status"
+                className={`mb-4 text-sm ${feedback.status === "success" ? "text-white" : "text-[#FFB4B4]"}`}
+              >
+                {feedback.message}
+              </p>
+            )}
+
             {/* Action button */}
             {isContact ? (
-              <button
-                onClick={handleSubmit}
-                disabled={!isContactValid}
-                className="w-full cursor-pointer rounded bg-white py-2 text-center text-lg font-bold text-[#0071E3] backdrop-blur-sm disabled:cursor-not-allowed disabled:opacity-50"
-              >
-                Enviar
-              </button>
+              <div className="relative z-10 flex items-center justify-between">
+                <button
+                  onClick={handleBack}
+                  disabled={isPending}
+                  className="w-26.5 cursor-pointer rounded-[10px] border border-white py-2 text-center text-lg font-bold text-white backdrop-blur-sm disabled:cursor-not-allowed disabled:opacity-50"
+                >
+                  Voltar
+                </button>
+                <button
+                  onClick={handleSubmit}
+                  disabled={!isContactValid || isPending}
+                  className="cursor-pointer rounded-[10px] bg-white px-4 py-2 text-center text-lg font-bold text-bluePrimary backdrop-blur-sm disabled:cursor-not-allowed disabled:opacity-50"
+                >
+                  {isPending ? "Enviando..." : "Enviar"}
+                </button>
+              </div>
             ) : (
-              <button
-                onClick={handleAdvance}
-                disabled={selections.length === 0}
-                className="w-full cursor-pointer rounded border border-white py-2 text-center text-lg font-bold text-white backdrop-blur-sm disabled:cursor-not-allowed disabled:opacity-50"
-              >
-                Avançar
-              </button>
+              <div className="relative z-10 flex items-center justify-between">
+                <button
+                  onClick={handleBack}
+                  disabled={currentStep === 0}
+                  className="w-26.5 cursor-pointer rounded-[10px] border border-white py-2 text-center text-lg font-bold text-white backdrop-blur-sm disabled:cursor-not-allowed disabled:opacity-0"
+                >
+                  Voltar
+                </button>
+                <button
+                  onClick={handleAdvance}
+                  disabled={selections.length === 0}
+                  className="w-26.5 cursor-pointer rounded-[10px] border border-white py-2 text-center text-lg font-bold text-white backdrop-blur-sm disabled:cursor-not-allowed disabled:opacity-50"
+                >
+                  Avançar
+                </button>
+              </div>
             )}
           </div>
         </div>

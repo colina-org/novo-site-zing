@@ -1,0 +1,3 @@
+.btn-primary {
+  @apply inline-block rounded-[10px] bg-bluePrimary px-4 py-2 text-lg font-bold text-white transition-opacity hover:bg-purplePrimary;
+}

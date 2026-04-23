@@ -8,16 +8,19 @@ import "swiper/css/pagination";
 
 const cards = [
   {
+    cover: "/inovacao-aberta/d2401b3c083b7b06003c93c1b1fea9e50621e949.png",
     title: "Criação de programas",
     description:
       "A organização configura o programa de inovação na plataforma, definindo a iniciativa, desafios, documentos e formulário de inscrição.",
   },
   {
+    cover: "/inovacao-aberta/e3c82ecdcd76de9f4543665ac5be3705324924e4.png",
     title: "Submissão de soluções",
     description:
       "Os solucionadores se inscrevem diretamente na ZING, enquanto a organização estabelece critérios, pesos e a banca avaliadora.",
   },
   {
+    cover: "/inovacao-aberta/5af11ceb6a11e510e8c792bbd819e363c7ee2ba5.png",
     title: "Avaliações",
     description:
       "A plataforma centraliza a avaliação, consolida notas e classifica as propostas para a tomada de decisão.",
@@ -27,16 +30,18 @@ const cards = [
 function WhyCard({
   title,
   description,
+  cover,
 }: {
   title: string;
   description: string;
+  cover: string;
 }) {
   return (
     <div className="flex h-full flex-col rounded bg-white p-2">
       {/* Image */}
       <div className="relative mb-2 h-87 max-sm:h-60 overflow-hidden rounded">
         <Image
-          src="/cpsi/why-card.png"
+          src={cover}
           alt={title}
           fill
           className="object-cover"
@@ -61,7 +66,7 @@ export default function WhyUse() {
         {/* Title */}
         <div
           data-aos="fade-up"
-          className="flex items-center justify-between gap-4 mb-10"
+          className="flex items-center justify-between gap-4 mb-10 max-lg:flex-col"
         >
           <h2 className="text-[40px] max-sm:text-[28px] leading-[120%] font-normal text-white w-full max-w-80">
             Por que fazer com a <span className="font-bold">ZING</span>?

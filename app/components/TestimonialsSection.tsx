@@ -3,107 +3,132 @@
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
 
 type Testimonial = {
   name: string;
-  quote: string;
+  role: string;
   company: string;
-  image: string;
+  quote: string;
+  image?: string;
+  rating?: number;
 };
+
+const DEFAULT_AVATAR = "/testimonials/avatar-default.png";
 
 const testimonials: Testimonial[] = [
   {
-    name: "Hannah Schmitt",
-    quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh mauris, nec turpis orci lectus maecenas. Suspendisse sed magna eget nibh in turpis. Consequat duis diam lacus arcu. Faucibus venenatis felis id augue sit cursus pellentesque enim.",
-    company: "Nome da empresa - Papel no ecossistema",
-    image: "/testimonials/testimonial-01.png",
+    name: "Felipe Santana",
+    role: "Gerente de Transformação",
+    company: "Banco do Nordeste",
+    quote: "5 + chamadas operada 350+ startups ",
+    image: "/testimonials/avatar-default.png",
+    rating: 5,
   },
   {
-    name: "Hannah Schmitt",
+    name: "Luísa Dias",
+    role: "Coordenadora geral da UBQ",
+    company: "Minas Gerais",
     quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh mauris, nec turpis orci lectus maecenas. Suspendisse sed magna eget nibh in turpis. Consequat duis diam lacus arcu. Faucibus venenatis felis id augue sit cursus pellentesque enim.",
-    company: "Nome da empresa - Papel no ecossistema",
-    image: "/testimonials/testimonial-02.png",
+      "A ZING IEBT tem sido uma parceira estratégica fundamental para a excelência do processo de avaliação do nosso evento O Grande Encontro – Equipes de Alta Performance. A plataforma proporcionou nos últimos três anos uma melhor organização, segurança e rastreabilidade de todas as etapas, garantindo transparência, agilidade e confiabilidade na análise dos projetos inscritos. A experiência dos avaliadores tornou-se muito mais fluida e o resultado mais profissional e seguro, reforçando o compromisso da UBQ com qualidade, inovação e melhoria contínua.",
+    image: "/testimonials/avatar-luisa-dias.png",
+    rating: 5,
   },
   {
-    name: "Hannah Schmitt",
+    name: "Felipe Santana",
+    role: "Gerente de Transformação",
+    company: "Banco do Nordeste",
     quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh mauris, nec turpis orci lectus maecenas. Suspendisse sed magna eget nibh in turpis. Consequat duis diam lacus arcu. Faucibus venenatis felis id augue sit cursus pellentesque enim.",
-    company: "Nome da empresa - Papel no ecossistema",
-    image: "/testimonials/testimonial-03.png",
-  },
-
-  {
-    name: "Hannah Schmitt",
-    quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh mauris, nec turpis orci lectus maecenas. Suspendisse sed magna eget nibh in turpis. Consequat duis diam lacus arcu. Faucibus venenatis felis id augue sit cursus pellentesque enim.",
-    company: "Nome da empresa - Papel no ecossistema",
-    image: "/testimonials/testimonial-03.png",
-  },
-
-  {
-    name: "Hannah Schmitt",
-    quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh mauris, nec turpis orci lectus maecenas. Suspendisse sed magna eget nibh in turpis. Consequat duis diam lacus arcu. Faucibus venenatis felis id augue sit cursus pellentesque enim.",
-    company: "Nome da empresa - Papel no ecossistema",
-    image: "/testimonials/testimonial-03.png",
+      "Graças à ZING, estruturamos e escalamos nossas iniciativas de inovação de forma eficiente.",
+    image: "/testimonials/avatar-default.png",
+    rating: 5,
   },
 ];
 
+function Stars({ count = 5 }: { count?: number }) {
+  return (
+    <div className="flex items-start justify-center gap-1 text-xl text-[#2974d9]">
+      {Array.from({ length: count }).map((_, i) => (
+        <span key={i} aria-hidden="true">
+          ★
+        </span>
+      ))}
+      <span className="sr-only">{count} de 5 estrelas</span>
+    </div>
+  );
+}
+
+function TestimonialCard({ t }: { t: Testimonial }) {
+  return (
+    <article className="flex w-full flex-col items-center rounded-[10px] bg-white p-6 shadow-[0_16px_24px_0_rgba(0,0,0,0.08)]">
+      <div className="flex items-center gap-3">
+        <div className="relative size-16 shrink-0 overflow-hidden">
+          <Image
+            src={t.image ?? DEFAULT_AVATAR}
+            alt={t.name}
+            fill
+            className="object-contain"
+            sizes="64px"
+          />
+        </div>
+        <div className="flex flex-col gap-0.5">
+          <p className="text-[15px] leading-none font-medium text-[#222e3f]">
+            {t.name}
+          </p>
+          <p className="text-[11px] leading-none text-[#667082]">{t.role}</p>
+          <p className="text-xs leading-none font-bold text-[#222e3f]">
+            {t.company}
+          </p>
+        </div>
+      </div>
+
+      <div className="my-4 h-px w-full bg-[#e0e7f2]" />
+
+      <p className="text-sm leading-relaxed text-greyPrimary">
+        &ldquo;{t.quote}&rdquo;
+      </p>
+
+      <div className="mt-4">
+        <Stars count={t.rating ?? 5} />
+      </div>
+    </article>
+  );
+}
+
 export default function TestimonialsSection() {
   return (
-    <section className="bg-[#F2F8FD] py-20 max-md:py-10">
-      <div className="container max-w-full!">
-        {/* Header */}
-        <h2 className="mb-15 max-sm:mb-10 text-center text-[clamp(28px,3vw,40px)] font-normal text-greyPrimary">
-          O que nossos <span className="font-medium">clientes</span> dizem
+    <section className="bg-[#F2F8FD] py-20 max-md:py-12">
+      <div className="container flex flex-col gap-15">
+        <h2
+          data-aos="fade-up"
+          className="text-greyPrimary text-center text-[clamp(28px,3vw,40px)] leading-[1.2] font-normal"
+        >
+          Quem já <span className="font-medium">inovou</span> com a gente
         </h2>
 
-        {/* Cards Swiper */}
-        <Swiper
-          modules={[Pagination]}
-          slidesPerView={1}
-          spaceBetween={24}
-          pagination={{ clickable: true, el: ".testimonials-pagination" }}
-          className="testimonials-swiper"
-          breakpoints={{
-            1023: { slidesPerView: 2 },
-          }}
-        >
-          {testimonials.map((t, i) => (
-            <SwiperSlide key={i}>
-              <div className="rounded bg-[#0071E3] p-6">
-                <div className="flex w-full items-end gap-4 max-md:flex-col max-md:items-center">
-                  {/* Profile photo */}
-                  <div className="relative h-55.75 max-sm:h-40 w-full max-w-45 shrink-0 overflow-hidden rounded">
-                    <Image
-                      src={t.image}
-                      alt={t.name}
-                      fill
-                      className="object-cover"
-                      sizes="96px"
-                    />
-                  </div>
+        <div data-aos="fade-up" data-aos-delay="100">
+          <Swiper
+            modules={[Pagination]}
+            slidesPerView={1}
+            spaceBetween={16}
+            autoHeight
+            pagination={{ clickable: true, el: ".testimonials-pagination" }}
+            className="testimonials-swiper overflow-visible! [&_.swiper-wrapper]:items-center"
+            breakpoints={{
+              768: { slidesPerView: 3, spaceBetween: 16, autoHeight: false },
+            }}
+          >
+            {testimonials.map((t, i) => (
+              <SwiperSlide
+                key={i}
+                className="flex! items-center justify-center"
+              >
+                <TestimonialCard t={t} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
 
-                  {/* Text */}
-                  <div className="flex flex-col gap-3 max-md:text-center">
-                    <p className="text-2xl font-bold text-white">{t.name}</p>
-                    <p className="text-lg  text-white/90">{t.quote}</p>
-                    <p className="text-xs font-bold text-white/70">
-                      {t.company}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-
-        {/* Pagination dots */}
-        <div className="testimonials-pagination mt-10 flex justify-center gap-2" />
+        <div className="testimonials-pagination flex justify-center gap-2" />
       </div>
     </section>
   );

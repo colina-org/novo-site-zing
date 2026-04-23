@@ -7,20 +7,22 @@ import "swiper/css";
 
 const logos = [
   { src: "/clients/client-02.png", alt: "Cemig" },
-  { src: "/clients/client-02.png", alt: "Cemig" },
-  { src: "/clients/client-02.png", alt: "Cemig" },
-  { src: "/clients/client-02.png", alt: "Cemig" },
-  { src: "/clients/client-02.png", alt: "Cemig" },
-  { src: "/clients/client-02.png", alt: "Cemig" },
+  { src: "/clients/client-08.png", alt: "SECTI Alagoas" },
+  { src: "/clients/client-15.png", alt: "bh.tec" },
+  { src: "/clients/client-03.png", alt: "Banco do Nordeste" },
+  { src: "/clients/client-06.png", alt: "Governo do Estado do Espírito Santo" },
 ];
 
 export default function Clients() {
   return (
-    <section className="bg-white pb-10 clients">
+    <section className="bg-white py-10 clients">
       <div className="container mx-auto px-6">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:gap-10">
           {/* Title */}
-          <p data-aos="fade-up" className="shrink-0 text-xl text-black lg:max-w-49 max-lg:text-center">
+          <p
+            data-aos="fade-up"
+            className="shrink-0 text-xl text-black lg:max-w-49 max-lg:text-center"
+          >
             Clientes que inovam com a
             <span className="font-bold text-bluePrimary"> ZING</span>
           </p>
@@ -50,8 +52,8 @@ export default function Clients() {
                     <Image
                       src={logo.src}
                       alt={logo.alt}
-                      width={120}
-                      height={60}
+                      width={144}
+                      height={84}
                       className="h-full w-full object-contain grayscale transition-[filter] duration-300 hover:grayscale-0"
                     />
                   </div>

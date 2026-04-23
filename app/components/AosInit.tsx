@@ -10,8 +10,14 @@ export default function AosInit() {
       duration: 600,
       once: true,
       easing: "ease-out",
-      offset: 60,
+      offset: 0,
     });
+
+    requestAnimationFrame(() => AOS.refresh());
+
+    const onLoad = () => AOS.refresh();
+    window.addEventListener("load", onLoad);
+    return () => window.removeEventListener("load", onLoad);
   }, []);
 
   return null;

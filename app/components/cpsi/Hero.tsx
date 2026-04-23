@@ -3,58 +3,73 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="bg-white pt-20 pb-6 max-sm:py-10 lg:flex lg:items-center">
-      <div className="container">
-        <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
-          {/* Text content */}
-          <div className="flex max-w-4xl flex-col gap-13.5 max-lg:text-center">
-            <div className="flex flex-col gap-6">
-              <h1
-                data-aos="fade-up"
-                className="text-[clamp(32px,4vw,48px)] font-normal leading-tight text-greyPrimary"
-              >
-                Plataforma líder na{" "}
-                <span className="font-medium">
-                  gestão de <br className="max-sm:hidden" />
-                  editais de CPSI
-                </span>{" "}
-                no Brasil
-              </h1>
-              <p
-                data-aos="fade-up"
-                data-aos-delay="100"
-                className="text-lg font-normal leading-relaxed text-greyPrimary"
-              >
+    <section className="relative flex min-h-140 items-center overflow-hidden bg-white lg:min-h-160">
+      <Image
+        src="/image-hero-cpsi.png"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-right max-lg:hidden"
+      />
+
+      <Image
+        src="/image-hero-tablet-cpsi.png"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        aria-hidden="true"
+        className="object-cover sm:hidden max-lg:block object-bottom"
+      />
+      <Image
+        src="/image-hero-mobile-cpsi.png"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        aria-hidden="true"
+        className="object-cover lg:hidden"
+      />
+
+      <div className="container relative z-10">
+        <div className="flex max-w-154.5 flex-col items-start gap-13.5 max-lg:text-center max-lg:items-center">
+          <div className="flex flex-col gap-6">
+            <h1
+              data-aos="fade-up"
+              className="text-[clamp(32px,4vw,48px)] font-normal leading-[1.2] text-greyPrimary"
+            >
+              Plataforma líder na{" "}
+              <span className="font-medium">gestão de editais de CPSI</span> no
+              Brasil
+            </h1>
+            <div
+              data-aos="fade-up"
+              data-aos-delay="100"
+              className="flex flex-col items-start gap-1 text-lg font-normal leading-relaxed text-greyPrimary"
+            >
+              <p>
                 A Zing é a plataforma dos maiores editais de{" "}
-                <strong>Contrato Público para Solução Inovadora (CPSI) </strong>
-                do Brasil. Grandes intuições como CAIXA, CEMIG, Porto Suape e
-                Prefeitura de Belo Horizonte confiam na ZING.
+                <strong className="font-medium">
+                  Contrato Público para Solução Inovadora (CPSI)
+                </strong>{" "}
+                do Brasil.
+              </p>
+              <p>
+                Grandes intuições como CAIXA, CEMIG, Porto Suape e Prefeitura de
+                Belo Horizonte confiam na ZING.
               </p>
             </div>
-
-            <Link
-              data-aos="fade-up"
-              data-aos-delay="200"
-              href="#cpsi-steps"
-              className="gradient-blue-primary-zing w-fit max-lg:table max-lg:mx-auto rounded px-4 py-2 text-lg font-bold text-white transition-opacity hover:opacity-90"
-            >
-              Quero fazer CPSI
-            </Link>
           </div>
 
-          {/* Cubes decoration */}
-          <div
-            data-aos="fade-left"
-            className="relative hidden w-82.5 shrink-0 lg:block"
+          <Link
+            data-aos="fade-up"
+            data-aos-delay="200"
+            href="#cpsi-steps"
+            className="btn-primary"
           >
-            <Image
-              src="/frame-right-cubes-cpsi-hero.png"
-              alt=""
-              width={327}
-              height={354}
-              className="ml-auto"
-            />
-          </div>
+            Quero fazer CPSI
+          </Link>
         </div>
       </div>
     </section>

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 export default function CaseSandbox() {
   return (
@@ -12,61 +11,46 @@ export default function CaseSandbox() {
             className="relative aspect-580/353 w-full overflow-hidden rounded-[10px] lg:w-1/2 lg:shrink-0"
           >
             <Image
-              src="/cpsi/case-sandbox.png"
-              alt="Espaço TEIA CAIXA"
+              src="/desafios/0ee06c8768d0a082aa56bf9ff3632b97da230eb0.png"
+              alt="UBQ"
               fill
-              className="object-cover"
+              className="object-contain"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
 
           {/* Content */}
           <div data-aos="fade-left" className="flex flex-col gap-10">
-            <h2 className="text-[clamp(28px,3.5vw,48px)] leading-[120%] text-greyPrimary">
-              Case de sucesso — <span className="font-bold">Sandbox CAIXA</span>
+            <h2 className="text-[clamp(28px,3.5vw,48px)] leading-[1.2] text-greyPrimary">
+              Case de sucesso — <span className="font-bold">UBQ</span>
             </h2>
-            <p className="text-base leading-[140%] text-greyPrimary">
-              No Sandbox CAIXA, colaboradores transformaram desafios do
-              cotidiano em oportunidades de inovação, propondo soluções que
-              contribuem para a evolução da instituição.
+            <p className="text-base leading-[1.4] text-greyPrimary">
+              Na UBQ, a ZING garante organização, segurança e rastreabilidade na
+              avaliação do “O Grande Encontro – Equipes de Alta Performance”,
+              tornando a experiência dos avaliadores mais fluida e os resultados
+              mais profissionais.Conta com a participação de empresas como Vale,
+              Vallourec, Cemig, Anglo American e outras grandes corporações.
             </p>
-            <Link
-              href="#"
-              className="group flex w-fit items-center gap-2.5 rounded border border-white bg-[#0071E30D] px-4 py-1 text-base font-bold transition-opacity duration-300 hover:opacity-80"
+            <button
+              className="flex h-8 w-fit items-center gap-2 rounded px-4 border border-bluePrimary text-base font-bold text-bluePrimary transition-colors hover:bg-bluePrimary hover:text-white"
             >
-              <span className="bg-linear-to-r from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text text-transparent">
-                Leia case completo
-              </span>
+              Leia case completo
               <svg
-                width="21"
-                height="11"
-                viewBox="0 0 21 11"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
               >
                 <path
-                  d="M15.5 0.5L20.5 5.5M20.5 5.5L15.5 10.5M20.5 5.5H0.5"
-                  stroke="url(#arrow-gradient)"
-                  strokeWidth="1.5"
+                  d="M5 12h14M13 6l6 6-6 6"
+                  stroke="currentColor"
+                  strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
-                <defs>
-                  <linearGradient
-                    id="arrow-gradient"
-                    x1="0.5"
-                    y1="5.5"
-                    x2="20.5"
-                    y2="5.5"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stopColor="#6453D1" />
-                    <stop offset="0.6" stopColor="#0071E3" />
-                    <stop offset="1" stopColor="#1ACBDC" />
-                  </linearGradient>
-                </defs>
               </svg>
-            </Link>
+            </button>
           </div>
         </div>
       </div>

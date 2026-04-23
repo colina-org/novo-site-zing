@@ -9,8 +9,8 @@ const logos = [
   { src: "/clients/client-01.png", alt: "Caixa" },
   { src: "/clients/client-02.png", alt: "Cemig" },
   { src: "/clients/client-07.png", alt: "Prefeitura de belo horizonte" },
-  { src: "/clients/client-13.png", alt: "Cliente 13" },
-  { src: "/clients/client-14.png", alt: "Itaqui" },
+  { src: "/clients/client-13.png", alt: "Suape" },
+  { src: "/clients/client-14.png", alt: "Porto do Itaqui" },
 ];
 
 export default function Clients() {
@@ -41,7 +41,7 @@ export default function Clients() {
               breakpoints={{
                 480: { slidesPerView: 4 },
                 768: { slidesPerView: 5 },
-                1024: { slidesPerView: 6 },
+                1024: { slidesPerView: 5, autoplay: false, loop: false },
               }}
             >
               {logos.map((logo, i) => (

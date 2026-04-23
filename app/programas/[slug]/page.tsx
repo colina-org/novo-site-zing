@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { programs } from "../../components/programas/ProgramCards";
 
@@ -71,12 +70,9 @@ export default async function ProgramPage({ params }: Props) {
             {/* Vídeos */}
             <h2 className="text-lg font-medium text-greyPrimary">Vídeos</h2>
             <div className="mt-6 flex flex-col gap-2.5">
-              <Link
-                href="#"
-                className="text-lg text-greyPrimary underline-offset-2 hover:underline max-sm:text-sm wrap-break-word"
-              >
+              <span className="text-lg text-greyPrimary underline-offset-2 max-sm:text-sm wrap-break-word">
                 Live - Tira-dúvidas | 2º Desafio de Inovação Aberta InovaSerra
-              </Link>
+              </span>
             </div>
 
             {/* Divider */}
@@ -85,30 +81,18 @@ export default async function ProgramPage({ params }: Props) {
             {/* Anexos */}
             <h2 className="text-lg font-medium text-greyPrimary">Anexos</h2>
             <div className="mt-6 flex flex-col gap-2.5">
-              <Link
-                href="#"
-                className="text-lg text-greyPrimary underline-offset-2 hover:underline max-sm:text-sm wrap-break-word"
-              >
+              <span className="text-lg text-greyPrimary underline-offset-2 max-sm:text-sm wrap-break-word">
                 Anexo_I_-_Declaração_de_Aceite_Integral.docx
-              </Link>
-              <Link
-                href="#"
-                className="text-lg text-greyPrimary underline-offset-2 hover:underline max-sm:text-sm wrap-break-word"
-              >
+              </span>
+              <span className="text-lg text-greyPrimary underline-offset-2 max-sm:text-sm wrap-break-word">
                 EDITAL_DE_SELEÇÃO_-_2º_Desafio_de_Inovação_Aberta_InovaSerra_Assinado.pdf
-              </Link>
-              <Link
-                href="#"
-                className="text-lg text-greyPrimary underline-offset-2 hover:underline max-sm:text-sm wrap-break-word"
-              >
+              </span>
+              <span className="text-lg text-greyPrimary underline-offset-2 max-sm:text-sm wrap-break-word">
                 ALTERAÇÃO_1_-_EDITAL_DE_SELEÇÃO_-2º_Desafio_de_Inovação_Aberta_InovaSerra_Assinado.pdf
-              </Link>
-              <Link
-                href="#"
-                className="text-lg text-greyPrimary underline-offset-2 hover:underline max-sm:text-sm wrap-break-word"
-              >
+              </span>
+              <span className="text-lg text-greyPrimary underline-offset-2 max-sm:text-sm wrap-break-word">
                 Anexo_II_-_Detalhamento_das_Empresas_e_Desafios.pdf
-              </Link>
+              </span>
             </div>
           </div>
 
@@ -116,12 +100,11 @@ export default async function ProgramPage({ params }: Props) {
           <aside className="w-full shrink-0 lg:w-75">
             <div className="sticky top-8 flex flex-col gap-6 rounded-[10px] border border-[#C4C5C6] p-4">
               {/* CTA */}
-              <Link
-                href="#"
+              <button
                 className="flex items-center justify-center rounded bg-linear-to-r from-[#6453D1] via-[#0071E3] to-[#1ACBDC] px-4 py-2 text-lg font-bold text-white transition-opacity duration-300 hover:opacity-80"
               >
                 Inscreva-se
-              </Link>
+              </button>
 
               {/* Inscrições */}
               <div className="flex gap-2.5">

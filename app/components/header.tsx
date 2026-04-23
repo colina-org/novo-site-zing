@@ -5,24 +5,28 @@ import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 
 const serviceItems = [
-  { label: "CPSI", href: "/cpsi" },
-  { label: "Gestão de Hubs", href: "/gestao-de-hubs" },
-  { label: "Programa de inovação aberta", href: "/programa-inovacao-aberta" },
+  { label: "Chamadas CPSI", href: "/cpsi" },
+  { label: "Programa de inovação", href: "/programa-inovacao-aberta" },
   {
-    label: "Desafios do Intraempreendedorismo",
+    label: "Desafios de Intraempreendedorismo",
     href: "/desafios-intraempreendedorismo",
   },
+  { label: "Gestão de Hubs", href: "/gestao-de-hubs" },
 ];
 
 const sectorItems = [
-  { label: "Setor público", href: "#" },
-  { label: "Setor Privado", href: "#" },
+  { label: "Setor público" },
+  { label: "Setor Privado" },
+  { label: "Startups" },
+];
+
+const contentItems = [
+  { label: "Cases" },
+  { label: "Podcasts" },
 ];
 
 const navItems = [
-  { label: "Programas", href: "/programas", hasDropdown: false },
-  { label: "Eventos", href: "#", hasDropdown: false },
-  { label: "Conteúdo", href: "#", hasDropdown: true },
+  { label: "Programas", href: "/programas" },
 ];
 
 function ChevronDown({ className }: { className?: string }) {
@@ -116,10 +120,13 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [sectorOpen, setSectorOpen] = useState(false);
+  const [contentOpen, setContentOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileSectorOpen, setMobileSectorOpen] = useState(false);
+  const [mobileContentOpen, setMobileContentOpen] = useState(false);
   const servicesRef = useRef<HTMLDivElement>(null);
   const sectorRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   // Close desktop dropdown when clicking outside
   useEffect(() => {
@@ -145,8 +152,21 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", menuSectorSecvices);
   }, []);
 
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (
+        contentRef.current &&
+        !contentRef.current.contains(e.target as Node)
+      ) {
+        setContentOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 w-full bg-white shadow-sm">
+    <header className="sticky top-0 z-50 w-full bg-white">
       <div className="container mx-auto flex h-20 items-center justify-between px-6">
         {/* Logo */}
         <Link
@@ -248,16 +268,15 @@ export default function Header() {
               }`}
             >
               {sectorItems.map((item) => (
-                <Link
+                <button
                   key={item.label}
-                  href={item.href}
-                  className="rounded bg-[#0071E30D] px-3 py-2 text-base"
+                  className="rounded bg-[#0071E30D] px-3 py-2 text-base text-left"
                   onClick={() => setSectorOpen(false)}
                 >
                   <span className="bg-linear-to-tr from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text text-transparent">
                     {item.label}
                   </span>
-                </Link>
+                </button>
               ))}
             </div>
           </div>
@@ -271,26 +290,67 @@ export default function Header() {
               <span className="bg-linear-to-tr from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text text-greyPrimary transition-colors duration-200 group-hover:text-transparent">
                 {item.label}
               </span>
-              {item.hasDropdown && (
-                <ChevronDown className="text-greyPrimary transition-colors duration-200 group-hover:text-[#0071E3]" />
-              )}
             </Link>
           ))}
+
+          {/* Conteúdo dropdown */}
+          <div
+            ref={contentRef}
+            className="relative"
+            onMouseEnter={() => setContentOpen(true)}
+            onMouseLeave={() => setContentOpen(false)}
+          >
+            <button
+              className={`group flex items-center gap-1 px-3 py-2 text-base font-normal transition-all duration-200 hover:rounded hover:bg-[#0071E30D] ${
+                contentOpen ? "rounded bg-[#0071E30D]" : ""
+              }`}
+              onClick={() => setContentOpen((prev) => !prev)}
+            >
+              <span
+                className={`bg-linear-to-tr from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text transition-colors duration-200 group-hover:text-transparent ${
+                  contentOpen ? "text-transparent" : "text-greyPrimary"
+                }`}
+              >
+                Conteúdo
+              </span>
+              <ChevronDown
+                className={`transition-colors duration-200 group-hover:text-[#0071E3] ${
+                  contentOpen ? "text-[#0071E3]" : "text-greyPrimary"
+                }`}
+              />
+            </button>
+
+            <div
+              className={`absolute left-0 top-full flex min-w-40 flex-col gap-2 rounded border border-gray-100 bg-white p-2 shadow-lg transition-all duration-200 ${
+                contentOpen
+                  ? "visible translate-y-0 opacity-100"
+                  : "invisible -translate-y-1 opacity-0"
+              }`}
+            >
+              {contentItems.map((item) => (
+                <button
+                  key={item.label}
+                  className="rounded bg-[#0071E30D] px-3 py-2 text-base text-left"
+                  onClick={() => setContentOpen(false)}
+                >
+                  <span className="bg-linear-to-tr from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text text-transparent">
+                    {item.label}
+                  </span>
+                </button>
+              ))}
+            </div>
+          </div>
         </nav>
 
         {/* Desktop Actions */}
         <div className="hidden items-center gap-4 nav:flex">
-          <Link
-            href="#"
+          <button
             className="flex items-center justify-center whitespace-nowrap rounded border border-black px-4 py-2 text-base font-bold text-black transition-colors hover:bg-gray-50"
           >
             Entrar
-          </Link>
+          </button>
 
-          <Link
-            href="/contato"
-            className="gradient-blue-primary-zing flex items-center justify-center whitespace-nowrap rounded px-4 py-2 text-base font-bold text-white transition-opacity hover:opacity-90"
-          >
+          <Link href="/contato" className="btn-primary">
             Solicite uma demonstração
           </Link>
         </div>
@@ -370,17 +430,16 @@ export default function Header() {
               }`}
             >
               {sectorItems.map((item) => (
-                <Link
+                <button
                   key={item.label}
-                  href={item.href}
-                  className="block rounded-lg px-6 py-2.5 text-base text-black transition-colors hover:bg-gray-50"
+                  className="block w-full rounded-lg px-6 py-2.5 text-left text-base text-black transition-colors hover:bg-gray-50"
                   onClick={() => {
                     setMenuOpen(false);
                     setMobileSectorOpen(false);
                   }}
                 >
                   {item.label}
-                </Link>
+                </button>
               ))}
             </div>
           </div>
@@ -393,19 +452,50 @@ export default function Header() {
               onClick={() => setMenuOpen(false)}
             >
               {item.label}
-              <ChevronDown />
             </Link>
           ))}
 
+          {/* Conteúdo accordion */}
+          <div>
+            <button
+              className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-base font-normal text-black transition-colors hover:bg-gray-50"
+              onClick={() => setMobileContentOpen((prev) => !prev)}
+            >
+              Conteúdo
+              <span
+                className={`transition-transform duration-200 ${mobileContentOpen ? "rotate-180" : ""}`}
+              >
+                <ChevronDown />
+              </span>
+            </button>
+            <div
+              className={`overflow-hidden transition-all duration-200 ${
+                mobileContentOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+              }`}
+            >
+              {contentItems.map((item) => (
+                <button
+                  key={item.label}
+                  className="block w-full rounded-lg px-6 py-2.5 text-left text-base text-black transition-colors hover:bg-gray-50"
+                  onClick={() => {
+                    setMenuOpen(false);
+                    setMobileContentOpen(false);
+                  }}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
           <div className="my-2 border-t border-gray-100" />
 
-          <Link
-            href="#"
+          <button
             className="flex items-center justify-center rounded border border-black py-3 text-base font-bold text-black transition-colors hover:bg-gray-50"
             onClick={() => setMenuOpen(false)}
           >
             Entrar
-          </Link>
+          </button>
 
           <Link
             href="/contato"

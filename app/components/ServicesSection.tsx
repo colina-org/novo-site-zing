@@ -5,45 +5,45 @@ import Image from "next/image";
 
 const services = [
   {
-    title: "Chamada CPSI",
+    title: "Gestão de CPSI",
     description:
       "A Zing gerencia chamadas de CPSI do início ao fim, preparando a instituição, conduzindo as inscrições das propostas e acompanhando a execução dos projetos.",
-    image: "/services/service-01.png",
+    image: "/services/service-cpsi.png",
   },
   {
     title: "Programa de inovação aberta",
     description:
       "A Zing estrutura e executa programas de inovação aberta, realizando a captação, seleção e avaliação de startups para participação em diferentes iniciativas de aceleração.",
-    image: "/services/service-01.png",
+    image: "/services/service-inovacao-aberta.png",
   },
   {
     title: "Desafios de intraempreendedorismo",
     description:
       "Criamos desafios para que colaboradores proponham soluções inovadoras para problemas reais da empresa.",
-    image: "/services/service-01.png",
+    image: "/services/service-desafios.png",
   },
   {
     title: "Gestão de Hubs",
     description:
-      "A Zing gerencia o espaço físico de hubs de inovação, conectando startups, setor público, empresas e academia para impulsionar soluções e impacto.",
-    image: "/services/service-01.png",
+      "A Zing estrutura e gerencia hubs de inovação, incluindo o espaço físico, conectando startups, setor público, empresas e academia para impulsionar a colaboração, o desenvolvimento de soluções e a geração de impacto.",
+    image: "/services/service-hubs.png",
   },
 ];
 
 function ArrowRightIcon() {
   return (
     <svg
-      width="16"
-      height="8"
-      viewBox="0 0 16 8"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
       fill="none"
       aria-hidden="true"
       className="shrink-0"
     >
       <path
-        d="M15 4H1M15 4L11 1M15 4L11 7"
+        d="M5 12h14M13 6l6 6-6 6"
         stroke="white"
-        strokeWidth="1.5"
+        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -88,10 +88,9 @@ export default function ServicesSection() {
   };
 
   return (
-    <section className="bg-white py-16 max-lg:py-10">
-      <div className="container">
-        {/* Badge */}
-        <div data-aos="fade-up" className="mb-8 flex items-center gap-2">
+    <section className="bg-white py-20 max-lg:py-12">
+      <div className="container flex flex-col gap-4">
+        <div data-aos="fade-up" className="flex items-center gap-2.5 px-2 py-1">
           <div
             aria-hidden="true"
             className="size-4 shrink-0"
@@ -100,106 +99,94 @@ export default function ServicesSection() {
                 "linear-gradient(125deg, #6453D1 0%, #0071E3 60%, #1ACBDC 100%)",
             }}
           />
-          <span className="text-xs font-bold uppercase tracking-widest text-greyPrimary">
+          <span className="text-greyPrimary text-xs font-bold tracking-[0.48em] uppercase">
             Serviços
           </span>
         </div>
 
-        {/* Header row: Title + Description */}
-        <div className="mb-10 flex flex-col gap-6 lg:flex-row lg:items-start lg:gap-16">
-          <h2
-            data-aos="fade-right"
-            className="text-[40px] max-sm:text-3xl leading-tight font-bold text-greyPrimary lg:w-1/2"
-          >
-            Transforme{" "}
-            <span className="font-normal">
-              ideias <br />
-              em
-            </span>{" "}
-            soluções concretas.
-          </h2>
-          <p
-            data-aos="fade-left"
-            className="text-lg font-normal leading-relaxed text-greyPrimary lg:w-1/2 lg:pt-3"
-          >
-            Conectamos setores, estimulamos a colaboração e promovemos desafios
-            para criar um ecossistema público-privado mais eficiente, inovador e
-            impactante.
-          </p>
-        </div>
+        <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between lg:gap-10">
+            <h2
+              data-aos="fade-right"
+              className="text-greyPrimary text-[clamp(28px,3.5vw,40px)] leading-[1.2] lg:max-w-140"
+            >
+              <span className="font-bold">Transforme</span>{" "}
+              <span className="font-normal">ideias</span>
+              <br />
+              <span className="font-normal">em</span>{" "}
+              <span className="font-bold">soluções concretas.</span>
+            </h2>
+            <p
+              data-aos="fade-left"
+              className="text-greyPrimary text-base leading-[1.4] font-normal lg:max-w-140"
+            >
+              Conectamos setores, estimulamos a colaboração e promovemos
+              capacitação para criar um ecossistema público-privado mais
+              eficiente, inovador e impactante.
+            </p>
+          </div>
 
-        {/* Content: Tabs + Image */}
-        <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-10">
-          {/* Tab list */}
-          <div data-aos="fade-up" className="flex flex-col gap-3 lg:w-1/2">
-            {services.map((service, i) => {
-              const isActive = active === i;
-              return (
-                <button
-                  key={i}
-                  onClick={() => handleTabClick(i)}
-                  className={`cursor-pointer w-full rounded-lg px-6 py-4 text-left transition-all duration-300 ${
-                    isActive
-                      ? "gradient-blue-primary-zing"
-                      : "bg-[#0071E30D] hover:bg-[#0071E31A]"
-                  }`}
-                >
-                  <div className="flex items-center justify-between gap-4">
-                    <div className="flex items-center gap-3">
+          <div className="flex flex-col gap-10 lg:flex-row lg:items-stretch">
+            <div data-aos="fade-up" className="flex flex-col gap-4 lg:flex-1">
+              {services.map((service, i) => {
+                const isActive = active === i;
+                return (
+                  <button
+                    key={i}
+                    onClick={() => handleTabClick(i)}
+                    className={`w-full cursor-pointer rounded-[10px] p-4 text-left transition-all duration-300 ${
+                      isActive
+                        ? "bg-[#6453D1]"
+                        : "bg-[#0071E30D] hover:bg-[#0071E31A]"
+                    }`}
+                  >
+                    <div className="flex items-center gap-2.5">
                       <div
                         aria-hidden="true"
-                        className={`size-4 shrink-0 ${isActive ? "bg-white" : ""}`}
-                        style={
-                          !isActive
-                            ? {
-                                backgroundImage:
-                                  "linear-gradient(125deg, #6453D1 0%, #0071E3 60%, #1ACBDC 100%)",
-                              }
-                            : undefined
-                        }
+                        className={`size-4 shrink-0 ${
+                          isActive ? "bg-white" : "bg-purpleSecondary"
+                        }`}
                       />
                       <span
-                        className={`text-lg font-bold leading-tight ${
+                        className={`flex-1 text-lg leading-[1.4] font-bold ${
                           isActive ? "text-white" : "text-greyPrimary"
                         }`}
                       >
                         {service.title}
                       </span>
+                      {isActive && <ArrowRightIcon />}
                     </div>
-                    {isActive && <ArrowRightIcon />}
-                  </div>
 
-                  {/* Description — expands when active */}
-                  <div
-                    className={`overflow-hidden transition-all duration-300 ${
-                      isActive
-                        ? "mt-3 max-h-40 opacity-100"
-                        : "max-h-0 opacity-0"
-                    }`}
-                  >
-                    <p className="text-base font-normal leading-relaxed text-white/90">
-                      {service.description}
-                    </p>
-                  </div>
-                </button>
-              );
-            })}
-          </div>
+                    <div
+                      className={`grid overflow-hidden transition-all duration-300 ${
+                        isActive
+                          ? "mt-2 grid-rows-[1fr] opacity-100"
+                          : "grid-rows-[0fr] opacity-0"
+                      }`}
+                    >
+                      <p className="ml-6.5 min-h-0 text-base leading-[1.4] font-normal text-white/95">
+                        {service.description}
+                      </p>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
 
-          {/* Image */}
-          <div data-aos="fade-left" className="lg:w-1/2">
-            <div
-              className={`relative h-72 w-full overflow-hidden rounded-xl lg:h-87.5 transition-opacity duration-250 ${
-                imgVisible ? "opacity-100" : "opacity-0"
-              }`}
-            >
-              <Image
-                src={services[active].image}
-                alt={services[active].title}
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
+            <div data-aos="fade-left" className="lg:flex-1">
+              <div
+                className={`duration-250 relative h-80 max-sm:h-60 w-full overflow-hidden rounded-[10px] transition-opacity lg:h-full lg:min-h-100 ${
+                  imgVisible ? "opacity-100" : "opacity-0"
+                }`}
+              >
+                <Image
+                  src={services[active].image}
+                  alt={services[active].title}
+                  fill
+                  className="object-cover max-sm:object-contain"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
             </div>
           </div>
         </div>

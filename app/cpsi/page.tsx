@@ -5,8 +5,9 @@ import Calls from "../components/cpsi/Calls";
 import WhyUse from "../components/cpsi/WhyUse";
 import Cases from "../components/cpsi/Cases";
 import Steps from "../components/cpsi/steps";
-import FaqSection from "../components/FaqSection";
+import FaqSection from "../components/cpsi/FaqSection";
 import CommunitySection from "../components/CommunitySection";
+import CaseSandbox from "../components/cpsi/CaseSandbox";
 
 export default function PageCPSI() {
   return (
@@ -15,8 +16,9 @@ export default function PageCPSI() {
       <Clients />
       <About />
       <Calls />
-      <WhyUse />
       <Steps />
+      <CaseSandbox />
+      <WhyUse />
       <Cases />
       <FaqSection />
       <CommunitySection />
