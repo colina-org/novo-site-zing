@@ -5,12 +5,14 @@ export default function Hero() {
   return (
     <section className="relative flex min-h-140 items-center overflow-hidden bg-white lg:min-h-160">
       <Image
-        src="/image-hero-cpsi.png"
+        src="/image-hero-cpsi2.png"
         alt=""
-        fill
         priority
-        sizes="100vw"
-        className="object-cover object-right max-lg:hidden"
+        quality={100}
+        height={1080}
+        width={1920}
+        aria-hidden="true"
+        className="object-cover object-right max-lg:hidden absolute top-0 left-0 w-full h-full"
       />
 
       <Image
@@ -19,8 +21,9 @@ export default function Hero() {
         fill
         priority
         sizes="100vw"
+        quality={100}
         aria-hidden="true"
-        className="object-cover sm:hidden max-lg:block object-bottom"
+        className="object-cover max-sm:hidden max-lg:block lg:hidden object-bottom w-full h-full"
       />
       <Image
         src="/image-hero-mobile-cpsi.png"
@@ -28,8 +31,9 @@ export default function Hero() {
         fill
         priority
         sizes="100vw"
+        quality={100}
         aria-hidden="true"
-        className="object-cover lg:hidden"
+        className="object-cover sm:hidden w-full h-full"
       />
 
       <div className="container relative z-10">

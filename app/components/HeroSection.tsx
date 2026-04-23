@@ -7,11 +7,12 @@ export default function HeroSection() {
       <Image
         src="/hero-bg.png"
         alt=""
-        fill
         priority
-        sizes="100vw"
+        quality={100}
+        height={1080}
+        width={1920}
         aria-hidden="true"
-        className="object-cover object-right max-lg:hidden"
+        className="object-cover object-right max-lg:hidden absolute top-0 left-0 w-full h-full"
       />
       <Image
         src="/image-hero-tablet-home.png"
@@ -19,8 +20,9 @@ export default function HeroSection() {
         fill
         priority
         sizes="100vw"
+        quality={100}
         aria-hidden="true"
-        className="object-cover max-sm:hidden max-lg:block object-bottom"
+        className="object-cover max-sm:hidden max-lg:block lg:hidden object-bottom w-full h-full"
       />
       <Image
         src="/image-hero-mobile-home.png"
@@ -28,16 +30,12 @@ export default function HeroSection() {
         fill
         priority
         sizes="100vw"
+        quality={100}
         aria-hidden="true"
-        className="object-cover lg:hidden"
+        className="object-cover sm:hidden lg:hidden w-full h-full"
       />
 
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-linear-to-r from-white via-white/85 to-white/0 lg:via-white/70 lg:to-white/0"
-      />
-
-      <div className="container relative z-10 flex min-h-140 flex-col justify-center py-16 lg:min-h-160 lg:py-32">
+      <div className="container relative z-10 flex min-h-140 max-sm:items-start max-sm:justify-start flex-col justify-center py-16 lg:min-h-160 lg:py-32">
         <div className="max-w-205.25">
           <h1
             data-aos="fade-up"

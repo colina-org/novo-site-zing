@@ -13,9 +13,10 @@ export default function CaseSandbox() {
             <Image
               src="/cpsi/case-teia-caixa.png"
               alt="Espaço TEIA CAIXA"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
+              quality={100}
+              width={580}
+              height={294}
+              className="object-cover w-full h-full"
             />
           </div>
 
@@ -30,9 +31,7 @@ export default function CaseSandbox() {
               cotidiano em oportunidades de inovação, propondo soluções que
               contribuem para a evolução da instituição.
             </p>
-            <button
-              className="flex h-8 w-fit items-center rounded px-4 border border-bluePrimary text-base font-bold text-bluePrimary transition-colors hover:bg-bluePrimary hover:text-white"
-            >
+            <button className="flex h-8 w-fit items-center rounded px-4 border border-bluePrimary text-base font-bold text-bluePrimary transition-colors hover:bg-bluePrimary hover:text-white">
               Baixe nosso e-book completo
             </button>
           </div>

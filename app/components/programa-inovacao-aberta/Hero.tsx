@@ -7,27 +7,32 @@ export default function HeroInovacaoAberta() {
       <Image
         src="/inovacao-aberta/59cefc48e3cf11ad91991c4ab1347fabcfe6842e.png"
         alt=""
-        fill
         priority
-        sizes="100vw"
         quality={100}
-        className="object-cover object-right max-lg:hidden"
+        height={1080}
+        width={1920}
+        aria-hidden="true"
+        className="object-cover object-right max-lg:hidden absolute top-0 left-0 w-full h-full"
       />
       <Image
         src="/inovacao-aberta/image-hero-inovacao-tablet.png"
         alt=""
         fill
+        priority
         sizes="100vw"
+        quality={100}
         aria-hidden="true"
-        className="object-cover object-bottom max-sm:hidden max-lg:block"
+        className="object-cover object-bottom max-sm:hidden max-lg:block lg:hidden w-full h-full"
       />
       <Image
         src="/inovacao-aberta/image-hero-inovacao-mobile.png"
         alt=""
         fill
+        priority
         sizes="100vw"
+        quality={100}
         aria-hidden="true"
-        className="object-cover lg:hidden"
+        className="object-cover sm:hidden lg:hidden w-full h-full"
       />
 
       <div className="container relative z-10">

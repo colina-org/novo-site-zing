@@ -8,6 +8,7 @@ export default function About() {
         alt=""
         height={368}
         width={880}
+        quality={100}
         className="object-cover object-right w-full max-w-220 absolute right-0 max-sm:hidden"
       />
 

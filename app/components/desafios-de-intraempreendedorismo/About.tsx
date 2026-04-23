@@ -4,9 +4,10 @@ export default function AboutGestao() {
   return (
     <section className="relative overflow-hidden py-28 max-sm:py-10 bg-gradientbg">
       <Image
-        src="/desafios/image-desafio-intra-about-nova.png"
+        src="/desafios/image-about-desafio-nova.png"
         alt=""
         height={368}
+        quality={100}
         width={880}
         className="object-cover object-top w-full max-w-220 absolute right-0 top-0 max-sm:hidden"
       />

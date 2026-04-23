@@ -13,9 +13,10 @@ export default function CaseSandbox() {
             <Image
               src="/hubs/case-teia-hubs.png"
               alt="Espaço TEIA CAIXA"
-              fill
+              quality={100}
               className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
+              width={580}
+              height={294}
             />
           </div>
 
@@ -30,12 +31,22 @@ export default function CaseSandbox() {
               cotidiano em oportunidades de inovação, propondo soluções que
               contribuem para a evolução da instituição.
             </p>
-            <button
-              className="flex h-8 w-fit items-center gap-2 rounded px-4 border border-bluePrimary text-base font-bold text-bluePrimary transition-colors hover:bg-bluePrimary hover:text-white"
-            >
+            <button className="flex h-8 w-fit items-center gap-2 rounded px-4 border border-bluePrimary text-base font-bold text-bluePrimary transition-colors hover:bg-bluePrimary hover:text-white">
               Leia case completo
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M5 12h14M13 6l6 6-6 6"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             </button>
           </div>

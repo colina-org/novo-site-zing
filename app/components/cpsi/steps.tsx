@@ -163,7 +163,7 @@ export default function Steps() {
           alt=""
           fill
           className="object-cover object-center"
-          sizes="55vw"
+          quality={100}
         />
       </div>
       <div className="container">

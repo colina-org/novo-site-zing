@@ -7,27 +7,32 @@ export default function HeroInovacaoAberta() {
       <Image
         src="/desafios/c9d003e5169a292534ec763e91603f190031fac3.png"
         alt=""
-        fill
         priority
-        sizes="100vw"
         quality={100}
-        className="object-cover object-right max-lg:hidden"
+        height={1080}
+        width={1920}
+        aria-hidden="true"
+        className="object-cover object-right max-lg:hidden absolute top-0 left-0 w-full h-full"
       />
       <Image
         src="/desafios/image-hero-tablet.png"
         alt=""
         fill
+        priority
         sizes="100vw"
+        quality={100}
         aria-hidden="true"
-        className="object-cover object-bottom sm:hidden max-lg:block!"
+        className="object-cover object-bottom max-sm:hidden max-lg:block lg:hidden w-full h-full"
       />
       <Image
         src="/desafios/image-hero-mobile.png"
         alt=""
         fill
+        priority
         sizes="100vw"
+        quality={100}
         aria-hidden="true"
-        className="object-cover lg:hidden"
+        className="object-cover sm:hidden lg:hidden w-full h-full"
       />
 
       <div className="container relative z-10">

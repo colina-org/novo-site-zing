@@ -56,7 +56,7 @@ function WhyCard({ card }: { card: Card }) {
         <Image
           src={card.image}
           alt={card.title}
-          fill
+          quality={100}
           className="object-cover"
           sizes="(max-width: 640px) 80vw, (max-width: 1024px) 50vw, 33vw"
         />

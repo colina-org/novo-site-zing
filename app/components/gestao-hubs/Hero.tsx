@@ -7,10 +7,12 @@ export default function HeroGestao() {
       <Image
         src="/hubs/image-hero-hubs.jpg"
         alt=""
-        fill
         priority
-        sizes="100vw"
-        className="object-cover object-right max-lg:hidden"
+        quality={100}
+        height={1080}
+        width={1920}
+        aria-hidden="true"
+        className="object-cover object-right max-lg:hidden absolute top-0 left-0 w-full h-full"
       />
 
       <Image
@@ -19,8 +21,9 @@ export default function HeroGestao() {
         fill
         priority
         sizes="100vw"
+        quality={100}
         aria-hidden="true"
-        className="object-cover max-sm:hidden max-lg:block object-bottom"
+        className="object-cover max-sm:hidden max-lg:block lg:hidden object-bottom w-full h-full"
       />
       <Image
         src="/hubs/hero-hubs-mobile.png"
@@ -28,10 +31,10 @@ export default function HeroGestao() {
         fill
         priority
         sizes="100vw"
+        quality={100}
         aria-hidden="true"
-        className="object-cover lg:hidden"
+        className="object-cover sm:hidden lg:hidden w-full h-full"
       />
-      <div className="absolute inset-0 bg-linear-to-r from-white via-white/85 to-white/0" />
 
       <div className="container relative z-10">
         <div className="flex max-w-154.5 flex-col items-start gap-13.5 max-lg:text-center max-lg:items-center">

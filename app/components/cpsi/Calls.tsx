@@ -53,9 +53,10 @@ function StepCard({ step, index }: { step: Step; index: number }) {
         <Image
           src={step.image}
           alt={step.title}
-          fill
           className="object-cover"
-          sizes="(max-width: 768px) 80vw, 20vw"
+          quality={100}
+          width={235}
+          height={150}
         />
       </div>
 

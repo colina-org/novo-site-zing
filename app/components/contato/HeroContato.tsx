@@ -75,6 +75,7 @@ export default function HeroContato() {
         alt=""
         width={329}
         height={331}
+        quality={100}
         className="pointer-events-none w-full max-w-83.25 h-82.75 object-contain absolute bottom-0 -left-6 hidden lg:block"
         aria-hidden="true"
       />
@@ -83,6 +84,7 @@ export default function HeroContato() {
         alt=""
         width={333}
         height={331}
+        quality={100}
         className="pointer-events-none absolute top-0 -right-10 hidden lg:block w-full max-w-83.25 h-82.75 object-contain"
         aria-hidden="true"
       />

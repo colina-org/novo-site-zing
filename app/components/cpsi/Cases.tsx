@@ -31,7 +31,10 @@ export default function Cases() {
       <div className="container mx-auto px-6">
         <div className="flex flex-col gap-10 lg:flex-row lg:gap-6">
           {/* Left — text */}
-          <div data-aos="fade-right" className="flex flex-col gap-6 lg:w-90 lg:shrink-0 max-sm:text-center">
+          <div
+            data-aos="fade-right"
+            className="flex flex-col gap-6 lg:w-90 lg:shrink-0 max-sm:text-center"
+          >
             <h2 className="text-[40px] font-normal leading-[120%] text-greyPrimary max-sm:text-3xl">
               Cases <span className="font-medium">de sucesso</span>
             </h2>
@@ -67,9 +70,10 @@ export default function Cases() {
                   <Image
                     src={card.src}
                     alt={card.badge}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 280px, 466px"
+                    quality={100}
+                    height={553}
+                    width={466}
+                    className="object-cover w-full h-full"
                   />
 
                   {/* Gradient overlay — top to bottom */}
