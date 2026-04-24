@@ -17,31 +17,31 @@ const steps: Step[] = [
     image: "/cpsi/1608b6ee36751d3daf6811b56a58a2cebe960969.png",
     title: "Preparação da instituição",
     description:
-      "Assessoria especializada para preparar e capacitar a instituição para o CPSI.",
+      "Diagnóstico de maturidade institucional, geração automática de documentos jurídicos e governança estruturada desde o início.",
   },
   {
     image: "/cpsi/e30bfe5f80fb1a56bec244516a17341c21edb941.png",
     title: "Chamada pública",
     description:
-      "Auxiliamos na criação, divulgação e gestão de editais de chamada pública.",
+      "Edital com segurança jurídica embutida, match com startups via IA e gestão completa das inscrições.",
   },
   {
     image: "/cpsi/57f22c8281d0390378764f974585fdb45399bd1b.png",
     title: "Seleção de proposta",
     description:
-      "Plataforma para auxiliar, selecionar e gerenciar as propostas recebidas.",
+      "Comparação de propostas com apoio de IA, redução de subjetividade e registro auditável de cada decisão.",
   },
   {
     image: "/cpsi/a372e4097f1c5ca52da82ca80a59d7d7c488c069.png",
     title: "Acompanhamento dos projetos",
     description:
-      "Ferramentas para acompanhar e impulsionar a execução dos projetos.",
+      "Gestão de sprints, checkpoints Go/No-Go e rastreabilidade total da execução.",
   },
   {
     image: "/cpsi/019b18447b324230dbc4c126192f20644a99184f.png",
-    title: "Resultados e relatórios",
+    title: "Contrato de fornecimento",
     description:
-      "Acompanhe indicadores e gere relatórios de impacto do programa.",
+      "Contrato gerado com histórico completo do processo — do edital ao fornecimento, tudo documentado e sob controle.",
   },
 ];
 
@@ -49,7 +49,7 @@ function StepCard({ step, index }: { step: Step; index: number }) {
   return (
     <div className="rounded-[10px]">
       {/* Image */}
-      <div className="relative h-37.5 w-full overflow-hidden rounded-t-[10px]">
+      <div className="relative h-37.5 w-full overflow-hidden rounded-[10px]">
         <Image
           src={step.image}
           alt={step.title}

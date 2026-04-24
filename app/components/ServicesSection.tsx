@@ -7,7 +7,7 @@ const services = [
   {
     title: "Gestão de CPSI",
     description:
-      "A Zing gerencia chamadas de CPSI do início ao fim, preparando a instituição, conduzindo as inscrições das propostas e acompanhando a execução dos projetos.",
+      "A Zing utiliza Inteligência Artificial para automatizar e otimizar cada etapa da gestão de CPSIs, desde a publicação do edital até a seleção e avaliação das startups.",
     image: "/services/service-cpsi.png",
   },
   {
@@ -108,13 +108,12 @@ export default function ServicesSection() {
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between lg:gap-10">
             <h2
               data-aos="fade-right"
-              className="text-greyPrimary text-[clamp(28px,3.5vw,40px)] leading-[1.2] lg:max-w-140"
+              className="text-greyPrimary text-[clamp(28px,3.5vw,40px)] leading-[120%]"
             >
-              <span className="font-bold">Transforme</span>{" "}
-              <span className="font-normal">ideias</span>
-              <br />
-              <span className="font-normal">em</span>{" "}
-              <span className="font-bold">soluções concretas.</span>
+              <span className="font-normal">Transforme ideias em</span>{" "}
+              <span className="font-bold">soluções concretas</span>,
+              <span className="font-normal"> com o apoio da</span>{" "}
+              <span className="font-bold">IA</span>
             </h2>
             <p
               data-aos="fade-left"
@@ -144,7 +143,7 @@ export default function ServicesSection() {
                       <div
                         aria-hidden="true"
                         className={`size-4 shrink-0 ${
-                          isActive ? "bg-white" : "bg-purpleSecondary"
+                          isActive ? "bg-white" : "bg-[#0071E3]"
                         }`}
                       />
                       <span
