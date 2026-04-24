@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { programs } from "../../components/programas/ProgramCards";
@@ -9,6 +10,27 @@ type Props = {
 export function generateStaticParams() {
   const uniqueSlugs = [...new Set(programs.map((p) => p.slug))];
   return uniqueSlugs.map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const program = programs.find((p) => p.slug === slug);
+
+  if (!program) {
+    return { title: "Programa não encontrado" };
+  }
+
+  return {
+    title: program.title,
+    description: program.description,
+    openGraph: {
+      title: `${program.title} | Zing Innovation`,
+      description: program.description,
+      url: `/programas/${program.slug}`,
+      images: [{ url: program.image }],
+    },
+    alternates: { canonical: `/programas/${program.slug}` },
+  };
 }
 
 export default async function ProgramPage({ params }: Props) {
