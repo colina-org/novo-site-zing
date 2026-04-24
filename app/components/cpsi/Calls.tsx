@@ -14,31 +14,31 @@ type Step = {
 
 const steps: Step[] = [
   {
-    image: "/cpsi/call-step-1.png",
+    image: "/cpsi/1608b6ee36751d3daf6811b56a58a2cebe960969.png",
     title: "Preparação da instituição",
     description:
       "Assessoria especializada para preparar e capacitar a instituição para o CPSI.",
   },
   {
-    image: "/cpsi/call-step-2.png",
+    image: "/cpsi/e30bfe5f80fb1a56bec244516a17341c21edb941.png",
     title: "Chamada pública",
     description:
       "Auxiliamos na criação, divulgação e gestão de editais de chamada pública.",
   },
   {
-    image: "/cpsi/call-step-3.png",
+    image: "/cpsi/57f22c8281d0390378764f974585fdb45399bd1b.png",
     title: "Seleção de proposta",
     description:
       "Plataforma para auxiliar, selecionar e gerenciar as propostas recebidas.",
   },
   {
-    image: "/cpsi/call-step-4.png",
+    image: "/cpsi/a372e4097f1c5ca52da82ca80a59d7d7c488c069.png",
     title: "Acompanhamento dos projetos",
     description:
       "Ferramentas para acompanhar e impulsionar a execução dos projetos.",
   },
   {
-    image: "/cpsi/call-step-5.png",
+    image: "/cpsi/019b18447b324230dbc4c126192f20644a99184f.png",
     title: "Resultados e relatórios",
     description:
       "Acompanhe indicadores e gere relatórios de impacto do programa.",

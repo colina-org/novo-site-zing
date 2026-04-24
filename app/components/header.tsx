@@ -185,6 +185,13 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-2 nav:flex">
+          {/* Sobre */}
+          <button className="group flex items-center gap-1 px-3 py-2 text-base font-normal transition-all duration-200 hover:rounded hover:bg-[#0071E30D]">
+            <span className="bg-linear-to-tr from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text text-greyPrimary transition-colors duration-200 group-hover:text-transparent">
+              Sobre
+            </span>
+          </button>
+
           {/* Serviços dropdown */}
           <div
             ref={servicesRef}
@@ -251,7 +258,7 @@ export default function Header() {
                   sectorOpen ? "text-transparent" : "text-greyPrimary"
                 }`}
               >
-                Para quem oferecemos
+                Pra quem oferecemos
               </span>
               <ChevronDown
                 className={`transition-colors duration-200 group-hover:text-[#0071E3] ${
@@ -292,6 +299,13 @@ export default function Header() {
               </span>
             </Link>
           ))}
+
+          {/* Eventos */}
+          <button className="group flex items-center gap-1 px-3 py-2 text-base font-normal transition-all duration-200 hover:rounded hover:bg-[#0071E30D]">
+            <span className="bg-linear-to-tr from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text text-greyPrimary transition-colors duration-200 group-hover:text-transparent">
+              Eventos
+            </span>
+          </button>
 
           {/* Conteúdo dropdown */}
           <div
@@ -375,6 +389,14 @@ export default function Header() {
         }`}
       >
         <div className="container mx-auto flex flex-col gap-1 px-6 py-4">
+          {/* Sobre */}
+          <button
+            className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-base font-normal text-black transition-colors hover:bg-gray-50"
+            onClick={() => setMenuOpen(false)}
+          >
+            Sobre
+          </button>
+
           {/* Serviços accordion */}
           <div>
             <button
@@ -417,7 +439,7 @@ export default function Header() {
               className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-base font-normal text-black transition-colors hover:bg-gray-50"
               onClick={() => setMobileSectorOpen((prev) => !prev)}
             >
-              Para quem oferecemos
+              Pra quem oferecemos
               <span
                 className={`transition-transform duration-200 ${mobileSectorOpen ? "rotate-180" : ""}`}
               >
@@ -454,6 +476,14 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
+
+          {/* Eventos */}
+          <button
+            className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-base font-normal text-black transition-colors hover:bg-gray-50"
+            onClick={() => setMenuOpen(false)}
+          >
+            Eventos
+          </button>
 
           {/* Conteúdo accordion */}
           <div>
