@@ -59,7 +59,7 @@ function WhyCard({ card }: { card: Card }) {
           quality={100}
           width={362}
           height={200}
-          className="object-cover"
+          className="object-cover w-full h-full"
           sizes="(max-width: 640px) 80vw, (max-width: 1024px) 50vw, 33vw"
         />
       </div>
@@ -77,7 +77,7 @@ function WhyCard({ card }: { card: Card }) {
 
 export default function WhyUse() {
   return (
-    <section className="whyuse relative bg-gradientbg py-16 max-sm:py-10">
+    <section className="whyuse relative bg-white py-16 max-sm:py-10">
       <div className="gradient-blue-primary-zing absolute top-0 left-0 h-96.25 w-full" />
       <div className="container">
         <h2
@@ -108,7 +108,7 @@ export default function WhyUse() {
             }}
           >
             {cards.map((card, i) => (
-              <SwiperSlide key={i} className="h-auto!">
+              <SwiperSlide key={i} className="h-auto! pb-2">
                 <WhyCard card={card} />
               </SwiperSlide>
             ))}

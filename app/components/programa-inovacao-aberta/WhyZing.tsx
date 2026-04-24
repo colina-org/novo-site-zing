@@ -37,9 +37,9 @@ function WhyCard({
   cover: string;
 }) {
   return (
-    <div className="flex h-full flex-col rounded bg-white p-2">
+    <div className="flex h-full flex-col shadow-md bg-white p-2 rounded-[10px]">
       {/* Image */}
-      <div className="relative mb-2 h-87 max-sm:h-60 overflow-hidden rounded">
+      <div className="relative mb-2 h-87 max-sm:h-60 overflow-hidden rounded-[10px]">
         <Image
           src={cover}
           alt={title}
@@ -51,7 +51,7 @@ function WhyCard({
       </div>
 
       {/* Text */}
-      <div className="flex flex-col gap-2 p-2">
+      <div className="flex flex-col gap-2 p-2 border border-[rgba(0,113,227,0.05)] rounded-[10px]">
         <p className="text-lg font-bold text-greyPrimary">{title}</p>
         <p className="text-base text-greyPrimary">{description}</p>
       </div>
@@ -94,7 +94,7 @@ export default function WhyUse() {
             }}
           >
             {cards.map((card, i) => (
-              <SwiperSlide key={i} className="h-auto!">
+              <SwiperSlide key={i} className="h-auto! pb-2">
                 <WhyCard {...card} />
               </SwiperSlide>
             ))}

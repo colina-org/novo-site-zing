@@ -41,11 +41,12 @@ function WhyCard({ card }: { card: Card }) {
           src={card.image}
           alt={card.title}
           fill
+          quality={100}
           className="object-cover"
           sizes="(max-width: 640px) 80vw, (max-width: 1024px) 50vw, 33vw"
         />
       </div>
-      <div className="mt-2 rounded-[10px] border border-[rgba(0,113,227,0.05)] p-2">
+      <div className="mt-2 flex-1 rounded-[10px] border border-[rgba(0,113,227,0.05)] p-2">
         <p className="mb-4 text-lg font-bold leading-[1.4] text-greyPrimary">
           {card.title}
         </p>

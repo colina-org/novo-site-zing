@@ -31,7 +31,7 @@ export default function CaseSandbox() {
               cotidiano em oportunidades de inovação, propondo soluções que
               contribuem para a evolução da instituição.
             </p>
-            <button className="flex h-8 w-fit items-center rounded px-4 border border-bluePrimary text-base font-bold text-bluePrimary transition-colors hover:bg-bluePrimary hover:text-white">
+            <button className="flex h-8 w-fit items-center rounded px-4 border bg-white border-bluePrimary text-base font-bold text-bluePrimary transition-colors hover:bg-bluePrimary hover:text-white">
               Baixe nosso e-book completo
             </button>
           </div>
