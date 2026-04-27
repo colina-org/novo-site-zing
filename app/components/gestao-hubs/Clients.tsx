@@ -8,6 +8,14 @@ import "swiper/css";
 const logos = [
   { src: "/hubs/hub-estacao-futuro.png", alt: "Estação Futuro" },
   { src: "/hubs/hub-teia.png", alt: "Espaço Teia Caixa" },
+  {
+    src: "/hubs/ef6f8885-2310-402d-827b-7b586e6d980c.jpg",
+    alt: "Prefeitura de Guaxupé",
+  },
+  {
+    src: "/hubs/7ace8e24-4dea-4014-8bca-418093544975.jpg",
+    alt: "CDL Belo Horizonte",
+  },
 ];
 
 export default function Clients() {

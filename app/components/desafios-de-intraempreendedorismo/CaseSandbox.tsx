@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function CaseSandbox() {
   return (
@@ -31,8 +32,11 @@ export default function CaseSandbox() {
               mais profissionais.Conta com a participação de empresas como Vale,
               Vallourec, Cemig, Anglo American e outras grandes corporações.
             </p>
-            <button className="flex h-8 w-fit items-center gap-2 rounded px-4 border bg-white border-bluePrimary text-base font-bold text-bluePrimary transition-colors hover:bg-bluePrimary hover:text-white">
-              Leia case completo
+            <Link
+              href={"/contato"}
+              className="flex h-8 w-fit items-center gap-2 rounded px-4 border bg-white border-bluePrimary text-base font-bold text-bluePrimary transition-colors hover:bg-bluePrimary hover:text-white"
+            >
+              Falar com especialista
               <svg
                 width="18"
                 height="18"
@@ -48,7 +52,7 @@ export default function CaseSandbox() {
                   strokeLinejoin="round"
                 />
               </svg>
-            </button>
+            </Link>
           </div>
         </div>
       </div>

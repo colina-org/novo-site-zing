@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const items = [
   "Quando o problema público não é bem resolvido por soluções prontas.",
@@ -34,8 +35,8 @@ export default function WhenCPSI() {
 
             <ul className="flex flex-col">
               {items.map((item, i) => (
-                <li key={i} className="flex items-start gap-[10px] px-4 py-4">
-                  <span className="mt-[3px] shrink-0 size-4 bg-bluePrimary rounded-sm" />
+                <li key={i} className="flex items-start gap-2.5 px-4 py-4">
+                  <span className="mt-0.75 shrink-0 size-4 bg-bluePrimary rounded-sm" />
                   <p className="text-base leading-[1.4] text-greyPrimary">
                     {item}
                   </p>
@@ -43,9 +44,13 @@ export default function WhenCPSI() {
               ))}
             </ul>
 
-            <button className="flex h-10 w-fit items-center gap-2 rounded px-4 bg-bluePrimary text-base font-bold text-white transition-colors hover:opacity-90">
+            <Link
+              href={"https://guiadefinitivoparainovarnogoverno.framer.ai/"}
+              target="_blank"
+              className="flex h-10 w-fit items-center gap-2 rounded px-4 bg-bluePrimary text-base font-bold text-white transition-colors hover:opacity-90"
+            >
               Baixe nosso e-book completo
-            </button>
+            </Link>
           </div>
         </div>
       </div>

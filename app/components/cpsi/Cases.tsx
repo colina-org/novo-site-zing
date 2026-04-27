@@ -7,19 +7,19 @@ import { useState } from "react";
 const cards = [
   {
     src: "/cpsi/cases-main.png",
-    badge: "Inovação",
+    badge: "CPSI",
     title:
-      "GOV RD: Conheça o programa de capacitação de gestores públicos em Mariana",
+      "CAIXA: A jornada da CAIXA na criação de chamadas de startups via contratação pública de solução inovadora (CPSI)",
   },
   {
     src: "/cpsi/cases-sm1.png",
-    badge: "Inovação",
-    title: "Segundo case de sucesso em contratação pública inovadora",
+    badge: "Inovação aberta",
+    title: "Cemig: Conectando desafios e soluções",
   },
   {
     src: "/cpsi/cases-sm2.png",
-    badge: "Inovação",
-    title: "Terceiro case de sucesso em contratação pública inovadora",
+    badge: "Inovação aberta",
+    title: "PBH Inova: Um marco nacional em inovação pública",
   },
 ];
 

@@ -8,6 +8,7 @@ import Steps from "../components/cpsi/steps";
 import FaqSection from "../components/cpsi/FaqSection";
 import CommunitySection from "../components/CommunitySection";
 // import CaseSandbox from "../components/cpsi/CaseSandbox";
+import Cases from "../components/cpsi/Cases";
 import WhenCPSI from "../components/cpsi/WhenCPSI";
 
 export const metadata: Metadata = {
@@ -33,7 +34,7 @@ export default function PageCPSI() {
       <WhenCPSI />
       {/* <CaseSandbox /> */}
       <WhyUse />
-      {/* <Cases /> */}
+      <Cases />
       <FaqSection />
       <CommunitySection />
     </main>

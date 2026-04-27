@@ -9,6 +9,13 @@ export type Program = {
   badge: string;
   image: string;
   href: string;
+  // Detail page
+  content?: string[];
+  inscricoes?: string;
+  inscricoesLink?: string;
+  avaliacoes?: { label: string; period: string }[];
+  videos?: { title: string; url?: string }[];
+  anexos?: { title: string; url?: string }[];
 };
 
 export const programs: Program[] = [
@@ -21,6 +28,22 @@ export const programs: Program[] = [
     badge: "Inscrições: 23 fev 2026 à 03 mar 2026",
     image: "/programs/6b164d99a5de176fb761c76bfe99fc58c586d69d.png",
     href: "/programas/cpsi-porto-itaqui-2-fase",
+    inscricoes: "23 fev 2026 à 03 mar 2026",
+    inscricoesLink:
+      "https://licitacoes.caixa.gov.br/sicve-web/public/visualizar.jsf?lote=201421",
+    avaliacoes: [
+      { label: "Etapa inicial", period: "17 nov 2025 à 17 dez 2025" },
+      { label: "Etapa intermediária", period: "17 nov 2025 à 17 dez 2025" },
+      { label: "Etapa final", period: "17 nov 2025 à 17 dez 2025" },
+    ],
+    content: [
+      "O desafio é direcionado a startups e empresas inovadoras que utilizem tecnologias emergentes como: inteligência artificial (IA), machine learning, Big Data e automação avançada.",
+      "O objetivo do CPSI é desenvolver e testar soluções que ajudem a CAIXA a: mitigar riscos jurídicos e operacionais, combater fraudes e litigância predatória, qualificar e acelerar a defesa judicial, automatizar e personalizar manifestações jurídicas e aumentar eficiência em alto volume de processos. Tudo isso sem substituir o advogado, mas apoiando a atuação humana com tecnologia.",
+      "A solução proposta deve ser capaz de:\n- Analisar documentos em múltiplos formatos (texto, PDF, imagem, áudio, vídeo);\n- Classificar processos judiciais automaticamente;\n- Identificar inconsistências e riscos;\n- Gerar minutas e peças jurídicas fundamentadas, prontas para revisão;\n- Apoiar decisões estratégicas com base em dados históricos e preditivos.",
+      "Perfil ideal das startups\n\nO edital é especialmente aderente a startups que atuam com:\n- Legaltech;\n- GovTech;\n- IA aplicada ao Direito;\n- Análise de dados jurídicos;\n- Automação documental;\n- NLP (Processamento de Linguagem Natural).",
+      "Soluções já existentes ou em estágio avançado têm vantagem competitiva.",
+      "O CPSI deixa claro que: a proposta precisa demonstrar aplicabilidade real, escalabilidade e segurança, especialmente considerando o volume, a criticidade e a responsabilidade institucional da CAIXA.",
+    ],
   },
   {
     slug: "cpsi-porto-suape-logistica",
@@ -31,6 +54,16 @@ export const programs: Program[] = [
     badge: "Inscrições: 18 dez 2025 à 01 jan 2026",
     image: "/programs/80c1f706d174bdad924ab385022ccb6f20d6654f.png",
     href: "/programas/cpsi-porto-suape-logistica",
+    inscricoes: "18 dez 2025 à 01 jan 2026",
+    avaliacoes: [
+      { label: "Etapa inicial", period: "17 nov 2025 à 17 dez 2025" },
+      { label: "Etapa intermediária", period: "17 nov 2025 à 17 dez 2025" },
+      { label: "Etapa final", period: "17 nov 2025 à 17 dez 2025" },
+    ],
+    content: [
+      'Inscreva sua startup no Inova Cemig.Lab – Ciclo 4!\n\nBuscamos startups com soluções inovadoras para participar de 08 desafios estratégicos da Cemig.\n\nComo participar?\n- Acesse o Anexo 2 do edital para conhecer os 08 desafios disponíveis e identificar onde sua solução pode gerar impacto.\n- Na página atual, clique no botão "Inscreva-se" ao lado do título.\n- Preencha os dados solicitados no formulário de cadastro da Zing e clique em "Cadastrar". Em seguida, faça seu login.\n- Se sua startup já for cadastrada, basta rolar até o final da página de cadastro e clicar em "Login" diretamente.\n- Na área logada da plataforma, localize o projeto "Inova Cemig.Lab" e clique em "Inscreva-se".\n- Preencha o formulário de inscrições disponível.\n- Se preferir preencher apenas uma parcela do formulário e continuar depois, clique em "salvar" e pode sair da página. O rascunho ficará disponível em "Minhas inscrições".\n- Quando você finalizar o preenchimento por completo, clique em "Publicar". A partir desse momento, não será mais possível editar os campos da inscrição.\n- Importante: lembre-se de clicar em "Publicar" sua inscrição antes do prazo final (25/01). Inscrições salvas como rascunho não serão consideradas válidas após o encerramento do período de submissão.\n- Caso deseje se inscrever em mais de um desafio, é necessário preencher um formulário separado para cada desafio.',
+      "Por que participar?\nStartups selecionadas terão acesso a:\n- Investimento de até R$1,6 milhão por projeto\n- Contrato Público para Solução Inovadora (CPSI), com recursos regulados da ANEEL para desenvolvimento em 12 meses\n- Possibilidade de se tornar fornecedora da Cemig por até 4 anos, sem novo processo licitatório após o programa\n- Entrada qualificada no mercado de energia, cocriando com uma das maiores empresas do setor: visibilidade e potencial de escala",
+    ],
   },
   {
     slug: "2-desafio-inovaserra",
@@ -41,17 +74,23 @@ export const programs: Program[] = [
     badge: "Inscrições: 18 mar 2026 à 17 ago 2026",
     image: "/programs/10798df5a590d60f10440e507d9fc39a0f77b8e7.png",
     href: "/programas/2-desafio-inovaserra",
+    inscricoes: "18 mar 2026 à 17 ago 2026",
+    avaliacoes: [
+      { label: "Etapa inicial", period: "17 nov 2025 à 17 dez 2025" },
+      { label: "Etapa intermediária", period: "17 nov 2025 à 17 dez 2025" },
+      { label: "Etapa final", period: "17 nov 2025 à 17 dez 2025" },
+    ],
   },
-  {
-    slug: "cpsi-porto-suape-sustentabilidade",
-    category: "INOVA SERRA",
-    title: "CPSI do Porto de Suape: Soluções Inovadoras para",
-    description:
-      "Porto do Itaqui lança primeiro edital de CPSI do Maranhão. Esta é uma oportunidade única de...",
-    badge: "Inscrições: 17 nov 2025 à 17 dez 2025",
-    image: "/programs/946faabc89d454ddfca9c767ab44780c4096c291.png",
-    href: "/programas/cpsi-porto-suape-sustentabilidade",
-  },
+  // {
+  //   slug: "cpsi-porto-suape-sustentabilidade",
+  //   category: "INOVA SERRA",
+  //   title: "CPSI do Porto de Suape: Soluções Inovadoras para",
+  //   description:
+  //     "Porto do Itaqui lança primeiro edital de CPSI do Maranhão. Esta é uma oportunidade única de...",
+  //   badge: "Inscrições: 17 nov 2025 à 17 dez 2025",
+  //   image: "/programs/946faabc89d454ddfca9c767ab44780c4096c291.png",
+  //   href: "/programas/cpsi-porto-suape-sustentabilidade",
+  // },
 ];
 
 function ProgramCard({ program }: { program: Program }) {

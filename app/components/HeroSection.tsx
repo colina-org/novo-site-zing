@@ -35,7 +35,7 @@ export default function HeroSection() {
         className="object-cover sm:hidden lg:hidden w-full h-full"
       />
 
-      <div className="container relative z-10 flex min-h-140 max-sm:items-start max-sm:justify-start flex-col justify-center py-16 lg:min-h-160 lg:py-32">
+      <div className="container relative z-10 flex min-h-140  flex-col justify-start py-16 lg:min-h-180 lg:pt-20 pb-32">
         <div className="w-full max-w-209.25">
           <h1
             data-aos="fade-up"
