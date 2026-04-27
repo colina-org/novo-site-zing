@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function HeroInovacaoAberta() {
   return (
-    <section className="relative flex min-h-140 max-sm:min-h-100 items-center max-sm:items-start max-sm:pt-10 overflow-hidden bg-white lg:min-h-160">
+    <section className="relative flex min-h-160  items-center max-sm:items-start max-sm:pt-10 overflow-hidden bg-white lg:min-h-160">
       <Image
         src="/inovacao-aberta/59cefc48e3cf11ad91991c4ab1347fabcfe6842e.png"
         alt=""

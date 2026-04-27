@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-140 items-center overflow-hidden bg-white lg:min-h-160">
+    <section className="relative flex min-h-160 max-sm:pt-10 items-center max-sm:items-start overflow-hidden bg-white lg:min-h-160">
       <Image
         src="/image-hero-cpsi2.png"
         alt=""
@@ -16,7 +16,7 @@ export default function Hero() {
       />
 
       <Image
-        src="/image-hero-tablet-cpsi.png"
+        src="/cpsi/image-hero-nova.png"
         alt=""
         fill
         priority
@@ -26,7 +26,7 @@ export default function Hero() {
         className="object-cover max-sm:hidden max-lg:block lg:hidden object-bottom w-full h-full"
       />
       <Image
-        src="/image-hero-mobile-cpsi.png"
+        src="/cpsi/image-hero-mobile.png"
         alt=""
         fill
         priority
@@ -37,31 +37,25 @@ export default function Hero() {
       />
 
       <div className="container relative z-10">
-        <div className="flex max-w-154.5 flex-col items-start gap-13.5 max-lg:text-center max-lg:items-center">
+        <div className="flex max-w-156 max-lg:max-w-full flex-col items-start gap-13.5 max-sm:gap-10 max-lg:text-center max-lg:items-center">
           <div className="flex flex-col gap-6">
             <h1
               data-aos="fade-up"
-              className="text-[clamp(32px,4vw,48px)] font-normal leading-[1.2] text-greyPrimary"
+              className="text-[clamp(32px,4vw,48px)] font-normal leading-[120%] text-greyPrimary"
             >
               Plataforma líder na{" "}
-              <span className="font-medium">gestão de editais de CPSI</span> no
-              Brasil
+              <span className="font-medium">gestão de CPSI</span> impulsionada
+              por IA
             </h1>
             <div
               data-aos="fade-up"
               data-aos-delay="100"
-              className="flex flex-col items-start gap-1 text-lg font-normal leading-relaxed text-greyPrimary"
+              className="flex flex-col items-start gap-1 text-lg max-sm:text-base font-normal leading-[140%] text-greyPrimary"
             >
               <p>
-                A Zing é a plataforma dos maiores editais de{" "}
-                <strong className="font-medium">
-                  Contrato Público para Solução Inovadora (CPSI)
-                </strong>{" "}
-                do Brasil.
-              </p>
-              <p>
-                Grandes intuições como CAIXA, CEMIG, Porto Suape e Prefeitura de
-                Belo Horizonte confiam na ZING.
+                Da preparação institucional à seleção das propostas e ao
+                acompanhamento dos projetos, a Zing centraliza a jornada do CPSI
+                em uma única plataforma.
               </p>
             </div>
           </div>

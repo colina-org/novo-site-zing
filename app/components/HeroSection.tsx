@@ -36,7 +36,7 @@ export default function HeroSection() {
       />
 
       <div className="container relative z-10 flex min-h-140 max-sm:items-start max-sm:justify-start flex-col justify-center py-16 lg:min-h-160 lg:py-32">
-        <div className="max-w-205.25">
+        <div className="w-full max-w-209.25">
           <h1
             data-aos="fade-up"
             className="text-greyPrimary text-[clamp(32px,5vw,58px)] font-normal leading-[1.2]"
@@ -48,11 +48,12 @@ export default function HeroSection() {
           <p
             data-aos="fade-up"
             data-aos-delay="100"
-            className="text-greyPrimary mt-10 max-w-180 text-[clamp(16px,1.5vw,18px)] font-medium leading-[1.4] max-lg:mt-8"
+            className="text-greyPrimary mt-10 text-[clamp(16px,1.5vw,18px)] font-medium leading-[1.4] max-lg:mt-8"
           >
-            Conectamos os atores do ecossistema de inovação para que startups
-            desenvolvam soluções sob medida para os desafios reais do setor
-            público e privado.
+            Conectamos, com o <strong>poder da Inteligência Artificial</strong>,
+            os atores do ecossistema de inovação para que startups desenvolvam
+            soluções sob medida para os{" "}
+            <strong>desafios reais do setor público e privado</strong>
           </p>
 
           <Link

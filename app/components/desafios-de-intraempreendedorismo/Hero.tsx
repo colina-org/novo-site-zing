@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function HeroInovacaoAberta() {
   return (
-    <section className="relative flex min-h-140 max-sm:min-h-120 items-center max-sm:items-start max-sm:pt-10 overflow-hidden bg-white lg:min-h-160">
+    <section className="relative flex min-h-160  items-center max-sm:items-start max-sm:pt-10 overflow-hidden bg-white lg:min-h-160">
       <Image
         src="/desafios/c9d003e5169a292534ec763e91603f190031fac3.png"
         alt=""
@@ -36,7 +36,7 @@ export default function HeroInovacaoAberta() {
       />
 
       <div className="container relative z-10">
-        <div className="flex max-w-150 flex-col items-start gap-13.5 max-lg:text-center max-lg:items-center">
+        <div className="flex max-w-150 flex-col items-start gap-13.5 max-sm:gap-10 max-lg:text-center max-lg:items-center">
           <div className="flex flex-col gap-6">
             <h1
               data-aos="fade-up"

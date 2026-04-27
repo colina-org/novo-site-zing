@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function HeroGestao() {
   return (
-    <section className="relative flex min-h-140 items-center overflow-hidden bg-white lg:min-h-160">
+    <section className="relative flex min-h-160 items-center max-sm:items-start max-sm:pt-10 overflow-hidden bg-white lg:min-h-160">
       <Image
         src="/hubs/image-hero-hubs.jpg"
         alt=""
@@ -37,7 +37,7 @@ export default function HeroGestao() {
       />
 
       <div className="container relative z-10">
-        <div className="flex max-w-154.5 flex-col items-start gap-13.5 max-lg:text-center max-lg:items-center">
+        <div className="flex max-w-154.5 flex-col items-start gap-13.5 max-sm:gap-10 max-lg:text-center max-lg:items-center">
           <div className="flex flex-col gap-6">
             <h1
               data-aos="fade-up"
@@ -52,7 +52,9 @@ export default function HeroGestao() {
               className="text-base font-normal leading-[1.4] text-greyPrimary"
             >
               Da operação do espaço físico à articulação do ecossistema, a Zing
-              oferece gestão integrada para hubs orientados a resultados.
+              oferece gestão integrada 
+              <strong>e potencializada por Inteligência Artificial</strong> para
+              hubs orientados a resultados.
             </p>
           </div>
 

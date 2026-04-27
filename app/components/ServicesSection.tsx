@@ -13,19 +13,19 @@ const services = [
   {
     title: "Programa de inovação aberta",
     description:
-      "A Zing estrutura e executa programas de inovação aberta, realizando a captação, seleção e avaliação de startups para participação em diferentes iniciativas de aceleração.",
+      "A Zing estrutura e executa programas de inovação aberta, utilizando Inteligência Artificial para realizar a captação, seleção e avaliação das startups mais aderentes para participação em diferentes iniciativas de aceleração.",
     image: "/services/service-inovacao-aberta.png",
   },
   {
     title: "Desafios de intraempreendedorismo",
     description:
-      "Criamos desafios para que colaboradores proponham soluções inovadoras para problemas reais da empresa.",
+      "Utilizamos IA para criar e gerenciar desafios que incentivam colaboradores a propor soluções inovadoras para problemas reais da empresa.",
     image: "/services/service-desafios.png",
   },
   {
     title: "Gestão de Hubs",
     description:
-      "A Zing estrutura e gerencia hubs de inovação, incluindo o espaço físico, conectando startups, setor público, empresas e academia para impulsionar a colaboração, o desenvolvimento de soluções e a geração de impacto.",
+      "A Zing estrutura e gerencia hubs de inovação com o suporte da Inteligência Artificial, incluindo o espaço físico, conectando startups, setor público, empresas e academia para impulsionar a colaboração, o desenvolvimento de soluções e a geração de impacto.",
     image: "/services/service-hubs.png",
   },
 ];
@@ -135,7 +135,7 @@ export default function ServicesSection() {
                     onClick={() => handleTabClick(i)}
                     className={`w-full cursor-pointer rounded-[10px] p-4 text-left transition-all duration-300 ${
                       isActive
-                        ? "bg-[#6453D1]"
+                        ? "bg-[#0071E3]"
                         : "bg-[#0071E30D] hover:bg-[#0071E31A]"
                     }`}
                   >

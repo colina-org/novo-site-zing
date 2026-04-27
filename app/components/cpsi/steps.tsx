@@ -159,10 +159,10 @@ export default function Steps() {
     >
       <div className="absolute top-0 right-0 h-full w-[55%] max-lg:hidden">
         <Image
-          src="/cpsi/steps-bg.png"
+          src="/cpsi/bg-container-steps-teste.svg"
           alt=""
           fill
-          className="object-cover object-center"
+          className="object-cover object-left w-full h-full"
           quality={100}
         />
       </div>

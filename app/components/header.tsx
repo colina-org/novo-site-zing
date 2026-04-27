@@ -353,9 +353,13 @@ export default function Header() {
 
         {/* Desktop Actions */}
         <div className="hidden items-center gap-4 nav:flex">
-          <button className="flex items-center justify-center whitespace-nowrap rounded-[10px] border border-black px-4 py-2 text-base font-bold text-black transition-colors hover:bg-gray-50">
+          <Link
+            href={"https://www.zinginnovation.com/login"}
+            target="_blank"
+            className="flex items-center justify-center whitespace-nowrap rounded-[10px] border border-black px-4 py-2 text-base font-bold text-black transition-colors hover:bg-gray-50"
+          >
             Entrar
-          </button>
+          </Link>
 
           <Link href="/contato" className="btn-primary">
             Solicite uma demonstração
@@ -513,12 +517,14 @@ export default function Header() {
 
           <div className="my-2 border-t border-gray-100" />
 
-          <button
+          <Link
+            href={"https://www.zinginnovation.com/login"}
+            target="_blank"
             className="flex items-center justify-center rounded border border-black py-3 text-base font-bold text-black transition-colors hover:bg-gray-50"
             onClick={() => setMenuOpen(false)}
           >
             Entrar
-          </button>
+          </Link>
 
           <Link
             href="/contato"
