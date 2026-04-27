@@ -19,6 +19,7 @@
   --color-bluePrimary: #0071e3;
   --color-gradientbg: #f2f8fd;
   --animate-fade-in-up: fadeInUp 0.6s ease-out both;
+  --breakpoint-desktop: 1268px;
   --breakpoint-nav: 1137px;
 }
 
@@ -141,7 +142,6 @@ body {
     }
   }
 }
-
 
 .s-hero-blog {
   form {

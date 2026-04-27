@@ -181,7 +181,7 @@ export default function Header() {
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-2 nav:flex">
           {/* Sobre */}
-          <button className="group flex items-center gap-1 px-3 py-2 text-base font-normal transition-all duration-200 hover:rounded-[10px] hover:bg-[#0071E30D]">
+          <button className="group flex items-center gap-1 p-2 text-base font-normal transition-all duration-200 hover:rounded-[10px] hover:bg-[#0071E30D]">
             <span className="bg-linear-to-tr from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text text-greyPrimary transition-colors duration-200 group-hover:text-transparent">
               Sobre
             </span>
@@ -195,7 +195,7 @@ export default function Header() {
             onMouseLeave={() => setServicesOpen(false)}
           >
             <button
-              className={`group flex items-center gap-1 px-3 py-2 text-base font-normal transition-all duration-200 hover:rounded hover:bg-[#0071E30D] ${
+              className={`group flex items-center gap-1 p-2 text-base font-normal transition-all duration-200 hover:rounded hover:bg-[#0071E30D] ${
                 servicesOpen ? "rounded-[10px] bg-[#0071E30D]" : ""
               }`}
               onClick={() => setServicesOpen((prev) => !prev)}
@@ -225,7 +225,7 @@ export default function Header() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="rounded-[10px] bg-[#0071E30D] px-3 py-2 text-base"
+                  className="rounded-[10px] bg-[#0071E30D] p-2 text-base"
                   onClick={() => setServicesOpen(false)}
                 >
                   <span className="bg-linear-to-tr from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text text-transparent">
@@ -243,7 +243,7 @@ export default function Header() {
             onMouseLeave={() => setSectorOpen(false)}
           >
             <button
-              className={`group flex items-center gap-1 px-3 py-2 text-base font-normal transition-all duration-200 hover:rounded-[10px] hover:bg-[#0071E30D] ${
+              className={`group flex items-center gap-1 p-2 text-base font-normal transition-all duration-200 hover:rounded-[10px] hover:bg-[#0071E30D] ${
                 sectorOpen ? "rounded bg-[#0071E30D]" : ""
               }`}
               onClick={() => setSectorOpen((prev) => !prev)}
@@ -272,7 +272,7 @@ export default function Header() {
               {sectorItems.map((item) => (
                 <button
                   key={item.label}
-                  className="rounded-[10px] bg-[#0071E30D] px-3 py-2 text-base text-left"
+                  className="rounded-[10px] bg-[#0071E30D] p-2 text-base text-left"
                   onClick={() => setSectorOpen(false)}
                 >
                   <span className="bg-linear-to-tr from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text text-transparent">
@@ -287,7 +287,7 @@ export default function Header() {
             <Link
               key={item.label}
               href={item.href}
-              className="group flex items-center gap-1 px-3 py-2 text-base font-normal transition-all duration-200 hover:rounded-[10px] hover:bg-[#0071E30D]"
+              className="group flex items-center gap-1 p-2 text-base font-normal transition-all duration-200 hover:rounded-[10px] hover:bg-[#0071E30D]"
             >
               <span className="bg-linear-to-tr from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text text-greyPrimary transition-colors duration-200 group-hover:text-transparent">
                 {item.label}
@@ -296,7 +296,7 @@ export default function Header() {
           ))}
 
           {/* Eventos */}
-          <button className="group flex items-center gap-1 px-3 py-2 text-base font-normal transition-all duration-200 hover:rounded-[10px] hover:bg-[#0071E30D]">
+          <button className="group flex items-center gap-1 p-2 text-base font-normal transition-all duration-200 hover:rounded-[10px] hover:bg-[#0071E30D]">
             <span className="bg-linear-to-tr from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text text-greyPrimary transition-colors duration-200 group-hover:text-transparent">
               Eventos
             </span>
@@ -310,7 +310,7 @@ export default function Header() {
             onMouseLeave={() => setContentOpen(false)}
           >
             <button
-              className={`group flex items-center gap-1 px-3 py-2 text-base font-normal transition-all duration-200 hover:rounded hover:bg-[#0071E30D] ${
+              className={`group flex items-center gap-1 p-2 text-base font-normal transition-all duration-200 hover:rounded hover:bg-[#0071E30D] ${
                 contentOpen ? "rounded-[10px] bg-[#0071E30D]" : ""
               }`}
               onClick={() => setContentOpen((prev) => !prev)}
@@ -339,7 +339,7 @@ export default function Header() {
               {contentItems.map((item) => (
                 <button
                   key={item.label}
-                  className="rounded-[10px] bg-[#0071E30D] px-3 py-2 text-base text-left"
+                  className="rounded-[10px] bg-[#0071E30D] p-2 text-base text-left"
                   onClick={() => setContentOpen(false)}
                 >
                   <span className="bg-linear-to-tr from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text text-transparent">
@@ -353,6 +353,18 @@ export default function Header() {
 
         {/* Desktop Actions */}
         <div className="hidden items-center gap-4 nav:flex">
+          <Link
+            href="https://zingassistente.lovable.app/"
+            target="_blank"
+            className=""
+          >
+            <Image
+              src={"/icon-menu-ia.jpeg"}
+              width={32}
+              height={32}
+              alt={"Zing Assistente IA"}
+            />
+          </Link>
           <Link
             href={"https://www.zinginnovation.com/login"}
             target="_blank"
