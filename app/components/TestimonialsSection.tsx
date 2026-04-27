@@ -17,29 +17,84 @@ const DEFAULT_AVATAR = "/testimonials/avatar-default.png";
 
 const testimonials: Testimonial[] = [
   {
-    name: "Felipe Santana",
-    role: "Gerente de Transformação",
-    company: "Banco do Nordeste",
-    quote: "5 + chamadas operada 350+ startups ",
-    image: "/testimonials/avatar-default.png",
+    name: "Espaço Teia",
+    role: "Gestão de CPSI",
+    company: "CAIXA ECONÔMICA FEDERAL",
+    quote:
+      "Na Caixa, a Zing acompanha o CPSI desde as primeiras edições e já apoia o 5º ciclo consecutivo, com fluxo customizado, aderência às exigências institucionais e registro completo das etapas.",
+    image: "/testimonials/063cc9f2-478e-42e8-8987-76826cf241a2.jpg",
     rating: 5,
   },
   {
-    name: "Luísa Dias",
-    role: "Coordenadora geral da UBQ",
-    company: "Minas Gerais",
+    name: "UBQ",
+    role: "Desafios de Intraempreendedorismo",
+    company: "UNIÃO BRASILEIRA DA QUALIDADE",
     quote:
-      "A ZING IEBT tem sido uma parceira estratégica fundamental para a excelência do processo de avaliação do nosso evento O Grande Encontro – Equipes de Alta Performance. A plataforma proporcionou nos últimos três anos uma melhor organização, segurança e rastreabilidade de todas as etapas, garantindo transparência, agilidade e confiabilidade na análise dos projetos inscritos. A experiência dos avaliadores tornou-se muito mais fluida e o resultado mais profissional e seguro, reforçando o compromisso da UBQ com qualidade, inovação e melhoria contínua.",
+      "No Grande Encontro da UBQ, a Zing gerencia por 3 anos o fluxo completo de submissão, avaliação e premiação de práticas de gestão, reunindo organizações de todo o Brasil em torno do compartilhamento de referências em qualidade, melhoria contínua e métodos ágeis.",
     image: "/testimonials/avatar-luisa-dias.png",
     rating: 5,
   },
   {
-    name: "Felipe Santana",
-    role: "Gerente de Transformação",
-    company: "Banco do Nordeste",
+    name: "PBH",
+    role: "Gestão de CPSI",
+    company: "PREFEITURA DE BELO HORIZONTE",
     quote:
-      "Graças à ZING, estruturamos e escalamos nossas iniciativas de inovação de forma eficiente.",
-    image: "/testimonials/avatar-default.png",
+      "No PBH Inova, a Zing estruturou o primeiro CPSI de Belo Horizonte do edital à prova de conceito, conectando startups a desafios reais da administração pública e posicionando a cidade como referência nacional em inovação aberta.",
+    image: "/testimonials/3d2e117c-abce-4212-a358-c44dd2c50e1c.jpg",
+    rating: 5,
+  },
+  {
+    name: "Espaço Teia",
+    role: "Gestão de Hubs",
+    company: "CAIXA ECONÔMICA FEDERAL",
+    quote:
+      "A Zing atua como plataforma white label, funcionando como hub digital que centraliza programas e conecta startups, setor público e parceiros em um ecossistema híbrido orientado a resultados.",
+    image: "/testimonials/063cc9f2-478e-42e8-8987-76826cf241a2.jpg",
+    rating: 5,
+  },
+  {
+    name: "Porto de Suape",
+    role: "Gestão de CPSI",
+    company: "PERNAMBUCO",
+    quote:
+      "No Porto de Suape, a Zing apoiou o IEBT na estruturação inédita do modelo de CPSI da instituição — do diagnóstico regulatório à documentação técnica —, preparando a organização para contratar soluções inovadoras com segurança jurídica e aderência ao Marco Legal das Startups.",
+    image: "/testimonials/6470aa14-c153-4f2f-9aa1-886324accff7.jpg",
+    rating: 5,
+  },
+  {
+    name: "Vumbora Startups",
+    role: "Programa de Inovação Aberta",
+    company: "BNB",
+    quote:
+      "No Vumbora Startups, a Zing centralizou todo o processo seletivo das 60 startups participantes — da inscrição à banca final —, conectando negócios inovadores às trilhas do programa idealizado pelo Banco do Nordeste.",
+    image: "/testimonials/603cb4f9-1380-4691-bb2e-0f79df3af933.jpg",
+    rating: 5,
+  },
+  {
+    name: "Programa Conexões",
+    role: "Programa de Inovação Aberta",
+    company: "BH TEC",
+    quote:
+      "No Conexões, a Zing operacionalizou a segunda edição do primeiro programa de pós-aceleração de Minas Gerais, viabilizando a interação entre startups, mentores e parceiros estratégicos e dando escala à iniciativa do Sebrae Minas e BH-TEC.",
+    image: "/testimonials/9a5f7e80-33b2-4d9f-839d-99f12da0986d.jpg",
+    rating: 5,
+  },
+  {
+    name: "Porto do Itaqui",
+    role: "Gestão de CPSI",
+    company: "MARANHÃO",
+    quote:
+      "No Porto do Itaqui, a Zing atuou na seleção de soluções inovadoras para o primeiro CPSI do Maranhão, conectando startups e empresas a desafios reais da operação portuária e marcando um avanço pioneiro no uso do Marco Legal das Startups no estado.",
+    image: "/testimonials/3f38b367-b2e3-48b1-bbac-b4e47d8ad25e.jpg",
+    rating: 5,
+  },
+  {
+    name: "Programa Sementes",
+    role: "Programa de Inovação Aberta",
+    company: "GOVERNO DO ESPÍRITO SANTO",
+    quote:
+      "No Programa Sementes, realizado pelo Governo do Espírito Santo com apoio da Zing, foram investidos R$ 7,6 milhões em 50 startups captadas, com atuação em 9 municípios.",
+    image: "/testimonials/b48ce8b6-a005-4c29-abf6-40028d425880.jpg",
     rating: 5,
   },
 ];
@@ -66,7 +121,7 @@ function TestimonialCard({ t }: { t: Testimonial }) {
             src={t.image ?? DEFAULT_AVATAR}
             alt={t.name}
             fill
-            className="object-contain"
+            className="object-cover w-full h-full rounded-full"
             sizes="64px"
           />
         </div>
@@ -96,7 +151,7 @@ function TestimonialCard({ t }: { t: Testimonial }) {
 
 export default function TestimonialsSection() {
   return (
-    <section className="bg-[#F2F8FD] py-20 max-md:py-12">
+    <section className="bg-[#F2F8FD] py-20 max-md:py-12 overflow-clip">
       <div className="container flex flex-col gap-15">
         <h2
           data-aos="fade-up"
