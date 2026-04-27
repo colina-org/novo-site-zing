@@ -2,27 +2,21 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 
 const serviceItems = [
   { label: "Chamadas CPSI", href: "/cpsi" },
-  { label: "Programa de inovação", href: "/programa-inovacao-aberta" },
+  { label: "Programas", href: "/programa-inovacao-aberta" },
   {
-    label: "Desafios de Intraempreendedorismo",
+    label: "Desafios de intra...",
     href: "/desafios-intraempreendedorismo",
   },
   { label: "Gestão de Hubs", href: "/gestao-de-hubs" },
 ];
 
-const sectorItems = [
-  { label: "Setor público" },
-  { label: "Setor Privado" },
-  { label: "Startups" },
-];
-
-const contentItems = [{ label: "Cases" }, { label: "Podcasts" }];
-
-const navItems = [{ label: "Programas", href: "/programas" }];
+// backup: const sectorItems = [{ label: "Setor público" }, { label: "Setor Privado" }, { label: "Startups" }];
+// backup: const contentItems = [{ label: "Cases" }, { label: "Podcasts" }];
+// backup: const navItems = [{ label: "Programas", href: "/programas" }];
 
 function ChevronDown({ className }: { className?: string }) {
   return (
@@ -113,52 +107,48 @@ function HamburgerIcon({ open }: { open: boolean }) {
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
-  const [sectorOpen, setSectorOpen] = useState(false);
-  const [contentOpen, setContentOpen] = useState(false);
-  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
-  const [mobileSectorOpen, setMobileSectorOpen] = useState(false);
-  const [mobileContentOpen, setMobileContentOpen] = useState(false);
-  const servicesRef = useRef<HTMLDivElement>(null);
-  const sectorRef = useRef<HTMLDivElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
+  // const [servicesOpen, setServicesOpen] = useState(false); // backup para dropdown Serviços
+  // const [sectorOpen, setSectorOpen] = useState(false); // backup para dropdown Pra quem
+  // const [contentOpen, setContentOpen] = useState(false); // backup para dropdown Conteúdo
+  // const [mobileServicesOpen, setMobileServicesOpen] = useState(false); // backup accordion mobile Serviços
+  // const [mobileSectorOpen, setMobileSectorOpen] = useState(false); // backup accordion mobile Pra quem
+  // const [mobileContentOpen, setMobileContentOpen] = useState(false); // backup accordion mobile Conteúdo
+  // const servicesRef = useRef<HTMLDivElement>(null); // backup dropdown Serviços
+  // const sectorRef = useRef<HTMLDivElement>(null); // backup dropdown Pra quem
+  // const contentRef = useRef<HTMLDivElement>(null); // backup dropdown Conteúdo
 
-  // Close desktop dropdown when clicking outside
-  useEffect(() => {
-    function handleClickOutside(e: MouseEvent) {
-      if (
-        servicesRef.current &&
-        !servicesRef.current.contains(e.target as Node)
-      ) {
-        setServicesOpen(false);
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [servicesRef]);
+  // Backup: close Serviços dropdown when clicking outside
+  // useEffect(() => {
+  //   function handleClickOutside(e: MouseEvent) {
+  //     if (servicesRef.current && !servicesRef.current.contains(e.target as Node)) {
+  //       setServicesOpen(false);
+  //     }
+  //   }
+  //   document.addEventListener("mousedown", handleClickOutside);
+  //   return () => document.removeEventListener("mousedown", handleClickOutside);
+  // }, [servicesRef]);
 
-  useEffect(() => {
-    function menuSectorSecvices(e: MouseEvent) {
-      if (sectorRef.current && !sectorRef.current.contains(e.target as Node)) {
-        setSectorOpen(false);
-      }
-    }
-    document.addEventListener("mousedown", menuSectorSecvices);
-    return () => document.removeEventListener("mousedown", menuSectorSecvices);
-  }, []);
+  // backup useEffect Pra quem
+  // useEffect(() => {
+  //   function menuSectorSecvices(e: MouseEvent) {
+  //     if (sectorRef.current && !sectorRef.current.contains(e.target as Node)) {
+  //       setSectorOpen(false);
+  //     }
+  //   }
+  //   document.addEventListener("mousedown", menuSectorSecvices);
+  //   return () => document.removeEventListener("mousedown", menuSectorSecvices);
+  // }, []);
 
-  useEffect(() => {
-    function handleClickOutside(e: MouseEvent) {
-      if (
-        contentRef.current &&
-        !contentRef.current.contains(e.target as Node)
-      ) {
-        setContentOpen(false);
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  // backup useEffect Conteúdo
+  // useEffect(() => {
+  //   function handleClickOutside(e: MouseEvent) {
+  //     if (contentRef.current && !contentRef.current.contains(e.target as Node)) {
+  //       setContentOpen(false);
+  //     }
+  //   }
+  //   document.addEventListener("mousedown", handleClickOutside);
+  //   return () => document.removeEventListener("mousedown", handleClickOutside);
+  // }, []);
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white">
@@ -181,14 +171,14 @@ export default function Header() {
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-2 nav:flex">
           {/* Sobre */}
-          <button className="group flex items-center gap-1 p-2 text-base font-normal transition-all duration-200 hover:rounded-[10px] hover:bg-[#0071E30D]">
+          {/* <button className="group flex items-center gap-1 p-2 text-base font-normal transition-all duration-200 hover:rounded-[10px] hover:bg-[#0071E30D]">
             <span className="bg-linear-to-tr from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text text-greyPrimary transition-colors duration-200 group-hover:text-transparent">
               Sobre
             </span>
-          </button>
+          </button> */}
 
-          {/* Serviços dropdown */}
-          <div
+          {/* Serviços dropdown — backup para quando o menu dropdown voltar */}
+          {/* <div
             ref={servicesRef}
             className="relative"
             onMouseEnter={() => setServicesOpen(true)}
@@ -213,7 +203,6 @@ export default function Header() {
                 }`}
               />
             </button>
-
             <div
               className={`absolute left-0 top-full flex min-w-80 flex-col gap-2 rounded-[10px] border border-gray-100 bg-white p-2 shadow-lg transition-all duration-200 ${
                 servicesOpen
@@ -234,8 +223,22 @@ export default function Header() {
                 </Link>
               ))}
             </div>
-          </div>
+          </div> */}
 
+          {/* Serviços — itens diretos no menu */}
+          {serviceItems.map((item) => (
+            <Link
+              key={item.label}
+              href={item.href}
+              className="group flex items-center gap-1 p-2 text-base font-normal transition-all duration-200 hover:rounded hover:bg-[#0071E30D]"
+            >
+              <span className="bg-linear-to-tr from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text text-greyPrimary transition-colors duration-200 group-hover:text-transparent">
+                {item.label}
+              </span>
+            </Link>
+          ))}
+
+          {/* Pra quem dropdown — backup
           <div
             ref={sectorRef}
             className="relative"
@@ -243,47 +246,25 @@ export default function Header() {
             onMouseLeave={() => setSectorOpen(false)}
           >
             <button
-              className={`group flex items-center gap-1 p-2 text-base font-normal transition-all duration-200 hover:rounded-[10px] hover:bg-[#0071E30D] ${
-                sectorOpen ? "rounded bg-[#0071E30D]" : ""
-              }`}
+              className={`group flex items-center gap-1 p-2 text-base font-normal transition-all duration-200 hover:rounded-[10px] hover:bg-[#0071E30D] ${sectorOpen ? "rounded bg-[#0071E30D]" : ""}`}
               onClick={() => setSectorOpen((prev) => !prev)}
             >
-              <span
-                className={`bg-linear-to-tr from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text transition-colors duration-200 group-hover:text-transparent ${
-                  sectorOpen ? "text-transparent" : "text-greyPrimary"
-                }`}
-              >
+              <span className={`bg-linear-to-tr from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text transition-colors duration-200 group-hover:text-transparent ${sectorOpen ? "text-transparent" : "text-greyPrimary"}`}>
                 Pra quem oferecemos
               </span>
-              <ChevronDown
-                className={`transition-colors duration-200 group-hover:text-[#0071E3] ${
-                  sectorOpen ? "text-[#0071E3]" : "text-greyPrimary"
-                }`}
-              />
+              <ChevronDown className={`transition-colors duration-200 group-hover:text-[#0071E3] ${sectorOpen ? "text-[#0071E3]" : "text-greyPrimary"}`} />
             </button>
-
-            <div
-              className={`absolute left-0 top-full flex min-w-44 flex-col gap-2 rounded-[10px] border border-gray-100 bg-white p-2 shadow-lg transition-all duration-200 ${
-                sectorOpen
-                  ? "visible translate-y-0 opacity-100"
-                  : "invisible -translate-y-1 opacity-0"
-              }`}
-            >
+            <div className={`absolute left-0 top-full flex min-w-44 flex-col gap-2 rounded-[10px] border border-gray-100 bg-white p-2 shadow-lg transition-all duration-200 ${sectorOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-1 opacity-0"}`}>
               {sectorItems.map((item) => (
-                <button
-                  key={item.label}
-                  className="rounded-[10px] bg-[#0071E30D] p-2 text-base text-left"
-                  onClick={() => setSectorOpen(false)}
-                >
-                  <span className="bg-linear-to-tr from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text text-transparent">
-                    {item.label}
-                  </span>
+                <button key={item.label} className="rounded-[10px] bg-[#0071E30D] p-2 text-base text-left" onClick={() => setSectorOpen(false)}>
+                  <span className="bg-linear-to-tr from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text text-transparent">{item.label}</span>
                 </button>
               ))}
             </div>
           </div>
+          */}
 
-          {navItems.map((item) => (
+          {/* {navItems.map((item) => (
             <Link
               key={item.label}
               href={item.href}
@@ -293,16 +274,16 @@ export default function Header() {
                 {item.label}
               </span>
             </Link>
-          ))}
+          ))} */}
 
           {/* Eventos */}
-          <button className="group flex items-center gap-1 p-2 text-base font-normal transition-all duration-200 hover:rounded-[10px] hover:bg-[#0071E30D]">
+          {/* <button className="group flex items-center gap-1 p-2 text-base font-normal transition-all duration-200 hover:rounded-[10px] hover:bg-[#0071E30D]">
             <span className="bg-linear-to-tr from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text text-greyPrimary transition-colors duration-200 group-hover:text-transparent">
               Eventos
             </span>
-          </button>
+          </button> */}
 
-          {/* Conteúdo dropdown */}
+          {/* Conteúdo dropdown — backup
           <div
             ref={contentRef}
             className="relative"
@@ -310,45 +291,23 @@ export default function Header() {
             onMouseLeave={() => setContentOpen(false)}
           >
             <button
-              className={`group flex items-center gap-1 p-2 text-base font-normal transition-all duration-200 hover:rounded hover:bg-[#0071E30D] ${
-                contentOpen ? "rounded-[10px] bg-[#0071E30D]" : ""
-              }`}
+              className={`group flex items-center gap-1 p-2 text-base font-normal transition-all duration-200 hover:rounded hover:bg-[#0071E30D] ${contentOpen ? "rounded-[10px] bg-[#0071E30D]" : ""}`}
               onClick={() => setContentOpen((prev) => !prev)}
             >
-              <span
-                className={`bg-linear-to-tr from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text transition-colors duration-200 group-hover:text-transparent ${
-                  contentOpen ? "text-transparent" : "text-greyPrimary"
-                }`}
-              >
+              <span className={`bg-linear-to-tr from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text transition-colors duration-200 group-hover:text-transparent ${contentOpen ? "text-transparent" : "text-greyPrimary"}`}>
                 Conteúdo
               </span>
-              <ChevronDown
-                className={`transition-colors duration-200 group-hover:text-[#0071E3] ${
-                  contentOpen ? "text-[#0071E3]" : "text-greyPrimary"
-                }`}
-              />
+              <ChevronDown className={`transition-colors duration-200 group-hover:text-[#0071E3] ${contentOpen ? "text-[#0071E3]" : "text-greyPrimary"}`} />
             </button>
-
-            <div
-              className={`absolute left-0 top-full flex min-w-40 flex-col gap-2 rounded-[10px] border border-gray-100 bg-white p-2 shadow-lg transition-all duration-200 ${
-                contentOpen
-                  ? "visible translate-y-0 opacity-100"
-                  : "invisible -translate-y-1 opacity-0"
-              }`}
-            >
+            <div className={`absolute left-0 top-full flex min-w-40 flex-col gap-2 rounded-[10px] border border-gray-100 bg-white p-2 shadow-lg transition-all duration-200 ${contentOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-1 opacity-0"}`}>
               {contentItems.map((item) => (
-                <button
-                  key={item.label}
-                  className="rounded-[10px] bg-[#0071E30D] p-2 text-base text-left"
-                  onClick={() => setContentOpen(false)}
-                >
-                  <span className="bg-linear-to-tr from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text text-transparent">
-                    {item.label}
-                  </span>
+                <button key={item.label} className="rounded-[10px] bg-[#0071E30D] p-2 text-base text-left" onClick={() => setContentOpen(false)}>
+                  <span className="bg-linear-to-tr from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text text-transparent">{item.label}</span>
                 </button>
               ))}
             </div>
           </div>
+          */}
         </nav>
 
         {/* Desktop Actions */}
@@ -360,8 +319,8 @@ export default function Header() {
           >
             <Image
               src={"/7fc7cfe1-abcb-4516-9b49-2c58df7aef35.jpg"}
-              width={32}
-              height={32}
+              width={36}
+              height={36}
               alt={"Zing Assistente IA"}
               className="group-hover:scale-105 duration-200 ease-linear"
             />
@@ -415,84 +374,41 @@ export default function Header() {
         }`}
       >
         <div className="container mx-auto flex flex-col gap-1 px-6 py-4">
-          {/* Sobre */}
-          <button
+          {/* Sobre — backup */}
+          {/* <button
             className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-base font-normal text-black transition-colors hover:bg-gray-50"
             onClick={() => setMenuOpen(false)}
           >
             Sobre
-          </button>
+          </button> */}
 
-          {/* Serviços accordion */}
-          <div>
+          {/* Serviços accordion — backup para quando o menu accordion voltar */}
+          {/* <div>
             <button
               className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-base font-normal text-black transition-colors hover:bg-gray-50"
               onClick={() => setMobileServicesOpen((prev) => !prev)}
             >
               Serviços
-              <span
-                className={`transition-transform duration-200 ${mobileServicesOpen ? "rotate-180" : ""}`}
-              >
+              <span className={`transition-transform duration-200 ${mobileServicesOpen ? "rotate-180" : ""}`}>
                 <ChevronDown />
               </span>
             </button>
-            <div
-              className={`overflow-hidden transition-all duration-200 ${
-                mobileServicesOpen
-                  ? "max-h-60 opacity-100"
-                  : "max-h-0 opacity-0"
-              }`}
-            >
+            <div className={`overflow-hidden transition-all duration-200 ${mobileServicesOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"}`}>
               {serviceItems.map((item) => (
                 <Link
                   key={item.label}
                   href={item.href}
                   className="block rounded-lg px-6 py-2.5 text-base text-black transition-colors hover:bg-gray-50"
-                  onClick={() => {
-                    setMenuOpen(false);
-                    setMobileServicesOpen(false);
-                  }}
+                  onClick={() => { setMenuOpen(false); setMobileServicesOpen(false); }}
                 >
                   {item.label}
                 </Link>
               ))}
             </div>
-          </div>
+          </div> */}
 
-          {/* Pra quem oferecemos accordion */}
-          <div>
-            <button
-              className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-base font-normal text-black transition-colors hover:bg-gray-50"
-              onClick={() => setMobileSectorOpen((prev) => !prev)}
-            >
-              Pra quem oferecemos
-              <span
-                className={`transition-transform duration-200 ${mobileSectorOpen ? "rotate-180" : ""}`}
-              >
-                <ChevronDown />
-              </span>
-            </button>
-            <div
-              className={`overflow-hidden transition-all duration-200 ${
-                mobileSectorOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
-              }`}
-            >
-              {sectorItems.map((item) => (
-                <button
-                  key={item.label}
-                  className="block w-full rounded-lg px-6 py-2.5 text-left text-base text-black transition-colors hover:bg-gray-50"
-                  onClick={() => {
-                    setMenuOpen(false);
-                    setMobileSectorOpen(false);
-                  }}
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {navItems.map((item) => (
+          {/* Serviços — itens diretos no menu mobile */}
+          {serviceItems.map((item) => (
             <Link
               key={item.label}
               href={item.href}
@@ -503,46 +419,73 @@ export default function Header() {
             </Link>
           ))}
 
-          {/* Eventos */}
-          <button
-            className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-base font-normal text-black transition-colors hover:bg-gray-50"
-            onClick={() => setMenuOpen(false)}
-          >
-            Eventos
-          </button>
-
-          {/* Conteúdo accordion */}
-          <div>
+          {/* Pra quem oferecemos accordion — backup */}
+          {/* <div>
             <button
               className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-base font-normal text-black transition-colors hover:bg-gray-50"
-              onClick={() => setMobileContentOpen((prev) => !prev)}
+              onClick={() => setMobileSectorOpen((prev) => !prev)}
             >
-              Conteúdo
-              <span
-                className={`transition-transform duration-200 ${mobileContentOpen ? "rotate-180" : ""}`}
-              >
+              Pra quem oferecemos
+              <span className={`transition-transform duration-200 ${mobileSectorOpen ? "rotate-180" : ""}`}>
                 <ChevronDown />
               </span>
             </button>
-            <div
-              className={`overflow-hidden transition-all duration-200 ${
-                mobileContentOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
-              }`}
-            >
-              {contentItems.map((item) => (
+            <div className={`overflow-hidden transition-all duration-200 ${mobileSectorOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"}`}>
+              {sectorItems.map((item) => (
                 <button
                   key={item.label}
                   className="block w-full rounded-lg px-6 py-2.5 text-left text-base text-black transition-colors hover:bg-gray-50"
-                  onClick={() => {
-                    setMenuOpen(false);
-                    setMobileContentOpen(false);
-                  }}
+                  onClick={() => { setMenuOpen(false); setMobileSectorOpen(false); }}
                 >
                   {item.label}
                 </button>
               ))}
             </div>
-          </div>
+          </div> */}
+
+          {/* Programas — backup */}
+          {/* {navItems.map((item) => (
+            <Link
+              key={item.label}
+              href={item.href}
+              className="flex items-center justify-between rounded-lg px-3 py-3 text-base font-normal text-black transition-colors hover:bg-gray-50"
+              onClick={() => setMenuOpen(false)}
+            >
+              {item.label}
+            </Link>
+          ))} */}
+
+          {/* Eventos — backup */}
+          {/* <button
+            className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-base font-normal text-black transition-colors hover:bg-gray-50"
+            onClick={() => setMenuOpen(false)}
+          >
+            Eventos
+          </button> */}
+
+          {/* Conteúdo accordion — backup */}
+          {/* <div>
+            <button
+              className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-base font-normal text-black transition-colors hover:bg-gray-50"
+              onClick={() => setMobileContentOpen((prev) => !prev)}
+            >
+              Conteúdo
+              <span className={`transition-transform duration-200 ${mobileContentOpen ? "rotate-180" : ""}`}>
+                <ChevronDown />
+              </span>
+            </button>
+            <div className={`overflow-hidden transition-all duration-200 ${mobileContentOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"}`}>
+              {contentItems.map((item) => (
+                <button
+                  key={item.label}
+                  className="block w-full rounded-lg px-6 py-2.5 text-left text-base text-black transition-colors hover:bg-gray-50"
+                  onClick={() => { setMenuOpen(false); setMobileContentOpen(false); }}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+          </div> */}
 
           <div className="my-2 border-t border-gray-100" />
 
