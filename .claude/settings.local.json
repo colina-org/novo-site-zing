@@ -11,7 +11,14 @@
       "Bash(npx vercel --prod)",
       "mcp__claude_ai_Figma__get_design_context",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "mcp__claude_ai_Figma__get_metadata",
+      "Bash(git -c safe.directory=E:/Projetos/zing diff app/components/SolutionsSection.tsx)",
+      "Bash(git -c safe.directory=E:/Projetos/zing diff app/components/TestimonialsSection.tsx)",
+      "mcp__claude_ai_Figma__get_screenshot",
+      "Bash(git remote *)",
+      "Bash(git push *)",
+      "Bash(git reset *)"
     ]
   }
 }

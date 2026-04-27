@@ -356,13 +356,14 @@ export default function Header() {
           <Link
             href="https://zingassistente.lovable.app/"
             target="_blank"
-            className=""
+            className="group"
           >
             <Image
-              src={"/icon-menu-ia.jpeg"}
-              width={32}
-              height={32}
+              src={"/7fc7cfe1-abcb-4516-9b49-2c58df7aef35.jpg"}
+              width={24}
+              height={24}
               alt={"Zing Assistente IA"}
+              className="group-hover:scale-105 duration-200 ease-linear"
             />
           </Link>
           <Link
@@ -378,15 +379,31 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Mobile Hamburger */}
-        <button
-          className="flex items-center justify-center nav:hidden"
-          onClick={() => setMenuOpen((prev) => !prev)}
-          aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
-          aria-expanded={menuOpen}
-        >
-          <HamburgerIcon open={menuOpen} />
-        </button>
+        <div className="flex items-center gap-4 nav:hidden">
+          <Link
+            href="https://zingassistente.lovable.app/"
+            target="_blank"
+            className="group"
+          >
+            <Image
+              src={"/7fc7cfe1-abcb-4516-9b49-2c58df7aef35.jpg"}
+              width={24}
+              height={24}
+              alt={"Zing Assistente IA"}
+              className="group-hover:scale-105 duration-200 ease-linear hidden max-nav:block"
+            />
+          </Link>
+
+          {/* Mobile Hamburger */}
+          <button
+            className="flex items-center justify-center nav:hidden"
+            onClick={() => setMenuOpen((prev) => !prev)}
+            aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={menuOpen}
+          >
+            <HamburgerIcon open={menuOpen} />
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
