@@ -360,8 +360,8 @@ export default function Header() {
           >
             <Image
               src={"/7fc7cfe1-abcb-4516-9b49-2c58df7aef35.jpg"}
-              width={24}
-              height={24}
+              width={32}
+              height={32}
               alt={"Zing Assistente IA"}
               className="group-hover:scale-105 duration-200 ease-linear"
             />
