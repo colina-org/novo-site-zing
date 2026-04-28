@@ -41,12 +41,12 @@ export default function Cases() {
             <p className="text-lg text-greyPrimary">
               Onde a inovação pública já aconteceu, com segurança e impacto.
             </p>
-            <Link
+            {/* <Link
               href={"#"}
               className="w-fit max-sm:hidden rounded-[10px] border border-black px-4 py-2 text-lg font-bold text-greyPrimary backdrop-blur-sm hover:bg-black hover:text-white duration-300 ease-linear"
             >
               Conheça mais
-            </Link>
+            </Link> */}
           </div>
 
           {/* Right — cards */}
@@ -101,12 +101,12 @@ export default function Cases() {
             })}
           </div>
 
-          <Link
+          {/* <Link
             href={"#"}
             className="w-fit hidden max-sm:table mx-auto rounded border border-black px-4 py-2 text-lg font-bold text-greyPrimary backdrop-blur-sm hover:bg-black hover:text-white duration-300 ease-linear"
           >
             Conheça mais
-          </Link>
+          </Link> */}
         </div>
       </div>
     </section>

@@ -34,8 +34,8 @@ export default function Clients() {
 
             <Swiper
               modules={[Autoplay]}
-              slidesPerView={3}
-              spaceBetween={32}
+              slidesPerView={2.3}
+              spaceBetween={16}
               loop
               allowTouchMove={false}
               autoplay={{ delay: 0, disableOnInteraction: false }}

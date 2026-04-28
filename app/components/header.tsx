@@ -312,7 +312,7 @@ export default function Header() {
 
         {/* Desktop Actions */}
         <div className="hidden items-center gap-4 nav:flex">
-          <Link
+          {/* <Link
             href="https://zingassistente.lovable.app/"
             target="_blank"
             className="group"
@@ -324,7 +324,7 @@ export default function Header() {
               alt={"Zing Assistente IA"}
               className="group-hover:scale-105 duration-200 ease-linear"
             />
-          </Link>
+          </Link> */}
           <Link
             href={"https://www.zinginnovation.com/login"}
             target="_blank"

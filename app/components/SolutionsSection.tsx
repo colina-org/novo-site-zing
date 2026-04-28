@@ -10,14 +10,14 @@ const solutions = [
     description:
       "Lance chamadas de CPSI e desafios de inovação para resolver problemas reais da gestão pública, testando e validando soluções com startups de forma segura, transparente e orientada a resultados.",
     image: "/img-card-setor-publico-v2.png",
-    href: "#",
+    href: "/cpsi",
   },
   {
     label: "Setor privado",
     description:
       "A Zing apoia empresas na criação e execução de programas de inovação aberta, conectando startups a desafios reais do negócio. Também desenvolve desafios de intraempreendedorismo para engajar colaboradores na criação de soluções inovadoras.",
     image: "/img-card-setor-privado-v2.png",
-    href: "#",
+    href: "/desafios-intraempreendedorismo",
   },
 ];
 

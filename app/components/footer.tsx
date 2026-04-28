@@ -1,22 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
 
-function FacebookIcon() {
-  return (
-    <svg
-      width="7"
-      height="14"
-      viewBox="0 0 7 14"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M4.5 5H6.5L6 7.5H4.5V14H2V7.5H0.5V5H2V3.5C2 1.567 3.067 0.5 5 0.5H6.5V3H5C4.724 3 4.5 3.224 4.5 3.5V5Z"
-        fill="white"
-      />
-    </svg>
-  );
-}
+// function FacebookIcon() {
+//   return (
+//     <svg
+//       width="7"
+//       height="14"
+//       viewBox="0 0 7 14"
+//       fill="none"
+//       aria-hidden="true"
+//     >
+//       <path
+//         d="M4.5 5H6.5L6 7.5H4.5V14H2V7.5H0.5V5H2V3.5C2 1.567 3.067 0.5 5 0.5H6.5V3H5C4.724 3 4.5 3.224 4.5 3.5V5Z"
+//         fill="white"
+//       />
+//     </svg>
+//   );
+// }
 
 function LinkedInIcon() {
   return (
@@ -119,13 +119,13 @@ export default function Footer() {
 
               {/* Social Icons */}
               <div className="flex items-center gap-3">
-                <SocialButton
+                {/* <SocialButton
                   href="https://www.facebook.com/iebtgestaoeinovacao/"
                   target="_blank"
                   label="Facebook"
                 >
                   <FacebookIcon />
-                </SocialButton>
+                </SocialButton> */}
                 <SocialButton
                   href="https://www.linkedin.com/company/iebt/"
                   target="_blank"

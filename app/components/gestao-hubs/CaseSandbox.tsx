@@ -27,9 +27,11 @@ export default function CaseSandbox() {
               <span className="font-bold">Espaço TEIA CAIXA</span>
             </h2>
             <p className="text-base leading-[1.4] text-greyPrimary">
-              No Sandbox CAIXA, colaboradores transformaram desafios do
-              cotidiano em oportunidades de inovação, propondo soluções que
-              contribuem para a evolução da instituição.
+              No Espaço TEIA CAIXA, a Zing atua como hub digital complementar ao
+              espaço físico de inovação, centralizando programas, eventos e
+              trilhas de capacitação em uma única plataforma e conectando
+              startups, instituições públicas e parceiros em um ecossistema
+              híbrido orientado a resultados.
             </p>
             <button className="flex h-8 w-fit items-center gap-2 bg-white rounded px-4 border border-bluePrimary text-base font-bold text-bluePrimary transition-colors hover:bg-bluePrimary hover:text-white">
               Leia case completo

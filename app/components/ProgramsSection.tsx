@@ -22,14 +22,14 @@ export default function ProgramsSection() {
             Fique por dentro dos nossos <br className="max-md:hidden" />
             <span className="font-bold">programas e chamadas</span>
           </h2>
-          <Link
+          {/* <Link
             href="/programas"
             className="inline-flex w-full max-w-50 shrink-0 items-center justify-center rounded-[10px] bg-white px-4 py-2 text-base font-bold hover:scale-105 duration-300 ease-linear max-md:hidden"
           >
             <span className="bg-linear-to-r from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text text-transparent">
               Ver todos
             </span>
-          </Link>
+          </Link> */}
         </div>
 
         {/* Cards Swiper */}
@@ -101,14 +101,14 @@ export default function ProgramsSection() {
           </Swiper>
         </div>
 
-        <Link
+        {/* <Link
           href="/programas"
           className="max-md:table mx-auto mt-10 w-full max-w-50 shrink-0 text-center rounded bg-white px-4 py-2 text-base font-bold hover:scale-105 duration-300 ease-linear hidden"
         >
           <span className="bg-linear-to-r from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text text-transparent">
             Ver todos
           </span>
-        </Link>
+        </Link> */}
       </div>
     </section>
   );
