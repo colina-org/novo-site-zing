@@ -2,103 +2,49 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const serviceItems = [
   { label: "Chamadas CPSI", href: "/cpsi" },
   { label: "Programas", href: "/programa-inovacao-aberta" },
-  {
-    label: "Desafios de intra...",
-    href: "/desafios-intraempreendedorismo",
-  },
+  { label: "Desafios de intra...", href: "/desafios-intraempreendedorismo" },
   { label: "Gestão de Hubs", href: "/gestao-de-hubs" },
 ];
 
-// backup: const sectorItems = [{ label: "Setor público" }, { label: "Setor Privado" }, { label: "Startups" }];
-// backup: const contentItems = [{ label: "Cases" }, { label: "Podcasts" }];
-// backup: const navItems = [{ label: "Programas", href: "/programas" }];
+const sectorItems = [
+  { label: "Setor público" },
+  { label: "Setor Privado" },
+  { label: "Startups" },
+];
+
+const contentItems = [
+  { label: "Cases" },
+  { label: "Podcasts" },
+];
+
+const navItems = [{ label: "Programas", href: "/programas" }];
 
 function ChevronDown({ className }: { className?: string }) {
   return (
-    <svg
-      width="8"
-      height="5"
-      viewBox="0 0 8 5"
-      fill="none"
-      aria-hidden="true"
-      className={className}
-    >
-      <path
-        d="M1 1L4 4L7 1"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+    <svg width="8" height="5" viewBox="0 0 8 5" fill="none" aria-hidden="true" className={className}>
+      <path d="M1 1L4 4L7 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
 
 function HamburgerIcon({ open }: { open: boolean }) {
   return (
-    <svg
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-      className="transition-transform duration-200"
-    >
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" className="transition-transform duration-200">
       {open ? (
         <>
-          <line
-            x1="4"
-            y1="4"
-            x2="20"
-            y2="20"
-            stroke="#000"
-            strokeWidth="2"
-            strokeLinecap="round"
-          />
-          <line
-            x1="20"
-            y1="4"
-            x2="4"
-            y2="20"
-            stroke="#000"
-            strokeWidth="2"
-            strokeLinecap="round"
-          />
+          <line x1="4" y1="4" x2="20" y2="20" stroke="#000" strokeWidth="2" strokeLinecap="round" />
+          <line x1="20" y1="4" x2="4" y2="20" stroke="#000" strokeWidth="2" strokeLinecap="round" />
         </>
       ) : (
         <>
-          <line
-            x1="3"
-            y1="7"
-            x2="21"
-            y2="7"
-            stroke="#000"
-            strokeWidth="2"
-            strokeLinecap="round"
-          />
-          <line
-            x1="3"
-            y1="12"
-            x2="21"
-            y2="12"
-            stroke="#000"
-            strokeWidth="2"
-            strokeLinecap="round"
-          />
-          <line
-            x1="3"
-            y1="17"
-            x2="21"
-            y2="17"
-            stroke="#000"
-            strokeWidth="2"
-            strokeLinecap="round"
-          />
+          <line x1="3" y1="7" x2="21" y2="7" stroke="#000" strokeWidth="2" strokeLinecap="round" />
+          <line x1="3" y1="12" x2="21" y2="12" stroke="#000" strokeWidth="2" strokeLinecap="round" />
+          <line x1="3" y1="17" x2="21" y2="17" stroke="#000" strokeWidth="2" strokeLinecap="round" />
         </>
       )}
     </svg>
@@ -107,144 +53,88 @@ function HamburgerIcon({ open }: { open: boolean }) {
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  // const [servicesOpen, setServicesOpen] = useState(false); // backup para dropdown Serviços
-  // const [sectorOpen, setSectorOpen] = useState(false); // backup para dropdown Pra quem
-  // const [contentOpen, setContentOpen] = useState(false); // backup para dropdown Conteúdo
-  // const [mobileServicesOpen, setMobileServicesOpen] = useState(false); // backup accordion mobile Serviços
-  // const [mobileSectorOpen, setMobileSectorOpen] = useState(false); // backup accordion mobile Pra quem
-  // const [mobileContentOpen, setMobileContentOpen] = useState(false); // backup accordion mobile Conteúdo
-  // const servicesRef = useRef<HTMLDivElement>(null); // backup dropdown Serviços
-  // const sectorRef = useRef<HTMLDivElement>(null); // backup dropdown Pra quem
-  // const contentRef = useRef<HTMLDivElement>(null); // backup dropdown Conteúdo
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [sectorOpen, setSectorOpen] = useState(false);
+  const [contentOpen, setContentOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileSectorOpen, setMobileSectorOpen] = useState(false);
+  const [mobileContentOpen, setMobileContentOpen] = useState(false);
+  const servicesRef = useRef<HTMLDivElement>(null);
+  const sectorRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
 
-  // Backup: close Serviços dropdown when clicking outside
-  // useEffect(() => {
-  //   function handleClickOutside(e: MouseEvent) {
-  //     if (servicesRef.current && !servicesRef.current.contains(e.target as Node)) {
-  //       setServicesOpen(false);
-  //     }
-  //   }
-  //   document.addEventListener("mousedown", handleClickOutside);
-  //   return () => document.removeEventListener("mousedown", handleClickOutside);
-  // }, [servicesRef]);
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (servicesRef.current && !servicesRef.current.contains(e.target as Node)) {
+        setServicesOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
-  // backup useEffect Pra quem
-  // useEffect(() => {
-  //   function menuSectorSecvices(e: MouseEvent) {
-  //     if (sectorRef.current && !sectorRef.current.contains(e.target as Node)) {
-  //       setSectorOpen(false);
-  //     }
-  //   }
-  //   document.addEventListener("mousedown", menuSectorSecvices);
-  //   return () => document.removeEventListener("mousedown", menuSectorSecvices);
-  // }, []);
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (sectorRef.current && !sectorRef.current.contains(e.target as Node)) {
+        setSectorOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
-  // backup useEffect Conteúdo
-  // useEffect(() => {
-  //   function handleClickOutside(e: MouseEvent) {
-  //     if (contentRef.current && !contentRef.current.contains(e.target as Node)) {
-  //       setContentOpen(false);
-  //     }
-  //   }
-  //   document.addEventListener("mousedown", handleClickOutside);
-  //   return () => document.removeEventListener("mousedown", handleClickOutside);
-  // }, []);
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (contentRef.current && !contentRef.current.contains(e.target as Node)) {
+        setContentOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white">
       <div className="container mx-auto flex h-20 items-center justify-between px-6">
         {/* Logo */}
-        <Link
-          href="/"
-          aria-label="Zing - Página inicial"
-          onClick={() => setMenuOpen(false)}
-        >
-          <Image
-            src="/logo-header.svg"
-            alt="Zing"
-            width={112}
-            height={50}
-            priority
-          />
+        <Link href="/" aria-label="Zing - Página inicial" onClick={() => setMenuOpen(false)}>
+          <Image src="/logo-header.svg" alt="Zing" width={112} height={50} priority />
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-2 nav:flex">
           {/* Sobre */}
-          {/* <button className="group flex items-center gap-1 p-2 text-base font-normal transition-all duration-200 hover:rounded-[10px] hover:bg-[#0071E30D]">
+          <Link
+            href="/sobre"
+            className="group flex items-center gap-1 p-2 text-base font-normal transition-all duration-200 hover:rounded-[10px] hover:bg-[#0071E30D]"
+          >
             <span className="bg-linear-to-tr from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text text-greyPrimary transition-colors duration-200 group-hover:text-transparent">
               Sobre
             </span>
-          </button> */}
+          </Link>
 
-          {/* Serviços dropdown — backup para quando o menu dropdown voltar */}
-          {/* <div
-            ref={servicesRef}
-            className="relative"
-            onMouseEnter={() => setServicesOpen(true)}
-            onMouseLeave={() => setServicesOpen(false)}
-          >
+          {/* Serviços dropdown */}
+          <div ref={servicesRef} className="relative" onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
             <button
-              className={`group flex items-center gap-1 p-2 text-base font-normal transition-all duration-200 hover:rounded hover:bg-[#0071E30D] ${
-                servicesOpen ? "rounded-[10px] bg-[#0071E30D]" : ""
-              }`}
+              className={`group flex items-center gap-1 p-2 text-base font-normal transition-all duration-200 hover:rounded hover:bg-[#0071E30D] ${servicesOpen ? "rounded-[10px] bg-[#0071E30D]" : ""}`}
               onClick={() => setServicesOpen((prev) => !prev)}
             >
-              <span
-                className={`bg-linear-to-tr from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text transition-colors duration-200 group-hover:text-transparent ${
-                  servicesOpen ? "text-transparent" : "text-greyPrimary"
-                }`}
-              >
+              <span className={`bg-linear-to-tr from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text transition-colors duration-200 group-hover:text-transparent ${servicesOpen ? "text-transparent" : "text-greyPrimary"}`}>
                 Serviços
               </span>
-              <ChevronDown
-                className={`transition-colors duration-200 group-hover:text-[#0071E3] ${
-                  servicesOpen ? "text-[#0071E3]" : "text-greyPrimary"
-                }`}
-              />
+              <ChevronDown className={`transition-colors duration-200 group-hover:text-[#0071E3] ${servicesOpen ? "text-[#0071E3]" : "text-greyPrimary"}`} />
             </button>
-            <div
-              className={`absolute left-0 top-full flex min-w-80 flex-col gap-2 rounded-[10px] border border-gray-100 bg-white p-2 shadow-lg transition-all duration-200 ${
-                servicesOpen
-                  ? "visible translate-y-0 opacity-100"
-                  : "invisible -translate-y-1 opacity-0"
-              }`}
-            >
+            <div className={`absolute left-0 top-full flex min-w-80 flex-col gap-2 rounded-[10px] border border-gray-100 bg-white p-2 shadow-lg transition-all duration-200 ${servicesOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-1 opacity-0"}`}>
               {serviceItems.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="rounded-[10px] bg-[#0071E30D] p-2 text-base"
-                  onClick={() => setServicesOpen(false)}
-                >
-                  <span className="bg-linear-to-tr from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text text-transparent">
-                    {item.label}
-                  </span>
+                <Link key={item.label} href={item.href} className="rounded-[10px] bg-[#0071E30D] p-2 text-base" onClick={() => setServicesOpen(false)}>
+                  <span className="bg-linear-to-tr from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text text-transparent">{item.label}</span>
                 </Link>
               ))}
             </div>
-          </div> */}
+          </div>
 
-          {/* Serviços — itens diretos no menu */}
-          {serviceItems.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              className="group flex items-center gap-1 p-2 text-base font-normal transition-all duration-200 hover:rounded hover:bg-[#0071E30D]"
-            >
-              <span className="bg-linear-to-tr from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text text-greyPrimary transition-colors duration-200 group-hover:text-transparent">
-                {item.label}
-              </span>
-            </Link>
-          ))}
-
-          {/* Pra quem dropdown — backup
-          <div
-            ref={sectorRef}
-            className="relative"
-            onMouseEnter={() => setSectorOpen(true)}
-            onMouseLeave={() => setSectorOpen(false)}
-          >
+          {/* Pra quem dropdown */}
+          <div ref={sectorRef} className="relative" onMouseEnter={() => setSectorOpen(true)} onMouseLeave={() => setSectorOpen(false)}>
             <button
               className={`group flex items-center gap-1 p-2 text-base font-normal transition-all duration-200 hover:rounded-[10px] hover:bg-[#0071E30D] ${sectorOpen ? "rounded bg-[#0071E30D]" : ""}`}
               onClick={() => setSectorOpen((prev) => !prev)}
@@ -262,9 +152,9 @@ export default function Header() {
               ))}
             </div>
           </div>
-          */}
 
-          {/* {navItems.map((item) => (
+          {/* Programas */}
+          {navItems.map((item) => (
             <Link
               key={item.label}
               href={item.href}
@@ -274,22 +164,17 @@ export default function Header() {
                 {item.label}
               </span>
             </Link>
-          ))} */}
+          ))}
 
           {/* Eventos */}
-          {/* <button className="group flex items-center gap-1 p-2 text-base font-normal transition-all duration-200 hover:rounded-[10px] hover:bg-[#0071E30D]">
+          <button className="group flex items-center gap-1 p-2 text-base font-normal transition-all duration-200 hover:rounded-[10px] hover:bg-[#0071E30D]">
             <span className="bg-linear-to-tr from-[#6453D1] via-[#0071E3] to-[#1ACBDC] bg-clip-text text-greyPrimary transition-colors duration-200 group-hover:text-transparent">
               Eventos
             </span>
-          </button> */}
+          </button>
 
-          {/* Conteúdo dropdown — backup
-          <div
-            ref={contentRef}
-            className="relative"
-            onMouseEnter={() => setContentOpen(true)}
-            onMouseLeave={() => setContentOpen(false)}
-          >
+          {/* Conteúdo dropdown */}
+          <div ref={contentRef} className="relative" onMouseEnter={() => setContentOpen(true)} onMouseLeave={() => setContentOpen(false)}>
             <button
               className={`group flex items-center gap-1 p-2 text-base font-normal transition-all duration-200 hover:rounded hover:bg-[#0071E30D] ${contentOpen ? "rounded-[10px] bg-[#0071E30D]" : ""}`}
               onClick={() => setContentOpen((prev) => !prev)}
@@ -307,23 +192,12 @@ export default function Header() {
               ))}
             </div>
           </div>
-          */}
         </nav>
 
         {/* Desktop Actions */}
         <div className="hidden items-center gap-4 nav:flex">
-          {/* <Link
-            href="https://zingassistente.lovable.app/"
-            target="_blank"
-            className="group"
-          >
-            <Image
-              src={"/7fc7cfe1-abcb-4516-9b49-2c58df7aef35.jpg"}
-              width={36}
-              height={36}
-              alt={"Zing Assistente IA"}
-              className="group-hover:scale-105 duration-200 ease-linear"
-            />
+          {/* <Link href="https://zingassistente.lovable.app/" target="_blank" className="group">
+            <Image src={"/7fc7cfe1-abcb-4516-9b49-2c58df7aef35.jpg"} width={36} height={36} alt={"Zing Assistente IA"} className="group-hover:scale-105 duration-200 ease-linear" />
           </Link> */}
           <Link
             href={"https://www.zinginnovation.com/login"}
@@ -332,18 +206,13 @@ export default function Header() {
           >
             Entrar
           </Link>
-
           <Link href="/contato" className="btn-primary">
             Solicite uma demonstração
           </Link>
         </div>
 
         <div className="flex items-center gap-4 nav:hidden">
-          <Link
-            href="https://zingassistente.lovable.app/"
-            target="_blank"
-            className="group"
-          >
+          <Link href="https://zingassistente.lovable.app/" target="_blank" className="group">
             <Image
               src={"/7fc7cfe1-abcb-4516-9b49-2c58df7aef35.jpg"}
               width={24}
@@ -352,8 +221,6 @@ export default function Header() {
               className="group-hover:scale-105 duration-200 ease-linear hidden max-nav:block"
             />
           </Link>
-
-          {/* Mobile Hamburger */}
           <button
             className="flex items-center justify-center nav:hidden"
             onClick={() => setMenuOpen((prev) => !prev)}
@@ -368,22 +235,21 @@ export default function Header() {
       {/* Mobile Menu */}
       <div
         className={`overflow-hidden bg-white transition-all duration-300 ease-in-out nav:hidden ${
-          menuOpen
-            ? "max-h-screen border-t border-gray-100 opacity-100"
-            : "max-h-0 opacity-0"
+          menuOpen ? "max-h-screen border-t border-gray-100 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="container mx-auto flex flex-col gap-1 px-6 py-4">
-          {/* Sobre — backup */}
-          {/* <button
+          {/* Sobre */}
+          <Link
+            href="/sobre"
             className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-base font-normal text-black transition-colors hover:bg-gray-50"
             onClick={() => setMenuOpen(false)}
           >
             Sobre
-          </button> */}
+          </Link>
 
-          {/* Serviços accordion — backup para quando o menu accordion voltar */}
-          {/* <div>
+          {/* Serviços accordion */}
+          <div>
             <button
               className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-base font-normal text-black transition-colors hover:bg-gray-50"
               onClick={() => setMobileServicesOpen((prev) => !prev)}
@@ -405,22 +271,10 @@ export default function Header() {
                 </Link>
               ))}
             </div>
-          </div> */}
+          </div>
 
-          {/* Serviços — itens diretos no menu mobile */}
-          {serviceItems.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              className="flex items-center justify-between rounded-lg px-3 py-3 text-base font-normal text-black transition-colors hover:bg-gray-50"
-              onClick={() => setMenuOpen(false)}
-            >
-              {item.label}
-            </Link>
-          ))}
-
-          {/* Pra quem oferecemos accordion — backup */}
-          {/* <div>
+          {/* Pra quem accordion */}
+          <div>
             <button
               className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-base font-normal text-black transition-colors hover:bg-gray-50"
               onClick={() => setMobileSectorOpen((prev) => !prev)}
@@ -441,10 +295,10 @@ export default function Header() {
                 </button>
               ))}
             </div>
-          </div> */}
+          </div>
 
-          {/* Programas — backup */}
-          {/* {navItems.map((item) => (
+          {/* Programas */}
+          {navItems.map((item) => (
             <Link
               key={item.label}
               href={item.href}
@@ -453,18 +307,15 @@ export default function Header() {
             >
               {item.label}
             </Link>
-          ))} */}
+          ))}
 
-          {/* Eventos — backup */}
-          {/* <button
-            className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-base font-normal text-black transition-colors hover:bg-gray-50"
-            onClick={() => setMenuOpen(false)}
-          >
+          {/* Eventos */}
+          <button className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-base font-normal text-black transition-colors hover:bg-gray-50">
             Eventos
-          </button> */}
+          </button>
 
-          {/* Conteúdo accordion — backup */}
-          {/* <div>
+          {/* Conteúdo accordion */}
+          <div>
             <button
               className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-base font-normal text-black transition-colors hover:bg-gray-50"
               onClick={() => setMobileContentOpen((prev) => !prev)}
@@ -485,7 +336,7 @@ export default function Header() {
                 </button>
               ))}
             </div>
-          </div> */}
+          </div>
 
           <div className="my-2 border-t border-gray-100" />
 
