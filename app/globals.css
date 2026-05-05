@@ -37,7 +37,7 @@ body {
 }
 html,
 body {
-  @apply scroll-smooth;
+  @apply scroll-smooth overflow-x-hidden;
 }
 .container {
   @apply w-full max-w-7xl px-4 mx-auto relative z-3;
@@ -140,6 +140,62 @@ body {
     .swiper-pagination-bullet-active {
       background: #0071e3;
     }
+  }
+}
+
+.oquefazemos-swiper {
+  @apply overflow-visible!;
+  .swiper-pagination {
+    @apply relative! bottom-auto! mt-4;
+  }
+  .swiper-pagination-bullet {
+    @apply bg-white! opacity-50! w-3! h-3!;
+  }
+  .swiper-pagination-bullet-active {
+    @apply opacity-100!;
+  }
+}
+
+.casesdestaque-swiper {
+  @apply overflow-visible!;
+  .swiper-pagination {
+    @apply relative! bottom-auto! mt-4;
+  }
+  .swiper-pagination-bullet {
+    @apply bg-bluePrimary! opacity-30! w-3! h-3!;
+  }
+  .swiper-pagination-bullet-active {
+    @apply opacity-100!;
+  }
+}
+
+.iebt-swiper {
+  @apply overflow-visible!;
+  .swiper-pagination {
+    @apply relative! bottom-auto! mt-4;
+  }
+  .swiper-pagination-bullet {
+    background: #464646;
+    opacity: 0.3;
+    @apply w-3! h-3!;
+  }
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+  }
+}
+
+.proximopasso-swiper {
+  .swiper-pagination {
+    position: relative !important;
+    margin-top: 16px;
+  }
+  .swiper-pagination-bullet {
+    background: white;
+    opacity: 0.5;
+    @apply w-3! h-3!;
+  }
+  .swiper-pagination-bullet-active {
+    opacity: 1;
   }
 }
 

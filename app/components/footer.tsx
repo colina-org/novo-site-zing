@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import AssistenteWidget from "./AssistenteWidget";
 
 // function FacebookIcon() {
 //   return (
@@ -88,6 +89,7 @@ function SocialButton({
 
 export default function Footer() {
   return (
+    <>
     <footer className="bg-[#F2F8FD]">
       <div className="container mx-auto px-6 py-10">
         <div className="flex flex-col gap-10">
@@ -164,5 +166,7 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+    <AssistenteWidget />
+    </>
   );
 }
