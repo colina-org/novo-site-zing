@@ -4,9 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function AssistenteWidget() {
-  const [open, setOpen] = useState(() =>
-    typeof window !== "undefined" ? window.innerWidth >= 640 : false
-  );
+  const [open, setOpen] = useState(false);
 
   return (
     <div className="fixed bottom-6 right-6 z-50 pointer-events-none">
@@ -62,9 +60,9 @@ export default function AssistenteWidget() {
             Zing transforma negócios.
           </p>
 
-          {/* CTA — adicione o href quando disponível */}
+          {/* CTA */}
           <a
-            href="https://zing-cpsi.iebtinnovation.com/"
+            href="https://zingassistente.lovable.app/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex h-11 w-full items-center justify-center rounded-lg text-sm font-medium text-white transition-opacity hover:opacity-90"
@@ -87,22 +85,29 @@ export default function AssistenteWidget() {
 
       {/* Botão flutuante quando fechado */}
       <div
-        className={`flex justify-end transition-all duration-300 ease-out ${
+        className={`group flex items-center justify-end gap-3 transition-all duration-300 ease-out ${
           open
             ? "opacity-0 pointer-events-none"
             : "opacity-100 pointer-events-auto"
         }`}
       >
+        {/* Tooltip — aparece ao passar o mouse */}
+        <button
+          onClick={() => setOpen(true)}
+          className="cursor-pointer rounded-[10px] bg-white px-4 py-2 text-base text-bluePrimary opacity-0 shadow-[0px_2px_5px_0px_rgba(0,0,0,0.16)] transition-opacity duration-200 group-hover:opacity-100 max-sm:hidden"
+        >
+          Conheça nossa assistente!
+        </button>
         <button
           onClick={() => setOpen(true)}
           aria-label="Abrir assistente da Zing"
-          className="flex size-14 cursor-pointer items-center justify-center rounded-full shadow-[0px_2px_10px_0px_rgba(0,0,0,0.16)] transition-transform hover:scale-105"
+          className="flex size-16 cursor-pointer items-center justify-center rounded-full shadow-[0px_2px_10px_0px_rgba(0,0,0,0.16)] transition-transform hover:scale-105"
           style={{
             background:
-              "linear-gradient(35deg, #6453D1 8%, #0071E3 58%, #1ACBDC 91%)",
+              "linear-gradient(78deg, #6453D1 8%, #0071E3 58%, #1ACBDC 91%)",
           }}
         >
-          <div className="relative size-8">
+          <div className="relative size-9">
             <Image
               src="/sobre/assistente-avatar.svg"
               alt=""
