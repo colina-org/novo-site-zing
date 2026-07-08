@@ -97,8 +97,9 @@ export default buildConfig({
   db: postgresAdapter({
     pool: {
       connectionString: process.env.DATABASE_URI || "",
-      // Supabase pooler limita clients (pool_size 15). Mantém abaixo do teto.
-      max: 5,
+      // Serverless (Vercel): 1 conexão por instância — o transaction pooler
+      // (porta 6543) multiplexa. Local: pool pequeno para o session pooler.
+      max: process.env.VERCEL ? 1 : 5,
       idleTimeoutMillis: 10000,
     },
   }),
