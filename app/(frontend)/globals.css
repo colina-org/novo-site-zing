@@ -1,0 +1,215 @@
+@import "tailwindcss";
+
+@import "./styles/fonts.css";
+@import "./styles/buttons.css";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Sundry", sans-serif;
+  --font-sundry: "Sundry", sans-serif;
+  --color-purplePrimary: #5f2ab2;
+  --color-greyPrimary: #464646;
+  --color-purpleSecondary: #9500ff;
+  --color-bluePrimary: #0071e3;
+  --color-gradientbg: #f2f8fd;
+  --animate-fade-in-up: fadeInUp 0.6s ease-out both;
+  --breakpoint-desktop: 1268px;
+  --breakpoint-nav: 1137px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Sundry", sans-serif;
+}
+html,
+body {
+  /* overflow-x-clip (não overflow-x-hidden) evita criar um container de
+     scroll no body, que quebraria o position: sticky do cabeçalho. */
+  @apply scroll-smooth overflow-x-clip;
+}
+.container {
+  @apply w-full max-w-7xl px-4 mx-auto relative z-3;
+}
+
+.gradient-blue-primary-zing {
+  background-image: linear-gradient(
+    35deg,
+    #6453d1 8%,
+    #0071e3 58%,
+    #1acbdc 91%
+  );
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-reverse {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.clients {
+  .swiper {
+    .swiper-wrapper {
+      -webkit-transition-timing-function: linear !important;
+      -moz-transition-timing-function: linear !important;
+      -o-transition-timing-function: linear !important;
+      transition-timing-function: linear !important;
+    }
+  }
+}
+
+.programs-swiper {
+  .swiper-pagination {
+    position: relative !important;
+    margin-top: 32px;
+  }
+  .swiper-pagination-bullet {
+    background: white;
+    opacity: 0.5;
+    width: 10px !important;
+    height: 10px !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+  }
+}
+
+.testimonials-pagination {
+  .swiper-pagination-bullet {
+    background: #c4c5c6;
+    opacity: 1;
+    width: 10px;
+    height: 10px;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #0071e3;
+  }
+}
+
+.calls {
+  .swiper-pagination {
+    .swiper-pagination-bullet {
+      @apply w-3! h-3!;
+    }
+    .swiper-pagination-bullet-active {
+      background: #0071e3;
+    }
+  }
+}
+.whyuse {
+  .why-pagination {
+    .swiper-pagination-bullet {
+      @apply w-3! h-3!;
+    }
+    .swiper-pagination-bullet-active {
+      background: #0071e3;
+    }
+  }
+}
+
+.oquefazemos-swiper {
+  @apply overflow-visible!;
+  .swiper-pagination {
+    @apply relative! bottom-auto! mt-4;
+  }
+  .swiper-pagination-bullet {
+    @apply bg-white! opacity-50! w-3! h-3!;
+  }
+  .swiper-pagination-bullet-active {
+    @apply opacity-100!;
+  }
+}
+
+.casesdestaque-swiper {
+  @apply overflow-visible!;
+  .swiper-pagination {
+    @apply relative! bottom-auto! mt-4;
+  }
+  .swiper-pagination-bullet {
+    @apply bg-bluePrimary! opacity-30! w-3! h-3!;
+  }
+  .swiper-pagination-bullet-active {
+    @apply opacity-100!;
+  }
+}
+
+.iebt-swiper {
+  @apply overflow-visible!;
+  .swiper-pagination {
+    @apply relative! bottom-auto! mt-4;
+  }
+  .swiper-pagination-bullet {
+    background: #464646;
+    opacity: 0.3;
+    @apply w-3! h-3!;
+  }
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+  }
+}
+
+.proximopasso-swiper {
+  .swiper-pagination {
+    position: relative !important;
+    margin-top: 16px;
+  }
+  .swiper-pagination-bullet {
+    background: white;
+    opacity: 0.5;
+    @apply w-3! h-3!;
+  }
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+  }
+}
+
+.s-hero-blog {
+  form {
+    button[type="submit"] {
+      background: linear-gradient(
+        78deg,
+        #6453d1 7.96%,
+        #0071e3 57.82%,
+        #1acbdc 91.06%
+      );
+    }
+  }
+}
