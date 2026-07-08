@@ -97,10 +97,11 @@ export default buildConfig({
   db: postgresAdapter({
     pool: {
       connectionString: process.env.DATABASE_URI || "",
-      // Serverless (Vercel): 1 conexão por instância — o transaction pooler
-      // (porta 6543) multiplexa. Local: pool pequeno para o session pooler.
-      max: process.env.VERCEL ? 1 : 5,
+      // Transaction pooler (6543) multiplexa bem; evita starvation na home
+      // (que dispara várias queries em paralelo). Timeout evita travar infinito.
+      max: process.env.VERCEL ? 10 : 5,
       idleTimeoutMillis: 10000,
+      connectionTimeoutMillis: 15000,
     },
   }),
   sharp,
