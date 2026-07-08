@@ -5,6 +5,11 @@ import Footer from "./components/footer";
 import AosInit from "./components/AosInit";
 import { getGlobal, mediaUrl } from "./lib/cms";
 
+// Renderização dinâmica (a cada request): desacopla o build do banco
+// e faz as edições do CMS refletirem imediatamente. O transaction pooler
+// (6543) + pool max 1 aguentam bem em serverless.
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await getGlobal("site-settings");
 

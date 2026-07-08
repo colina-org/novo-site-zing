@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { getProgramBySlug, getProgramSlugs } from "../../lib/cms";
+import { getProgramBySlug } from "../../lib/cms";
 
 function CalendarIcon() {
   return (
@@ -28,9 +28,10 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
+// Sem prerender no build (páginas dinâmicas). As rotas são renderizadas
+// sob demanda; evita acoplar o build ao banco.
 export async function generateStaticParams() {
-  const slugs = await getProgramSlugs();
-  return slugs.map((slug) => ({ slug }));
+  return [];
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
