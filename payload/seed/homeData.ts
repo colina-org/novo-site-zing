@@ -100,7 +100,7 @@ export const homeData = {
     { src: "/clients/client-20.png", alt: "CDL" },
     { src: "/clients/client-21.png", alt: "Condumax" },
   ],
-  // FAQ da home (group=home) — 6 itens (o 6º é duplicado do 3º, conforme original).
+  // FAQ da home (group=home) — 5 itens (confere com o site em produção).
   faqs: [
     {
       question: "Para quem é a Zing?",
@@ -126,11 +126,6 @@ export const homeData = {
       question: "Preciso de conhecimento técnico para usar a plataforma?",
       answer:
         "Não. A Zing possui uma interface intuitiva e é acompanhada por suporte especializado para apoiar sua implementação e uso.",
-    },
-    {
-      question: "Quais tipos de iniciativas posso gerenciar na Zing?",
-      answer:
-        "Você pode gerenciar programas de inovação aberta, CPSI, hubs de inovação, desafios internos, eventos e outras iniciativas em um único ambiente.",
     },
   ],
   // Depoimentos (collection testimonials) — 9 itens.
