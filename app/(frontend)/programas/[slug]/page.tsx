@@ -70,6 +70,7 @@ export default async function ProgramPage({ params }: Props) {
             src={program.image}
             alt={program.title}
             fill
+            quality={100}
             className="object-cover"
             sizes="100vw"
             priority
